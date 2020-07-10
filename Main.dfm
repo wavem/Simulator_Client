@@ -74,6 +74,98 @@ object Form1: TForm1
           ExplicitHeight = 41
         end
       end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 1
+        Caption = '1'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_01_: TPanel
+          Left = 0
+          Top = 0
+          Width = 561
+          Height = 582
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clCream
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 176
+          ExplicitTop = 144
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 2
+        Caption = '2'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_02_: TPanel
+          Left = 0
+          Top = 0
+          Width = 561
+          Height = 582
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clMedGray
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 184
+          ExplicitTop = 208
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 3
+        Caption = '3'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_03_: TPanel
+          Left = 0
+          Top = 0
+          Width = 561
+          Height = 582
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clYellow
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 184
+          ExplicitTop = 160
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
+      object TPage
+        Left = 0
+        Top = 0
+        HelpContext = 4
+        Caption = '4'
+        ExplicitWidth = 0
+        ExplicitHeight = 0
+        object __pnBase_04_: TPanel
+          Left = 0
+          Top = 0
+          Width = 561
+          Height = 582
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clActiveCaption
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 120
+          ExplicitTop = 200
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
+      end
     end
     object memo: TAdvMemo
       Left = 656

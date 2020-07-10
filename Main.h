@@ -81,6 +81,10 @@ __published:	// IDE-managed Components
 	TNotebook *Notebook_Main;
 	TAdvMemo *memo;
 	TPanel *__pnBase_00_Default;
+	TPanel *__pnBase_01_;
+	TPanel *__pnBase_02_;
+	TPanel *__pnBase_03_;
+	TPanel *__pnBase_04_;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);
