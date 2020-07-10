@@ -58,6 +58,21 @@ object Form1: TForm1
         Caption = 'Default'
         ExplicitWidth = 150
         ExplicitHeight = 150
+        object __pnBase_00_Default: TPanel
+          Left = 0
+          Top = 0
+          Width = 561
+          Height = 582
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clWindowFrame
+          ParentBackground = False
+          TabOrder = 0
+          ExplicitLeft = 120
+          ExplicitTop = 144
+          ExplicitWidth = 185
+          ExplicitHeight = 41
+        end
       end
     end
     object memo: TAdvMemo
