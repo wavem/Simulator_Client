@@ -68,6 +68,7 @@
 #include "dxSkinVS2010.hpp"
 #include "dxSkinWhiteprint.hpp"
 #include "dxSkinXmas2008Blue.hpp"
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -75,6 +76,7 @@ __published:	// IDE-managed Components
 	TdxRibbonTab *dxRibbon1Tab1;
 	TdxRibbon *dxRibbon1;
 	TdxBarManager *BarMgr;
+	TPanel *___pnBase;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm1(TComponent* Owner);

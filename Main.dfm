@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 411
-  ClientWidth = 852
+  ClientHeight = 708
+  ClientWidth = 908
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,19 +16,35 @@ object Form1: TForm1
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 852
+    Width = 908
     Height = 126
     BarManager = BarMgr
     ColorSchemeName = 'Blue'
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 852
     object dxRibbon1Tab1: TdxRibbonTab
       Active = True
       Caption = 'dxRibbon1Tab1'
       Groups = <>
       Index = 0
     end
+  end
+  object ___pnBase: TPanel
+    Left = 0
+    Top = 126
+    Width = 908
+    Height = 582
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clBlack
+    ParentBackground = False
+    TabOrder = 5
+    ExplicitLeft = 328
+    ExplicitTop = 272
+    ExplicitWidth = 185
+    ExplicitHeight = 41
   end
   object BarMgr: TdxBarManager
     Font.Charset = DEFAULT_CHARSET
