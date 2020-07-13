@@ -69,26 +69,26 @@
 #pragma link "dxSkinXmas2008Blue"
 #pragma link "AdvMemo"
 #pragma resource "*.dfm"
-TForm1 *Form1;
+TFormMain *FormMain;
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
+__fastcall TFormMain::TFormMain(TComponent* Owner)
 	: TForm(Owner)
 {
 	InitProgram();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::InitProgram() {
+void __fastcall TFormMain::InitProgram() {
 
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ExitProgram() {
+void __fastcall TFormMain::ExitProgram() {
 
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::PrintMsg(UnicodeString _str) {
+void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 
 }
 //---------------------------------------------------------------------------

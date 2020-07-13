@@ -1,7 +1,7 @@
-object Form1: TForm1
+object FormMain: TFormMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Simulator_Client'
   ClientHeight = 708
   ClientWidth = 908
   Color = clBtnFace

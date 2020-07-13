@@ -71,7 +71,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include "AdvMemo.hpp"
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TFormMain : public TForm
 {
 __published:	// IDE-managed Components
 	TdxRibbonTab *dxRibbon1Tab1;
@@ -87,7 +87,7 @@ __published:	// IDE-managed Components
 	TPanel *__pnBase_04_;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall TFormMain(TComponent* Owner);
 
 // START
 public:	// Basic Functions
@@ -96,6 +96,6 @@ public:	// Basic Functions
 	void __fastcall PrintMsg(UnicodeString _str);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TFormMain *FormMain;
 //---------------------------------------------------------------------------
 #endif
