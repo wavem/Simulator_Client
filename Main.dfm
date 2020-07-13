@@ -1,9 +1,10 @@
 object FormMain: TFormMain
   Left = 0
   Top = 0
+  BorderStyle = bsDialog
   Caption = 'Simulator_Client'
-  ClientHeight = 708
-  ClientWidth = 908
+  ClientHeight = 718
+  ClientWidth = 918
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,7 +18,7 @@ object FormMain: TFormMain
   object dxRibbon1: TdxRibbon
     Left = 0
     Top = 0
-    Width = 908
+    Width = 918
     Height = 126
     BarManager = BarMgr
     ColorSchemeName = 'Blue'
@@ -35,8 +36,8 @@ object FormMain: TFormMain
   object ___pnBase: TPanel
     Left = 0
     Top = 126
-    Width = 908
-    Height = 582
+    Width = 918
+    Height = 592
     Align = alClient
     BevelOuter = bvNone
     Color = clBlack
@@ -50,9 +51,10 @@ object FormMain: TFormMain
       Left = 0
       Top = 0
       Width = 561
-      Height = 582
+      Height = 592
       Align = alLeft
       TabOrder = 0
+      ExplicitHeight = 582
       object TPage
         Left = 0
         Top = 0
@@ -63,7 +65,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 561
-          Height = 582
+          Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clWindowFrame
@@ -86,7 +88,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 561
-          Height = 582
+          Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clCream
@@ -109,7 +111,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 561
-          Height = 582
+          Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clMedGray
@@ -132,7 +134,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 561
-          Height = 582
+          Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clYellow
@@ -155,7 +157,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 561
-          Height = 582
+          Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clActiveCaption
@@ -169,10 +171,10 @@ object FormMain: TFormMain
       end
     end
     object memo: TAdvMemo
-      Left = 656
+      Left = 666
       Top = 0
       Width = 252
-      Height = 582
+      Height = 592
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
       ActiveLineSettings.ShowActiveLineIndicator = False
@@ -281,6 +283,8 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
+      ExplicitLeft = 656
+      ExplicitHeight = 582
     end
   end
   object BarMgr: TdxBarManager
