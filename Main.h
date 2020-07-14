@@ -74,8 +74,8 @@
 class TFormMain : public TForm
 {
 __published:	// IDE-managed Components
-	TdxRibbonTab *dxRibbon1Tab1;
-	TdxRibbon *dxRibbon1;
+	TdxRibbonTab *MenuTab_1;
+	TdxRibbon *MainRibbonMenu;
 	TdxBarManager *BarMgr;
 	TPanel *___pnBase;
 	TNotebook *Notebook_Main;

@@ -15,7 +15,7 @@ object FormMain: TFormMain
   Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
-  object dxRibbon1: TdxRibbon
+  object MainRibbonMenu: TdxRibbon
     Left = 0
     Top = 0
     Width = 918
@@ -26,9 +26,9 @@ object FormMain: TFormMain
     TabOrder = 0
     TabStop = False
     ExplicitWidth = 852
-    object dxRibbon1Tab1: TdxRibbonTab
+    object MenuTab_1: TdxRibbonTab
       Active = True
-      Caption = 'dxRibbon1Tab1'
+      Caption = 'Menu'
       Groups = <>
       Index = 0
     end
