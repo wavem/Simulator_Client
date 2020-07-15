@@ -29,7 +29,10 @@ object FormMain: TFormMain
     object MenuTab_1: TdxRibbonTab
       Active = True
       Caption = 'Menu'
-      Groups = <>
+      Groups = <
+        item
+          ToolbarName = 'BarMgrBar1'
+        end>
       Index = 0
     end
   end
@@ -307,5 +310,21 @@ object FormMain: TFormMain
       0
       0
       0)
+    object BarMgrBar1: TdxBar
+      Caption = 'Custom 1'
+      CaptionButtons = <>
+      DockedLeft = 0
+      DockedTop = 0
+      FloatLeft = 942
+      FloatTop = 8
+      FloatClientWidth = 0
+      FloatClientHeight = 0
+      ItemLinks = <>
+      OneOnRow = True
+      Row = 0
+      UseOwnFont = False
+      Visible = True
+      WholeRow = False
+    end
   end
 end
