@@ -86,6 +86,11 @@ __published:	// IDE-managed Components
 	TPanel *__pnBase_03_;
 	TPanel *__pnBase_04_;
 	TdxBar *BarMgrBar1;
+	TdxBarLargeButton *MenuBtn_01;
+	TdxBarLargeButton *MenuBtn_02;
+	TdxBarLargeButton *MenuBtn_03;
+	TdxBarLargeButton *MenuBtn_04;
+	TdxBarLargeButton *MenuBtn_05;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);

@@ -311,7 +311,6 @@ object FormMain: TFormMain
       0
       0)
     object BarMgrBar1: TdxBar
-      Caption = 'Custom 1'
       CaptionButtons = <>
       DockedLeft = 0
       DockedTop = 0
@@ -319,12 +318,67 @@ object FormMain: TFormMain
       FloatTop = 8
       FloatClientWidth = 0
       FloatClientHeight = 0
-      ItemLinks = <>
+      ItemLinks = <
+        item
+          Visible = True
+          ItemName = 'MenuBtn_01'
+        end
+        item
+          Visible = True
+          ItemName = 'MenuBtn_02'
+        end
+        item
+          Visible = True
+          ItemName = 'MenuBtn_03'
+        end
+        item
+          Visible = True
+          ItemName = 'MenuBtn_04'
+        end
+        item
+          Visible = True
+          ItemName = 'MenuBtn_05'
+        end>
       OneOnRow = True
       Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
+    end
+    object MenuBtn_01: TdxBarLargeButton
+      Caption = 'Page 1'
+      Category = 0
+      Hint = 'Page 1'
+      Visible = ivAlways
+      Width = 60
+    end
+    object MenuBtn_02: TdxBarLargeButton
+      Caption = 'Page 2'
+      Category = 0
+      Hint = 'Page 2'
+      Visible = ivAlways
+      Width = 60
+    end
+    object MenuBtn_03: TdxBarLargeButton
+      Caption = 'Page 3'
+      Category = 0
+      Hint = 'Page 3'
+      Visible = ivAlways
+      Width = 60
+    end
+    object MenuBtn_04: TdxBarLargeButton
+      Caption = 'Page 4'
+      Category = 0
+      Hint = 'Page 4'
+      Visible = ivAlways
+      Width = 60
+    end
+    object MenuBtn_05: TdxBarLargeButton
+      Caption = 'Page 5'
+      Category = 0
+      Hint = 'Page 5'
+      Visible = ivAlways
+      Width = 60
     end
   end
 end
