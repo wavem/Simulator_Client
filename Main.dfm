@@ -350,6 +350,7 @@ object FormMain: TFormMain
       Category = 0
       Hint = 'Page 1'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -484,10 +485,12 @@ object FormMain: TFormMain
       Width = 60
     end
     object MenuBtn_02: TdxBarLargeButton
+      Tag = 1
       Caption = 'Page 2'
       Category = 0
       Hint = 'Page 2'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -622,10 +625,12 @@ object FormMain: TFormMain
       Width = 60
     end
     object MenuBtn_03: TdxBarLargeButton
+      Tag = 2
       Caption = 'Page 3'
       Category = 0
       Hint = 'Page 3'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -760,10 +765,12 @@ object FormMain: TFormMain
       Width = 60
     end
     object MenuBtn_04: TdxBarLargeButton
+      Tag = 3
       Caption = 'Page 4'
       Category = 0
       Hint = 'Page 4'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000
@@ -898,10 +905,12 @@ object FormMain: TFormMain
       Width = 60
     end
     object MenuBtn_05: TdxBarLargeButton
+      Tag = 4
       Caption = 'Page 5'
       Category = 0
       Hint = 'Page 5'
       Visible = ivAlways
+      OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
         2000000000000010000000000000000000000000000000000000000000000000

@@ -92,3 +92,9 @@ void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 
 }
 //---------------------------------------------------------------------------
+void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
+{
+	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
+	Notebook_Main->PageIndex = p_Btn->Tag;
+}
+//---------------------------------------------------------------------------
