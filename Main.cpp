@@ -80,6 +80,10 @@ __fastcall TFormMain::TFormMain(TComponent* Owner)
 
 void __fastcall TFormMain::InitProgram() {
 
+	// Setting Default Notebook Page
+	Notebook_Main->PageIndex = 0;
+
+
 	PrintMsg(L"Init Complete");
 }
 //---------------------------------------------------------------------------
