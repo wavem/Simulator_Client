@@ -53,11 +53,10 @@ object FormMain: TFormMain
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
-      Width = 561
+      Width = 634
       Height = 592
       Align = alLeft
       TabOrder = 0
-      ExplicitHeight = 582
       object TPage
         Left = 0
         Top = 0
@@ -67,7 +66,7 @@ object FormMain: TFormMain
         object __pnBase_00_Default: TPanel
           Left = 0
           Top = 0
-          Width = 561
+          Width = 634
           Height = 592
           Align = alClient
           BevelOuter = bvNone
@@ -90,7 +89,7 @@ object FormMain: TFormMain
         object __pnBase_01_: TPanel
           Left = 0
           Top = 0
-          Width = 561
+          Width = 634
           Height = 592
           Align = alClient
           BevelOuter = bvNone
@@ -113,7 +112,7 @@ object FormMain: TFormMain
         object __pnBase_02_: TPanel
           Left = 0
           Top = 0
-          Width = 561
+          Width = 634
           Height = 592
           Align = alClient
           BevelOuter = bvNone
@@ -136,7 +135,7 @@ object FormMain: TFormMain
         object __pnBase_03_: TPanel
           Left = 0
           Top = 0
-          Width = 561
+          Width = 634
           Height = 592
           Align = alClient
           BevelOuter = bvNone
@@ -159,7 +158,7 @@ object FormMain: TFormMain
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
-          Width = 561
+          Width = 634
           Height = 592
           Align = alClient
           BevelOuter = bvNone
@@ -174,9 +173,9 @@ object FormMain: TFormMain
       end
     end
     object memo: TAdvMemo
-      Left = 666
+      Left = 634
       Top = 0
-      Width = 252
+      Width = 284
       Height = 592
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
@@ -286,8 +285,6 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitLeft = 656
-      ExplicitHeight = 582
     end
   end
   object BarMgr: TdxBarManager
