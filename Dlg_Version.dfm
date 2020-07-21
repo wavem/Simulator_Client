@@ -1,10 +1,12 @@
-object Form1: TForm1
+object FormVersion: TFormVersion
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 411
-  ClientWidth = 852
+  BorderStyle = bsDialog
+  Caption = 'Version'
+  ClientHeight = 333
+  ClientWidth = 475
   Color = clBtnFace
+  DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -14,4 +16,19 @@ object Form1: TForm1
   Position = poOwnerFormCenter
   PixelsPerInch = 96
   TextHeight = 13
+  object ___pnBase: TPanel
+    Left = 0
+    Top = 0
+    Width = 475
+    Height = 333
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clBlack
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 144
+    ExplicitTop = 104
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+  end
 end

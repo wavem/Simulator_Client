@@ -7,15 +7,17 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TFormVersion : public TForm
 {
 __published:	// IDE-managed Components
+	TPanel *___pnBase;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm1(TComponent* Owner);
+	__fastcall TFormVersion(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TFormVersion *FormVersion;
 //---------------------------------------------------------------------------
 #endif
