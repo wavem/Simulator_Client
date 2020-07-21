@@ -91,6 +91,8 @@ __published:	// IDE-managed Components
 	TdxBarLargeButton *MenuBtn_03;
 	TdxBarLargeButton *MenuBtn_04;
 	TdxBarLargeButton *MenuBtn_05;
+	TdxBar *BarMgrBar2;
+	TdxBarLargeButton *dxBarLargeButton1;
 	void __fastcall ClickMenuButton(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
