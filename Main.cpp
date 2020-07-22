@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Main.h"
+#include "Dlg_Version.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "cxClasses"
@@ -103,5 +104,13 @@ void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
 {
 	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
 	Notebook_Main->PageIndex = p_Btn->Tag;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::dxBarLargeButton1Click(TObject *Sender)
+{
+	TFormVersion* p_Dlg = new TFormVersion(NULL);
+	p_Dlg->ShowModal();
+	delete p_Dlg;
 }
 //---------------------------------------------------------------------------
