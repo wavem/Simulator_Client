@@ -103,6 +103,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DynamicRTL>false</DynamicRTL>
+        <BCC_IncludePath>Z:\wave\010_Project\020_Util\Simulator\Client\010_Source\include_cpp;$(BCC_IncludePath)</BCC_IncludePath>
         <ILINK_LibraryPath>C:\Users\WAVE_W64\Documents\tmssoftware\TMS Component Pack\DelphiXE7\Win32\Debug\;C:\Users\Public\Documents\Embarcadero\Studio\15.0\DCP\;C:\Program Files (x86)\DevExpress VCL\Library\RS21\;$(BDS)\lib\win32\release\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <UsePackages>false</UsePackages>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
