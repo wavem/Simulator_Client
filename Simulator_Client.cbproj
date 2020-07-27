@@ -118,6 +118,10 @@
         <BCC_PCHName_Clang>Simulator_Client_PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Define.cpp">
+            <DependentOn>Define.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Dlg_Version.cpp">
             <Form>FormVersion</Form>
             <FormType>dfm</FormType>
