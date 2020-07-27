@@ -107,6 +107,10 @@ public:	// Basic Functions
 	void __fastcall InitProgram();
 	void __fastcall ExitProgram();
 	void __fastcall PrintMsg(UnicodeString _str);
+
+
+public: // Socket
+	bool __fastcall CreateUDPSocket();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;

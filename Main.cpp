@@ -109,8 +109,8 @@ void __fastcall TFormMain::InitProgram() {
 		PrintMsg(L"Socket init success");
 	}
 
-	// Create T Client Socket
-	//if(CreateTCPSocket() == false) return;
+	// Create UDP Socket
+	if(CreateUDPSocket() == false) return;
 
 	// Create T Client Thread
 	//if(CreateClientThread() == false) return;
@@ -142,5 +142,12 @@ void __fastcall TFormMain::dxBarLargeButton1Click(TObject *Sender)
 	TFormVersion* p_Dlg = new TFormVersion(NULL);
 	p_Dlg->ShowModal();
 	delete p_Dlg;
+}
+//---------------------------------------------------------------------------
+
+bool __fastcall TFormMain::CreateUDPSocket() {
+
+
+	return true;
 }
 //---------------------------------------------------------------------------
