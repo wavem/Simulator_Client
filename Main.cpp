@@ -88,6 +88,9 @@ void __fastcall TFormMain::InitProgram() {
 	// Setting Default Notebook Page
 	Notebook_Main->PageIndex = 0;
 
+	// Init Variables...
+	m_sock_UDP = INVALID_SOCKET;
+
 
 	// Socket Init
 	WSADATA data;
@@ -147,6 +150,23 @@ void __fastcall TFormMain::dxBarLargeButton1Click(TObject *Sender)
 
 bool __fastcall TFormMain::CreateUDPSocket() {
 
+	// Common
+	UnicodeString tempStr = L"";
+	AnsiString t_AnsiStr = "";
+
+	// Create Socket
+	m_sock_UDP = socket(AF_INET, SOCK_DGRAM, 0);
+	if(m_sock_UDP == INVALID_SOCKET) {
+		PrintMsg(L"Fail to create socket");
+		return false;
+	}
+
+	// Set Socket Option : REUSE
+	int t_opt_reuse = 1;
+	if(setsockopt(m_sock_UDP, SOL_SOCKET, SO_REUSEADDR,(char *)&t_opt_reuse, sizeof(t_opt_reuse)) == SOCKET_ERROR) {
+		PrintMsg(L"Fail to set socket option (REUSE)");
+		return false;
+	}
 
 	return true;
 }

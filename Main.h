@@ -110,6 +110,7 @@ public:	// Basic Functions
 
 
 public: // Socket
+	SOCKET m_sock_UDP;
 	bool __fastcall CreateUDPSocket();
 };
 //---------------------------------------------------------------------------
