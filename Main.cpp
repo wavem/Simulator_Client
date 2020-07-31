@@ -124,6 +124,22 @@ void __fastcall TFormMain::InitProgram() {
 
 void __fastcall TFormMain::ExitProgram() {
 
+	// Delete Socket
+	if(m_sock_UDP != INVALID_SOCKET) {
+		closesocket(m_sock_UDP);
+		m_sock_UDP = INVALID_SOCKET;
+	}
+
+	// Delete Thread
+	//if(m_ClientThread != NULL) {
+	//	m_ClientThread->DoTerminate();
+	//	m_ClientThread->Terminate();
+	//	delete m_ClientThread;
+	//	m_ClientThread = NULL;
+	//}
+
+	// Socket Clean Up
+	WSACleanup();
 }
 //---------------------------------------------------------------------------
 
