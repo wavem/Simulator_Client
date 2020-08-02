@@ -140,6 +140,10 @@
         <PCHCompile Include="Simulator_Client_PCH1.h">
             <BuildOrder>1</BuildOrder>
         </PCHCompile>
+        <CppCompile Include="UdpSocketThread.cpp">
+            <DependentOn>UdpSocketThread.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
         <FormResources Include="Main.dfm"/>
         <FormResources Include="Dlg_Version.dfm"/>
         <BuildConfiguration Include="Release">
