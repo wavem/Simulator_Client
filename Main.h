@@ -112,6 +112,16 @@ public:	// Basic Functions
 public: // Socket
 	SOCKET m_sock_UDP;
 	bool __fastcall CreateUDPSocket();
+
+
+
+
+public: // User Message Handler
+	void __fastcall PrintThreadLogMessage(TMessage &_msg);
+
+BEGIN_MESSAGE_MAP
+	MESSAGE_HANDLER(MSG_LOG_FROM_THREAD, TMessage, PrintThreadLogMessage)
+END_MESSAGE_MAP(TForm)
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMain *FormMain;

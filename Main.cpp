@@ -187,3 +187,8 @@ bool __fastcall TFormMain::CreateUDPSocket() {
 	return true;
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
+
+}
+//---------------------------------------------------------------------------
