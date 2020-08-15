@@ -115,8 +115,8 @@ void __fastcall TFormMain::InitProgram() {
 	// Create UDP Socket
 	if(CreateUDPSocket() == false) return;
 
-	// Create T Client Thread
-	//if(CreateClientThread() == false) return;
+	// Create UDP Thread
+	if(CreateUDPThread() == false) return;
 
 	PrintMsg(L"Init Complete");
 }
@@ -198,5 +198,11 @@ void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
 	p = (UnicodeString*)t_wParam;
 	tempStr = *p;
 	PrintMsg(tempStr);
+}
+//---------------------------------------------------------------------------
+
+bool __fastcall TFormMain::CreateUDPThread() {
+
+	return true;
 }
 //---------------------------------------------------------------------------
