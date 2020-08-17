@@ -75,6 +75,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include "AdvMemo.hpp"
 //---------------------------------------------------------------------------
+class CUdpSocketThread;
 class TFormMain : public TForm
 {
 __published:	// IDE-managed Components
@@ -114,6 +115,7 @@ public: // Socket
 	SOCKET m_sock_UDP;
 	bool __fastcall CreateUDPSocket();
 	bool __fastcall CreateUDPThread();
+	CUdpSocketThread* m_UdpThread;
 
 
 

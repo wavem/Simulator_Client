@@ -5,6 +5,9 @@
 //---------------------------------------------------------------------------
 
 
+#define UDP_SERVER_PORT	1000
+#define IP_SERVER "127.0.0.1"
+
 #define UDP_SEND_BUF_SIZE 256
 #define UDP_RECV_BUF_SIZE 1500
 

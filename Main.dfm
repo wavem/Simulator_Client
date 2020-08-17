@@ -25,7 +25,6 @@ object FormMain: TFormMain
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 852
     object MenuTab_1: TdxRibbonTab
       Active = True
       Caption = 'Menu'
@@ -49,10 +48,6 @@ object FormMain: TFormMain
     Color = clBlack
     ParentBackground = False
     TabOrder = 5
-    ExplicitLeft = 328
-    ExplicitTop = 272
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
@@ -64,8 +59,6 @@ object FormMain: TFormMain
         Left = 0
         Top = 0
         Caption = 'Default'
-        ExplicitWidth = 150
-        ExplicitHeight = 150
         object __pnBase_00_Default: TPanel
           Left = 0
           Top = 0
@@ -76,10 +69,6 @@ object FormMain: TFormMain
           Color = clWindowFrame
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 120
-          ExplicitTop = 144
-          ExplicitWidth = 185
-          ExplicitHeight = 41
         end
       end
       object TPage
@@ -257,7 +246,7 @@ object FormMain: TFormMain
         '')
       MarkerList.UseDefaultMarkerImageIndex = False
       MarkerList.DefaultMarkerImageIndex = -1
-      MarkerList.ImageTransparentColor = -1
+      MarkerList.ImageTransparentColor = 33554432
       OleDropTarget = []
       PrintOptions.MarginLeft = 0
       PrintOptions.MarginRight = 0
@@ -339,8 +328,8 @@ object FormMain: TFormMain
           Visible = True
           ItemName = 'MenuBtn_05'
         end>
-      OneOnRow = True
-      Row = 1
+      OneOnRow = False
+      Row = 0
       UseOwnFont = False
       Visible = True
       WholeRow = False
@@ -359,7 +348,7 @@ object FormMain: TFormMain
           Visible = True
           ItemName = 'dxBarLargeButton1'
         end>
-      OneOnRow = True
+      OneOnRow = False
       Row = 0
       UseOwnFont = False
       Visible = True
