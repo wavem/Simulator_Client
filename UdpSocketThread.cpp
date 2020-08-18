@@ -46,6 +46,23 @@ void __fastcall CUdpSocketThread::Execute() {
 	SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	m_eThreadWork = THREAD_RUNNING;
 
+
+	while(!Terminated) {
+		// For Thread Stop & Resume
+		if(m_eThreadWork != THREAD_RUNNING) {
+			if(m_eThreadWork == THREAD_TERMINATED) return;
+			WaitForSingleObject((void*)this->Handle, 500);
+			continue;
+		}
+
+		static int temp = 0;
+		t_Str = temp++;
+		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
+		Sleep(1000);
+
+		if(temp == 10) break;
+	}
+
 	return;
 	#if 0
 
