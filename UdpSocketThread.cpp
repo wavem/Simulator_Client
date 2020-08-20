@@ -46,6 +46,13 @@ void __fastcall CUdpSocketThread::Execute() {
 	SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	m_eThreadWork = THREAD_RUNNING;
 
+	BYTE t_Buffer[256] = {0, };
+	t_Buffer[0] = 0;
+	t_Buffer[1] = 1;
+	t_Buffer[2] = 2;
+
+	int t_SendSize = 0;
+
 
 	while(!Terminated) {
 		// For Thread Stop & Resume
@@ -55,15 +62,17 @@ void __fastcall CUdpSocketThread::Execute() {
 			continue;
 		}
 
-		static int temp = 0;
-		t_Str = temp++;
+		t_SendSize = sendto(*m_sock, t_Buffer, 256, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
+		t_Str = t_SendSize;
 		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 		Sleep(1000);
-
-		if(temp == 10) break;
 	}
 
 	return;
+
+
+
+
 	#if 0
 
 	// Try to Connect
