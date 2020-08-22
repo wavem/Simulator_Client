@@ -69,6 +69,7 @@
 #pragma link "dxSkinWhiteprint"
 #pragma link "dxSkinXmas2008Blue"
 #pragma link "AdvMemo"
+#pragma link "AdvGlassButton"
 #pragma resource "*.dfm"
 #pragma link "libxl.lib"
 TFormMain *FormMain;
@@ -219,3 +220,37 @@ bool __fastcall TFormMain::CreateUDPThread() {
 	return true;
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_SendClick(TObject *Sender)
+{
+
+	// Pre Return
+	if(m_sock_UDP == INVALID_SOCKET) {
+		PrintMsg(L"There is no socket");
+		return;
+	}
+
+	// Common
+	UnicodeString t_Str = L"";
+	AnsiString t_AnsiStr = "";
+
+	struct sockaddr_in	t_sockaddr_in;
+	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
+	t_sockaddr_in.sin_family = AF_INET;
+	t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_SERVER);
+	t_sockaddr_in.sin_port = htons(UDP_SERVER_PORT);
+
+	BYTE t_Buffer[20] = {0, };
+	t_Buffer[0] = 0x47;
+	t_Buffer[1] = 0x42;
+	t_Buffer[2] = 0x44;
+	t_Buffer[3] = 0x31;
+
+	int t_SendSize = 20;
+
+	t_SendSize = sendto(m_sock_UDP, t_Buffer, 20, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
+	t_Str.sprintf(L"Send Size : %d", t_SendSize);
+	PrintMsg(t_Str);
+}
+//---------------------------------------------------------------------------
+

@@ -74,6 +74,7 @@
 #include "dxSkinXmas2008Blue.hpp"
 #include <Vcl.ExtCtrls.hpp>
 #include "AdvMemo.hpp"
+#include "AdvGlassButton.hpp"
 //---------------------------------------------------------------------------
 class CUdpSocketThread;
 class TFormMain : public TForm
@@ -98,8 +99,10 @@ __published:	// IDE-managed Components
 	TdxBarLargeButton *MenuBtn_05;
 	TdxBar *BarMgrBar2;
 	TdxBarLargeButton *dxBarLargeButton1;
+	TAdvGlassButton *btn_Send;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
+	void __fastcall btn_SendClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);

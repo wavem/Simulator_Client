@@ -69,6 +69,28 @@ object FormMain: TFormMain
           Color = clWindowFrame
           ParentBackground = False
           TabOrder = 0
+          object btn_Send: TAdvGlassButton
+            Left = 32
+            Top = 32
+            Width = 100
+            Height = 32
+            BackColor = clWhite
+            Caption = 'Send'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = 16760205
+            InnerBorderColor = clBlack
+            OuterBorderColor = clWhite
+            ParentFont = False
+            ShineColor = clWhite
+            TabOrder = 0
+            Version = '1.3.0.2'
+            OnClick = btn_SendClick
+          end
         end
       end
       object TPage
@@ -76,8 +98,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_01_: TPanel
           Left = 0
           Top = 0
@@ -88,10 +108,6 @@ object FormMain: TFormMain
           Color = clCream
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 176
-          ExplicitTop = 144
-          ExplicitWidth = 185
-          ExplicitHeight = 41
         end
       end
       object TPage
@@ -99,8 +115,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 2
         Caption = '2'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_02_: TPanel
           Left = 0
           Top = 0
@@ -111,10 +125,6 @@ object FormMain: TFormMain
           Color = clMedGray
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 184
-          ExplicitTop = 208
-          ExplicitWidth = 185
-          ExplicitHeight = 41
         end
       end
       object TPage
@@ -122,8 +132,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = '3'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_03_: TPanel
           Left = 0
           Top = 0
@@ -134,10 +142,6 @@ object FormMain: TFormMain
           Color = clYellow
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 184
-          ExplicitTop = 160
-          ExplicitWidth = 185
-          ExplicitHeight = 41
         end
       end
       object TPage
@@ -145,8 +149,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 4
         Caption = '4'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
@@ -157,10 +159,6 @@ object FormMain: TFormMain
           Color = clActiveCaption
           ParentBackground = False
           TabOrder = 0
-          ExplicitLeft = 120
-          ExplicitTop = 200
-          ExplicitWidth = 185
-          ExplicitHeight = 41
         end
       end
     end

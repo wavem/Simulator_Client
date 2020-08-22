@@ -37,6 +37,8 @@ void __fastcall CUdpSocketThread::Execute() {
 	int t_ConnectTryingCount = 1;
 
 	struct sockaddr_in	t_sockaddr_in;
+	struct sockaddr_in t_from_addr;
+	int t_fromaddrsize = sizeof(t_from_addr);
 	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
 	t_sockaddr_in.sin_family = AF_INET;
 	t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_SERVER);
@@ -46,12 +48,16 @@ void __fastcall CUdpSocketThread::Execute() {
 	SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	m_eThreadWork = THREAD_RUNNING;
 
-	BYTE t_Buffer[256] = {0, };
-	t_Buffer[0] = 0;
-	t_Buffer[1] = 1;
-	t_Buffer[2] = 2;
+	BYTE t_Buffer[1500] = {0, };
 
 	int t_SendSize = 0;
+	int t_ReceivedSize = 0;
+
+	if(bind(*m_sock, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in)) < 0) {
+		t_Str = L"Bind Error";
+		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
+		return;
+	}
 
 
 	while(!Terminated) {
@@ -62,10 +68,9 @@ void __fastcall CUdpSocketThread::Execute() {
 			continue;
 		}
 
-		t_SendSize = sendto(*m_sock, t_Buffer, 256, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
-		t_Str = t_SendSize;
+		t_ReceivedSize = recvfrom(*m_sock, t_Buffer, 1500, 0, (struct sockaddr*)&t_from_addr, &t_fromaddrsize);
+		t_Str.sprintf(L"Recv Size : %d", t_ReceivedSize);
 		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
-		Sleep(1000);
 	}
 
 	return;
