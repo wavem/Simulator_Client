@@ -75,6 +75,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include "AdvMemo.hpp"
 #include "AdvGlassButton.hpp"
+#include "AdvEdit.hpp"
 //---------------------------------------------------------------------------
 class CUdpSocketThread;
 class TFormMain : public TForm
@@ -100,6 +101,7 @@ __published:	// IDE-managed Components
 	TdxBar *BarMgrBar2;
 	TdxBarLargeButton *dxBarLargeButton1;
 	TAdvGlassButton *btn_Send;
+	TAdvEdit *ed_Type;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);

@@ -70,6 +70,7 @@
 #pragma link "dxSkinXmas2008Blue"
 #pragma link "AdvMemo"
 #pragma link "AdvGlassButton"
+#pragma link "AdvEdit"
 #pragma resource "*.dfm"
 #pragma link "libxl.lib"
 TFormMain *FormMain;
@@ -233,6 +234,8 @@ void __fastcall TFormMain::btn_SendClick(TObject *Sender)
 	// Common
 	UnicodeString t_Str = L"";
 	AnsiString t_AnsiStr = "";
+	static unsigned char t_Counter = 0;
+	unsigned char t_Type = StrToInt(ed_Type->Text);
 
 	struct sockaddr_in	t_sockaddr_in;
 	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
@@ -245,11 +248,13 @@ void __fastcall TFormMain::btn_SendClick(TObject *Sender)
 	t_Buffer[1] = 0x42;
 	t_Buffer[2] = 0x44;
 	t_Buffer[3] = 0x31;
+	t_Buffer[4] = ++t_Counter;
+	t_Buffer[5] = t_Type;
 
 	int t_SendSize = 20;
 
 	t_SendSize = sendto(m_sock_UDP, t_Buffer, 20, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
-	t_Str.sprintf(L"Send Size : %d", t_SendSize);
+	t_Str.sprintf(L"[SEND] Req Type : %d, Count : %d, Size : %d", t_Type, t_Counter, t_SendSize);
 	PrintMsg(t_Str);
 }
 //---------------------------------------------------------------------------

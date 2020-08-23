@@ -4,7 +4,7 @@ object FormMain: TFormMain
   BorderStyle = bsDialog
   Caption = 'Simulator_Client'
   ClientHeight = 718
-  ClientWidth = 918
+  ClientWidth = 1020
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,13 +18,14 @@ object FormMain: TFormMain
   object MainRibbonMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 918
+    Width = 1020
     Height = 126
     BarManager = BarMgr
     ColorSchemeName = 'Blue'
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 918
     object MenuTab_1: TdxRibbonTab
       Active = True
       Caption = 'Menu'
@@ -41,17 +42,18 @@ object FormMain: TFormMain
   object ___pnBase: TPanel
     Left = 0
     Top = 126
-    Width = 918
+    Width = 1020
     Height = 592
     Align = alClient
     BevelOuter = bvNone
     Color = clBlack
     ParentBackground = False
     TabOrder = 5
+    ExplicitWidth = 918
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
-      Width = 634
+      Width = 337
       Height = 592
       Align = alLeft
       TabOrder = 0
@@ -59,16 +61,18 @@ object FormMain: TFormMain
         Left = 0
         Top = 0
         Caption = 'Default'
+        ExplicitWidth = 634
         object __pnBase_00_Default: TPanel
           Left = 0
           Top = 0
-          Width = 634
+          Width = 337
           Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clWindowFrame
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 634
           object btn_Send: TAdvGlassButton
             Left = 32
             Top = 32
@@ -91,6 +95,39 @@ object FormMain: TFormMain
             Version = '1.3.0.2'
             OnClick = btn_SendClick
           end
+          object ed_Type: TAdvEdit
+            Left = 184
+            Top = 37
+            Width = 49
+            Height = 24
+            EditAlign = eaRight
+            EditType = etNumeric
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWindow
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 2
+            ParentFont = False
+            TabOrder = 1
+            Text = '0'
+            Visible = True
+            Version = '3.3.5.3'
+          end
         end
       end
       object TPage
@@ -98,16 +135,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
+        ExplicitWidth = 634
         object __pnBase_01_: TPanel
           Left = 0
           Top = 0
-          Width = 634
+          Width = 337
           Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clCream
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 634
         end
       end
       object TPage
@@ -115,16 +154,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 2
         Caption = '2'
+        ExplicitWidth = 634
         object __pnBase_02_: TPanel
           Left = 0
           Top = 0
-          Width = 634
+          Width = 337
           Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clMedGray
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 634
         end
       end
       object TPage
@@ -132,16 +173,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = '3'
+        ExplicitWidth = 634
         object __pnBase_03_: TPanel
           Left = 0
           Top = 0
-          Width = 634
+          Width = 337
           Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clYellow
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 634
         end
       end
       object TPage
@@ -149,23 +192,25 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 4
         Caption = '4'
+        ExplicitWidth = 634
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
-          Width = 634
+          Width = 337
           Height = 592
           Align = alClient
           BevelOuter = bvNone
           Color = clActiveCaption
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 634
         end
       end
     end
     object memo: TAdvMemo
-      Left = 634
+      Left = 336
       Top = 0
-      Width = 284
+      Width = 684
       Height = 592
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
