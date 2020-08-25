@@ -29,7 +29,6 @@ __fastcall CUdpSocketThread::~CUdpSocketThread() {
 
 void __fastcall CUdpSocketThread::Execute() {
 
-
 	// Common
 	UnicodeString t_Str = L"";
 	AnsiString t_AnsiStr = "";
@@ -41,7 +40,8 @@ void __fastcall CUdpSocketThread::Execute() {
 	int t_fromaddrsize = sizeof(t_from_addr);
 	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
 	t_sockaddr_in.sin_family = AF_INET;
-	t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_SERVER);
+	//t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_SERVER);
+	t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_LOCAL);
 	t_sockaddr_in.sin_port = htons(UDP_SERVER_PORT);
 
 	t_Str = L"Thread Start";
