@@ -26,10 +26,6 @@ object FormVersion: TFormVersion
     Color = clBlack
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 144
-    ExplicitTop = 104
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object lb_Version: TLabel
       Left = 301
       Top = 72
@@ -48,7 +44,7 @@ object FormVersion: TFormVersion
       Top = 94
       Width = 231
       Height = 16
-      Caption = 'Last Update : 2020-07-21 PM 15:00'
+      Caption = 'Last Update : 2020-08-26 PM 17:00'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -13
