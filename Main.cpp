@@ -71,6 +71,9 @@
 #pragma link "AdvMemo"
 #pragma link "AdvGlassButton"
 #pragma link "AdvEdit"
+#pragma link "CurvyControls"
+#pragma link "AdvSmoothComboBox"
+#pragma link "AdvSmoothListBox"
 #pragma resource "*.dfm"
 #pragma link "libxl.lib"
 TFormMain *FormMain;
@@ -146,8 +149,8 @@ void __fastcall TFormMain::ExitProgram() {
 //---------------------------------------------------------------------------
 
 void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
-	int t_Line = memo->Lines->Add(_str);
-	memo->SetCursor(0, t_Line);
+	int t_Line = memo_Msg->Lines->Add(_str);
+	memo_Msg->SetCursor(0, t_Line);
 }
 //---------------------------------------------------------------------------
 

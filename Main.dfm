@@ -3,8 +3,8 @@ object FormMain: TFormMain
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Simulator_Client'
-  ClientHeight = 718
-  ClientWidth = 1020
+  ClientHeight = 771
+  ClientWidth = 1194
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,14 +18,20 @@ object FormMain: TFormMain
   object MainRibbonMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 1020
-    Height = 126
+    Width = 1194
+    Height = 122
+    Cursor = crHandPoint
     BarManager = BarMgr
-    ColorSchemeName = 'Blue'
+    ColorSchemeName = 'MetropolisDark'
+    Fonts.AssignedFonts = [afGroupHeader]
+    Fonts.GroupHeader.Charset = DEFAULT_CHARSET
+    Fonts.GroupHeader.Color = clWhite
+    Fonts.GroupHeader.Height = -12
+    Fonts.GroupHeader.Name = #47569#51008' '#44256#46357
+    Fonts.GroupHeader.Style = []
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 918
     object MenuTab_1: TdxRibbonTab
       Active = True
       Caption = 'Menu'
@@ -41,41 +47,121 @@ object FormMain: TFormMain
   end
   object ___pnBase: TPanel
     Left = 0
-    Top = 126
-    Width = 1020
-    Height = 592
+    Top = 122
+    Width = 1194
+    Height = 649
     Align = alClient
     BevelOuter = bvNone
     Color = clBlack
     ParentBackground = False
     TabOrder = 5
-    ExplicitWidth = 918
+    ExplicitTop = 126
+    ExplicitWidth = 1020
+    ExplicitHeight = 592
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
-      Width = 337
-      Height = 592
+      Width = 968
+      Height = 548
       Align = alLeft
       TabOrder = 0
+      ExplicitHeight = 544
       object TPage
         Left = 0
         Top = 0
         Caption = 'Default'
-        ExplicitWidth = 634
-        object __pnBase_00_Default: TPanel
+        ExplicitWidth = 337
+        ExplicitHeight = 592
+        object __pnBase_00_Start: TPanel
           Left = 0
           Top = 0
-          Width = 337
-          Height = 592
+          Width = 968
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
-          Color = clWindowFrame
+          Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 634
-          object btn_Send: TAdvGlassButton
+          ExplicitWidth = 337
+          ExplicitHeight = 592
+          object lb_Title_Start_1: TLabel
             Left = 32
-            Top = 32
+            Top = 41
+            Width = 54
+            Height = 16
+            Caption = 'Protocol'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Title_Start_2: TLabel
+            Left = 32
+            Top = 86
+            Width = 50
+            Height = 16
+            Caption = 'Local IP'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Title_Start_3: TLabel
+            Left = 32
+            Top = 130
+            Width = 61
+            Height = 16
+            Caption = 'Server IP'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Title_Start_4: TLabel
+            Left = 32
+            Top = 172
+            Width = 65
+            Height = 16
+            Caption = 'Local Port'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Title_Start_5: TLabel
+            Left = 32
+            Top = 213
+            Width = 76
+            Height = 16
+            Caption = 'Server Port'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object btn_Send: TAdvGlassButton
+            Left = 392
+            Top = 64
             Width = 100
             Height = 32
             BackColor = clWhite
@@ -96,8 +182,8 @@ object FormMain: TFormMain
             OnClick = btn_SendClick
           end
           object ed_Type: TAdvEdit
-            Left = 184
-            Top = 37
+            Left = 498
+            Top = 64
             Width = 49
             Height = 24
             EditAlign = eaRight
@@ -128,6 +214,750 @@ object FormMain: TFormMain
             Visible = True
             Version = '3.3.5.3'
           end
+          object cb_Protocol: TAdvSmoothComboBox
+            Left = 122
+            Top = 34
+            Width = 113
+            Height = 30
+            Cursor = crHandPoint
+            Fill.Color = cl3DDkShadow
+            Fill.ColorTo = 5131854
+            Fill.ColorMirror = 5131854
+            Fill.ColorMirrorTo = 5131854
+            Fill.GradientType = gtSolid
+            Fill.GradientMirrorType = gtSolid
+            Fill.BorderColor = clNone
+            Fill.Rounding = 0
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmNone
+            Items = <
+              item
+                Caption = 'UDP'
+                CaptionFont.Charset = DEFAULT_CHARSET
+                CaptionFont.Color = 2129339
+                CaptionFont.Height = -13
+                CaptionFont.Name = 'Tahoma'
+                CaptionFont.Style = [fsBold]
+                CaptionSelectedFont.Charset = DEFAULT_CHARSET
+                CaptionSelectedFont.Color = 2129339
+                CaptionSelectedFont.Height = -13
+                CaptionSelectedFont.Name = 'Tahoma'
+                CaptionSelectedFont.Style = [fsBold]
+                InfoFont.Charset = DEFAULT_CHARSET
+                InfoFont.Color = clWindowText
+                InfoFont.Height = -11
+                InfoFont.Name = 'Tahoma'
+                InfoFont.Style = []
+                InfoSelectedFont.Charset = DEFAULT_CHARSET
+                InfoSelectedFont.Color = clWindowText
+                InfoSelectedFont.Height = -11
+                InfoSelectedFont.Name = 'Tahoma'
+                InfoSelectedFont.Style = []
+                NotesFont.Charset = DEFAULT_CHARSET
+                NotesFont.Color = clWindowText
+                NotesFont.Height = -11
+                NotesFont.Name = 'Tahoma'
+                NotesFont.Style = []
+                NotesSelectedFont.Charset = DEFAULT_CHARSET
+                NotesSelectedFont.Color = clWindowText
+                NotesSelectedFont.Height = -11
+                NotesSelectedFont.Name = 'Tahoma'
+                NotesSelectedFont.Style = []
+                ProgressMaximum = 100.000000000000000000
+              end
+              item
+                Caption = 'TCP'
+                CaptionFont.Charset = DEFAULT_CHARSET
+                CaptionFont.Color = 2129339
+                CaptionFont.Height = -13
+                CaptionFont.Name = 'Tahoma'
+                CaptionFont.Style = [fsBold]
+                CaptionSelectedFont.Charset = DEFAULT_CHARSET
+                CaptionSelectedFont.Color = 2129339
+                CaptionSelectedFont.Height = -13
+                CaptionSelectedFont.Name = 'Tahoma'
+                CaptionSelectedFont.Style = [fsBold]
+                InfoFont.Charset = DEFAULT_CHARSET
+                InfoFont.Color = clWindowText
+                InfoFont.Height = -11
+                InfoFont.Name = 'Tahoma'
+                InfoFont.Style = []
+                InfoSelectedFont.Charset = DEFAULT_CHARSET
+                InfoSelectedFont.Color = clWindowText
+                InfoSelectedFont.Height = -11
+                InfoSelectedFont.Name = 'Tahoma'
+                InfoSelectedFont.Style = []
+                NotesFont.Charset = DEFAULT_CHARSET
+                NotesFont.Color = clWindowText
+                NotesFont.Height = -11
+                NotesFont.Name = 'Tahoma'
+                NotesFont.Style = []
+                NotesSelectedFont.Charset = DEFAULT_CHARSET
+                NotesSelectedFont.Color = clWindowText
+                NotesSelectedFont.Height = -11
+                NotesSelectedFont.Name = 'Tahoma'
+                NotesSelectedFont.Style = []
+                ProgressMaximum = 100.000000000000000000
+              end
+              item
+                Caption = 'Multicast'
+                CaptionFont.Charset = DEFAULT_CHARSET
+                CaptionFont.Color = 2129339
+                CaptionFont.Height = -13
+                CaptionFont.Name = 'Tahoma'
+                CaptionFont.Style = [fsBold]
+                CaptionSelectedFont.Charset = DEFAULT_CHARSET
+                CaptionSelectedFont.Color = 2129339
+                CaptionSelectedFont.Height = -13
+                CaptionSelectedFont.Name = 'Tahoma'
+                CaptionSelectedFont.Style = [fsBold]
+                InfoFont.Charset = DEFAULT_CHARSET
+                InfoFont.Color = clWindowText
+                InfoFont.Height = -11
+                InfoFont.Name = 'Tahoma'
+                InfoFont.Style = []
+                InfoSelectedFont.Charset = DEFAULT_CHARSET
+                InfoSelectedFont.Color = clWindowText
+                InfoSelectedFont.Height = -11
+                InfoSelectedFont.Name = 'Tahoma'
+                InfoSelectedFont.Style = []
+                NotesFont.Charset = DEFAULT_CHARSET
+                NotesFont.Color = clWindowText
+                NotesFont.Height = -11
+                NotesFont.Name = 'Tahoma'
+                NotesFont.Style = []
+                NotesSelectedFont.Charset = DEFAULT_CHARSET
+                NotesSelectedFont.Color = clWindowText
+                NotesSelectedFont.Height = -11
+                NotesSelectedFont.Name = 'Tahoma'
+                NotesSelectedFont.Style = []
+                ProgressMaximum = 100.000000000000000000
+              end>
+            ItemAppearance.FillAlternate.Color = 16773091
+            ItemAppearance.FillAlternate.ColorTo = 16768452
+            ItemAppearance.FillAlternate.ColorMirror = 16765357
+            ItemAppearance.FillAlternate.ColorMirrorTo = 16767936
+            ItemAppearance.FillAlternate.GradientType = gtVertical
+            ItemAppearance.FillAlternate.GradientMirrorType = gtVertical
+            ItemAppearance.FillAlternate.BorderColor = 16765357
+            ItemAppearance.FillAlternate.Rounding = 0
+            ItemAppearance.FillAlternate.ShadowOffset = 0
+            ItemAppearance.FillAlternate.Glow = gmNone
+            ItemAppearance.Fill.Color = cl3DDkShadow
+            ItemAppearance.Fill.ColorTo = 5131854
+            ItemAppearance.Fill.ColorMirror = 5131854
+            ItemAppearance.Fill.ColorMirrorTo = 5131854
+            ItemAppearance.Fill.GradientType = gtVertical
+            ItemAppearance.Fill.GradientMirrorType = gtVertical
+            ItemAppearance.Fill.BorderColor = 5131854
+            ItemAppearance.Fill.Rounding = 0
+            ItemAppearance.Fill.ShadowOffset = 0
+            ItemAppearance.Fill.Glow = gmNone
+            ItemAppearance.FillSelected.ColorTo = clSilver
+            ItemAppearance.FillSelected.ColorMirror = clSilver
+            ItemAppearance.FillSelected.ColorMirrorTo = clSilver
+            ItemAppearance.FillSelected.GradientType = gtVertical
+            ItemAppearance.FillSelected.GradientMirrorType = gtVertical
+            ItemAppearance.FillSelected.BorderColor = 5131854
+            ItemAppearance.FillSelected.Rounding = 0
+            ItemAppearance.FillSelected.ShadowOffset = 0
+            ItemAppearance.FillSelected.Glow = gmNone
+            ItemAppearance.FillSelectedAlternate.Color = 11196927
+            ItemAppearance.FillSelectedAlternate.ColorTo = 7257087
+            ItemAppearance.FillSelectedAlternate.ColorMirror = 4370174
+            ItemAppearance.FillSelectedAlternate.ColorMirrorTo = 8053246
+            ItemAppearance.FillSelectedAlternate.GradientType = gtVertical
+            ItemAppearance.FillSelectedAlternate.GradientMirrorType = gtVertical
+            ItemAppearance.FillSelectedAlternate.BorderColor = 16765357
+            ItemAppearance.FillSelectedAlternate.Rounding = 0
+            ItemAppearance.FillSelectedAlternate.ShadowOffset = 0
+            ItemAppearance.FillSelectedAlternate.Glow = gmNone
+            ItemAppearance.FillDisabled.Color = 15921906
+            ItemAppearance.FillDisabled.ColorTo = 11974326
+            ItemAppearance.FillDisabled.ColorMirror = 11974326
+            ItemAppearance.FillDisabled.ColorMirrorTo = 15921906
+            ItemAppearance.FillDisabled.GradientType = gtVertical
+            ItemAppearance.FillDisabled.GradientMirrorType = gtVertical
+            ItemAppearance.FillDisabled.BorderColor = 16765357
+            ItemAppearance.FillDisabled.Rounding = 0
+            ItemAppearance.FillDisabled.ShadowOffset = 0
+            ItemAppearance.FillDisabled.Glow = gmNone
+            ItemAppearance.ProgressAppearance.BackGroundFill.Color = 16765615
+            ItemAppearance.ProgressAppearance.BackGroundFill.ColorTo = 16765615
+            ItemAppearance.ProgressAppearance.BackGroundFill.ColorMirror = clNone
+            ItemAppearance.ProgressAppearance.BackGroundFill.ColorMirrorTo = clNone
+            ItemAppearance.ProgressAppearance.BackGroundFill.GradientType = gtVertical
+            ItemAppearance.ProgressAppearance.BackGroundFill.GradientMirrorType = gtSolid
+            ItemAppearance.ProgressAppearance.BackGroundFill.BorderColor = clSilver
+            ItemAppearance.ProgressAppearance.BackGroundFill.Rounding = 0
+            ItemAppearance.ProgressAppearance.BackGroundFill.ShadowOffset = 0
+            ItemAppearance.ProgressAppearance.BackGroundFill.Glow = gmNone
+            ItemAppearance.ProgressAppearance.ProgressFill.Color = 16773091
+            ItemAppearance.ProgressAppearance.ProgressFill.ColorTo = 16768452
+            ItemAppearance.ProgressAppearance.ProgressFill.ColorMirror = 16765357
+            ItemAppearance.ProgressAppearance.ProgressFill.ColorMirrorTo = 16767936
+            ItemAppearance.ProgressAppearance.ProgressFill.GradientType = gtVertical
+            ItemAppearance.ProgressAppearance.ProgressFill.GradientMirrorType = gtVertical
+            ItemAppearance.ProgressAppearance.ProgressFill.BorderColor = 16765357
+            ItemAppearance.ProgressAppearance.ProgressFill.Rounding = 0
+            ItemAppearance.ProgressAppearance.ProgressFill.ShadowOffset = 0
+            ItemAppearance.ProgressAppearance.ProgressFill.Glow = gmNone
+            ItemAppearance.ProgressAppearance.Font.Charset = DEFAULT_CHARSET
+            ItemAppearance.ProgressAppearance.Font.Color = clWindowText
+            ItemAppearance.ProgressAppearance.Font.Height = -11
+            ItemAppearance.ProgressAppearance.Font.Name = 'Tahoma'
+            ItemAppearance.ProgressAppearance.Font.Style = []
+            ItemAppearance.ProgressAppearance.ProgressFont.Charset = DEFAULT_CHARSET
+            ItemAppearance.ProgressAppearance.ProgressFont.Color = clWindowText
+            ItemAppearance.ProgressAppearance.ProgressFont.Height = -11
+            ItemAppearance.ProgressAppearance.ProgressFont.Name = 'Tahoma'
+            ItemAppearance.ProgressAppearance.ProgressFont.Style = []
+            ItemAppearance.ProgressAppearance.ValueFormat = '%.0f%%'
+            ItemAppearance.ButtonAppearance.Font.Charset = DEFAULT_CHARSET
+            ItemAppearance.ButtonAppearance.Font.Color = clWindowText
+            ItemAppearance.ButtonAppearance.Font.Height = -11
+            ItemAppearance.ButtonAppearance.Font.Name = 'Tahoma'
+            ItemAppearance.ButtonAppearance.Font.Style = []
+            ItemAppearance.InfoFill.ColorMirror = clNone
+            ItemAppearance.InfoFill.ColorMirrorTo = clNone
+            ItemAppearance.InfoFill.GradientType = gtVertical
+            ItemAppearance.InfoFill.GradientMirrorType = gtSolid
+            ItemAppearance.InfoFill.BorderColor = clNone
+            ItemAppearance.InfoFill.Rounding = 0
+            ItemAppearance.InfoFill.ShadowOffset = 0
+            ItemAppearance.InfoFill.Glow = gmNone
+            ItemAppearance.InfoFillSelected.ColorMirror = clNone
+            ItemAppearance.InfoFillSelected.ColorMirrorTo = clNone
+            ItemAppearance.InfoFillSelected.GradientType = gtVertical
+            ItemAppearance.InfoFillSelected.GradientMirrorType = gtSolid
+            ItemAppearance.InfoFillSelected.BorderColor = clNone
+            ItemAppearance.InfoFillSelected.Rounding = 0
+            ItemAppearance.InfoFillSelected.ShadowOffset = 0
+            ItemAppearance.InfoFillSelected.Glow = gmNone
+            ItemAppearance.InfoFillDisabled.ColorMirror = clNone
+            ItemAppearance.InfoFillDisabled.ColorMirrorTo = clNone
+            ItemAppearance.InfoFillDisabled.GradientType = gtVertical
+            ItemAppearance.InfoFillDisabled.GradientMirrorType = gtSolid
+            ItemAppearance.InfoFillDisabled.BorderColor = clNone
+            ItemAppearance.InfoFillDisabled.Rounding = 0
+            ItemAppearance.InfoFillDisabled.ShadowOffset = 0
+            ItemAppearance.InfoFillDisabled.Glow = gmNone
+            ItemAppearance.DeleteButtonCaption = 'Delete'
+            LookupBar.DisabledFont.Charset = DEFAULT_CHARSET
+            LookupBar.DisabledFont.Color = clSilver
+            LookupBar.DisabledFont.Height = -11
+            LookupBar.DisabledFont.Name = 'Tahoma'
+            LookupBar.DisabledFont.Style = []
+            LookupBar.Font.Charset = DEFAULT_CHARSET
+            LookupBar.Font.Color = clWindowText
+            LookupBar.Font.Height = -11
+            LookupBar.Font.Name = 'Tahoma'
+            LookupBar.Font.Style = []
+            LookupBar.Visible = False
+            Sections.Font.Charset = DEFAULT_CHARSET
+            Sections.Font.Color = clWindowText
+            Sections.Font.Height = -11
+            Sections.Font.Name = 'Tahoma'
+            Sections.Font.Style = []
+            Sections.BorderColor = clBlack
+            Header.Fill.Color = 16773091
+            Header.Fill.ColorTo = 16765615
+            Header.Fill.ColorMirror = clNone
+            Header.Fill.ColorMirrorTo = clNone
+            Header.Fill.GradientType = gtVertical
+            Header.Fill.GradientMirrorType = gtSolid
+            Header.Fill.BorderColor = 16765615
+            Header.Fill.Rounding = 0
+            Header.Fill.ShadowOffset = 0
+            Header.Fill.Glow = gmNone
+            Header.Caption = 'Header'
+            Header.Font.Charset = DEFAULT_CHARSET
+            Header.Font.Color = 7485192
+            Header.Font.Height = -13
+            Header.Font.Name = 'Tahoma'
+            Header.Font.Style = []
+            Header.Visible = False
+            Filter.Fill.Color = 16773091
+            Filter.Fill.ColorMirror = clNone
+            Filter.Fill.ColorMirrorTo = clNone
+            Filter.Fill.GradientType = gtSolid
+            Filter.Fill.GradientMirrorType = gtSolid
+            Filter.Fill.BorderColor = 16765615
+            Filter.Fill.Rounding = 0
+            Filter.Fill.ShadowOffset = 0
+            Filter.Fill.Glow = gmNone
+            Footer.Fill.Color = 16773091
+            Footer.Fill.ColorTo = 16765615
+            Footer.Fill.ColorMirror = clNone
+            Footer.Fill.ColorMirrorTo = clNone
+            Footer.Fill.GradientType = gtVertical
+            Footer.Fill.GradientMirrorType = gtSolid
+            Footer.Fill.BorderColor = 16765615
+            Footer.Fill.Rounding = 0
+            Footer.Fill.ShadowOffset = 0
+            Footer.Fill.Glow = gmNone
+            Footer.Caption = 'Footer'
+            Footer.Font.Charset = DEFAULT_CHARSET
+            Footer.Font.Color = 7485192
+            Footer.Font.Height = -13
+            Footer.Font.Name = 'Tahoma'
+            Footer.Font.Style = []
+            Footer.Visible = False
+            ScrollIndicator.Visible = False
+            DefaultItem.Caption = 'Item 0'
+            DefaultItem.CaptionFont.Charset = DEFAULT_CHARSET
+            DefaultItem.CaptionFont.Color = 2129339
+            DefaultItem.CaptionFont.Height = -13
+            DefaultItem.CaptionFont.Name = 'Tahoma'
+            DefaultItem.CaptionFont.Style = [fsBold]
+            DefaultItem.CaptionSelectedFont.Charset = DEFAULT_CHARSET
+            DefaultItem.CaptionSelectedFont.Color = 2129339
+            DefaultItem.CaptionSelectedFont.Height = -13
+            DefaultItem.CaptionSelectedFont.Name = 'Tahoma'
+            DefaultItem.CaptionSelectedFont.Style = [fsBold]
+            DefaultItem.InfoFont.Charset = DEFAULT_CHARSET
+            DefaultItem.InfoFont.Color = clWindowText
+            DefaultItem.InfoFont.Height = -11
+            DefaultItem.InfoFont.Name = 'Tahoma'
+            DefaultItem.InfoFont.Style = []
+            DefaultItem.InfoSelectedFont.Charset = DEFAULT_CHARSET
+            DefaultItem.InfoSelectedFont.Color = clWindowText
+            DefaultItem.InfoSelectedFont.Height = -11
+            DefaultItem.InfoSelectedFont.Name = 'Tahoma'
+            DefaultItem.InfoSelectedFont.Style = []
+            DefaultItem.NotesFont.Charset = DEFAULT_CHARSET
+            DefaultItem.NotesFont.Color = clWindowText
+            DefaultItem.NotesFont.Height = -11
+            DefaultItem.NotesFont.Name = 'Tahoma'
+            DefaultItem.NotesFont.Style = []
+            DefaultItem.NotesSelectedFont.Charset = DEFAULT_CHARSET
+            DefaultItem.NotesSelectedFont.Color = clWindowText
+            DefaultItem.NotesSelectedFont.Height = -11
+            DefaultItem.NotesSelectedFont.Name = 'Tahoma'
+            DefaultItem.NotesSelectedFont.Style = []
+            DefaultItem.ProgressMaximum = 100.000000000000000000
+            Categories = <>
+            TabOrder = 2
+            Text = ''
+            ItemBackGroundFill.Color = cl3DDkShadow
+            ItemBackGroundFill.ColorTo = 5131854
+            ItemBackGroundFill.ColorMirror = 5131854
+            ItemBackGroundFill.ColorMirrorTo = 5131854
+            ItemBackGroundFill.GradientType = gtVertical
+            ItemBackGroundFill.GradientMirrorType = gtVertical
+            ItemBackGroundFill.BorderColor = 5131854
+            ItemBackGroundFill.Rounding = 0
+            ItemBackGroundFill.ShadowOffset = 0
+            ItemBackGroundFill.Glow = gmNone
+            ButtonAppearance.ArrowColor = 2129339
+            ButtonAppearance.ArrowColorHover = 2129339
+            ButtonAppearance.ArrowColorDown = 2129339
+            ButtonAppearance.Fill.Color = cl3DDkShadow
+            ButtonAppearance.Fill.ColorTo = 5131854
+            ButtonAppearance.Fill.ColorMirror = 5131854
+            ButtonAppearance.Fill.ColorMirrorTo = 5131854
+            ButtonAppearance.Fill.GradientType = gtVertical
+            ButtonAppearance.Fill.GradientMirrorType = gtVertical
+            ButtonAppearance.Fill.BorderColor = 5131854
+            ButtonAppearance.Fill.Rounding = 5
+            ButtonAppearance.Fill.ShadowOffset = 0
+            ButtonAppearance.Fill.Glow = gmNone
+            ButtonAppearance.FillDown.Color = 11196927
+            ButtonAppearance.FillDown.ColorTo = 7257087
+            ButtonAppearance.FillDown.ColorMirror = 4370174
+            ButtonAppearance.FillDown.ColorMirrorTo = 8053246
+            ButtonAppearance.FillDown.GradientType = gtVertical
+            ButtonAppearance.FillDown.GradientMirrorType = gtVertical
+            ButtonAppearance.FillDown.BorderColor = 16765615
+            ButtonAppearance.FillDown.Rounding = 5
+            ButtonAppearance.FillDown.ShadowOffset = 0
+            ButtonAppearance.FillDown.Glow = gmNone
+            ButtonAppearance.FillHover.Color = 15465983
+            ButtonAppearance.FillHover.ColorTo = 11332863
+            ButtonAppearance.FillHover.ColorMirror = 5888767
+            ButtonAppearance.FillHover.ColorMirrorTo = 10807807
+            ButtonAppearance.FillHover.GradientType = gtVertical
+            ButtonAppearance.FillHover.GradientMirrorType = gtVertical
+            ButtonAppearance.FillHover.BorderColor = 16765615
+            ButtonAppearance.FillHover.Rounding = 5
+            ButtonAppearance.FillHover.ShadowOffset = 0
+            ButtonAppearance.FillHover.Glow = gmNone
+            DropDownHeight = 90
+            DropDownWidth = 112
+            TMSStyle = 4
+          end
+          object ed_Local_IP_1: TAdvEdit
+            Left = 122
+            Top = 82
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 3
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Local_IP_2: TAdvEdit
+            Left = 175
+            Top = 82
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 4
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Local_IP_3: TAdvEdit
+            Left = 228
+            Top = 82
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 5
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Local_IP_4: TAdvEdit
+            Left = 281
+            Top = 82
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 6
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Server_IP_1: TAdvEdit
+            Left = 122
+            Top = 125
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 7
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Server_IP_2: TAdvEdit
+            Left = 175
+            Top = 125
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 8
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Server_IP_3: TAdvEdit
+            Left = 228
+            Top = 125
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 9
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_Server_IP_4: TAdvEdit
+            Left = 281
+            Top = 125
+            Width = 47
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 255
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 3
+            ParentFont = False
+            TabOrder = 10
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_LocalPort: TAdvEdit
+            Left = 122
+            Top = 167
+            Width = 100
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 65535
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 5
+            ParentFont = False
+            TabOrder = 11
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object ed_LocalServerPort: TAdvEdit
+            Left = 122
+            Top = 208
+            Width = 100
+            Height = 26
+            EditAlign = eaCenter
+            EditType = etNumeric
+            EmptyText = '0'
+            EmptyTextStyle = []
+            MaxValue = 65535
+            LabelFont.Charset = DEFAULT_CHARSET
+            LabelFont.Color = clWindowText
+            LabelFont.Height = -11
+            LabelFont.Name = 'Tahoma'
+            LabelFont.Style = []
+            Lookup.Font.Charset = DEFAULT_CHARSET
+            Lookup.Font.Color = clWindowText
+            Lookup.Font.Height = -11
+            Lookup.Font.Name = 'Arial'
+            Lookup.Font.Style = []
+            Lookup.Separator = ';'
+            Color = clWhite
+            DoubleBuffered = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            MaxLength = 5
+            ParentFont = False
+            TabOrder = 12
+            Text = '192'
+            Visible = True
+            Version = '3.3.5.3'
+          end
+          object btn_Create: TAdvGlassButton
+            Left = 122
+            Top = 264
+            Width = 100
+            Height = 32
+            BackColor = clWhite
+            Caption = 'Create'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = 16760205
+            InnerBorderColor = clBlack
+            OuterBorderColor = clWhite
+            ParentFont = False
+            ShineColor = clWhite
+            TabOrder = 13
+            Version = '1.3.0.2'
+            OnClick = btn_SendClick
+          end
         end
       end
       object TPage
@@ -135,18 +965,20 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
-        ExplicitWidth = 634
-        object __pnBase_01_: TPanel
+        ExplicitWidth = 337
+        ExplicitHeight = 592
+        object __pnBase_01_View: TPanel
           Left = 0
           Top = 0
-          Width = 337
-          Height = 592
+          Width = 968
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clCream
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 634
+          ExplicitWidth = 337
+          ExplicitHeight = 592
         end
       end
       object TPage
@@ -154,18 +986,20 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 2
         Caption = '2'
-        ExplicitWidth = 634
+        ExplicitWidth = 337
+        ExplicitHeight = 592
         object __pnBase_02_: TPanel
           Left = 0
           Top = 0
-          Width = 337
-          Height = 592
+          Width = 968
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clMedGray
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 634
+          ExplicitWidth = 337
+          ExplicitHeight = 592
         end
       end
       object TPage
@@ -173,18 +1007,20 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = '3'
-        ExplicitWidth = 634
+        ExplicitWidth = 337
+        ExplicitHeight = 592
         object __pnBase_03_: TPanel
           Left = 0
           Top = 0
-          Width = 337
-          Height = 592
+          Width = 968
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clYellow
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 634
+          ExplicitWidth = 337
+          ExplicitHeight = 592
         end
       end
       object TPage
@@ -192,26 +1028,28 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 4
         Caption = '4'
-        ExplicitWidth = 634
+        ExplicitWidth = 337
+        ExplicitHeight = 592
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
-          Width = 337
-          Height = 592
+          Width = 968
+          Height = 548
           Align = alClient
           BevelOuter = bvNone
           Color = clActiveCaption
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 634
+          ExplicitWidth = 337
+          ExplicitHeight = 592
         end
       end
     end
-    object memo: TAdvMemo
-      Left = 336
+    object memo_Msg: TAdvMemo
+      Left = 974
       Top = 0
-      Width = 684
-      Height = 592
+      Width = 220
+      Height = 548
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
       ActiveLineSettings.ShowActiveLineIndicator = False
@@ -320,6 +1158,122 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
+      ExplicitHeight = 544
+    end
+    object memo_Log: TAdvMemo
+      Left = 0
+      Top = 548
+      Width = 1194
+      Height = 101
+      Cursor = crIBeam
+      ActiveLineSettings.ShowActiveLine = False
+      ActiveLineSettings.ShowActiveLineIndicator = False
+      Align = alBottom
+      AutoCompletion.Font.Charset = DEFAULT_CHARSET
+      AutoCompletion.Font.Color = clWindowText
+      AutoCompletion.Font.Height = -11
+      AutoCompletion.Font.Name = 'Tahoma'
+      AutoCompletion.Font.Style = []
+      AutoCompletion.StartToken = '(.'
+      AutoCorrect.Active = True
+      AutoHintParameterPosition = hpBelowCode
+      BookmarkGlyph.Data = {
+        36050000424D3605000000000000360400002800000010000000100000000100
+        0800000000000001000000000000000000000001000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000C0DCC000F0CA
+        A6000020400000206000002080000020A0000020C0000020E000004000000040
+        20000040400000406000004080000040A0000040C0000040E000006000000060
+        20000060400000606000006080000060A0000060C0000060E000008000000080
+        20000080400000806000008080000080A0000080C0000080E00000A0000000A0
+        200000A0400000A0600000A0800000A0A00000A0C00000A0E00000C0000000C0
+        200000C0400000C0600000C0800000C0A00000C0C00000C0E00000E0000000E0
+        200000E0400000E0600000E0800000E0A00000E0C00000E0E000400000004000
+        20004000400040006000400080004000A0004000C0004000E000402000004020
+        20004020400040206000402080004020A0004020C0004020E000404000004040
+        20004040400040406000404080004040A0004040C0004040E000406000004060
+        20004060400040606000406080004060A0004060C0004060E000408000004080
+        20004080400040806000408080004080A0004080C0004080E00040A0000040A0
+        200040A0400040A0600040A0800040A0A00040A0C00040A0E00040C0000040C0
+        200040C0400040C0600040C0800040C0A00040C0C00040C0E00040E0000040E0
+        200040E0400040E0600040E0800040E0A00040E0C00040E0E000800000008000
+        20008000400080006000800080008000A0008000C0008000E000802000008020
+        20008020400080206000802080008020A0008020C0008020E000804000008040
+        20008040400080406000804080008040A0008040C0008040E000806000008060
+        20008060400080606000806080008060A0008060C0008060E000808000008080
+        20008080400080806000808080008080A0008080C0008080E00080A0000080A0
+        200080A0400080A0600080A0800080A0A00080A0C00080A0E00080C0000080C0
+        200080C0400080C0600080C0800080C0A00080C0C00080C0E00080E0000080E0
+        200080E0400080E0600080E0800080E0A00080E0C00080E0E000C0000000C000
+        2000C0004000C0006000C0008000C000A000C000C000C000E000C0200000C020
+        2000C0204000C0206000C0208000C020A000C020C000C020E000C0400000C040
+        2000C0404000C0406000C0408000C040A000C040C000C040E000C0600000C060
+        2000C0604000C0606000C0608000C060A000C060C000C060E000C0800000C080
+        2000C0804000C0806000C0808000C080A000C080C000C080E000C0A00000C0A0
+        2000C0A04000C0A06000C0A08000C0A0A000C0A0C000C0A0E000C0C00000C0C0
+        2000C0C04000C0C06000C0C08000C0C0A000F0FBFF00A4A0A000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00FDFD25252525
+        2525252525252525FDFDFD2E25FFFFFFFFFFFFFFFFFFFF25FDFDFD2525252525
+        2525252525252525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25B7B7B7B7
+        B7B7B7B7B7B72525FDFD9A9AB7B7B7B7B7B7B7B7B7B72525FDFDFD25BFB7BFBF
+        B7B7B7B7B7B72525FDFD9A9ABFBFBFB7BFBFB7B7B7B72525FDFDFD25BFBFBFBF
+        BFB7BFBFB7B72525FDFD9A9ABFBFBFB7BFBFBFB7BFB72525FDFDFD25BFBFBFBF
+        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
+        BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
+        25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
+      BorderStyle = bsSingle
+      ClipboardFormats = [cfText]
+      CodeFolding.Enabled = False
+      CodeFolding.LineColor = clGray
+      Ctl3D = False
+      DelErase = True
+      EnhancedHomeKey = False
+      Gutter.Font.Charset = DEFAULT_CHARSET
+      Gutter.Font.Color = clWindowText
+      Gutter.Font.Height = -13
+      Gutter.Font.Name = 'Courier New'
+      Gutter.Font.Style = []
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'COURIER NEW'
+      Font.Style = []
+      HiddenCaret = False
+      Lines.Strings = (
+        '')
+      MarkerList.UseDefaultMarkerImageIndex = False
+      MarkerList.DefaultMarkerImageIndex = -1
+      MarkerList.ImageTransparentColor = 33554432
+      OleDropTarget = []
+      PrintOptions.MarginLeft = 0
+      PrintOptions.MarginRight = 0
+      PrintOptions.MarginTop = 0
+      PrintOptions.MarginBottom = 0
+      PrintOptions.PageNr = False
+      PrintOptions.PrintLineNumbers = False
+      RightMarginColor = 14869218
+      ScrollHint = False
+      SelColor = clWhite
+      SelBkColor = clNavy
+      ShowRightMargin = True
+      SmartTabs = False
+      TabOrder = 2
+      TabStop = True
+      TrimTrailingSpaces = False
+      UILanguage.ScrollHint = 'Row'
+      UILanguage.Undo = 'Undo'
+      UILanguage.Redo = 'Redo'
+      UILanguage.Copy = 'Copy'
+      UILanguage.Cut = 'Cut'
+      UILanguage.Paste = 'Paste'
+      UILanguage.Delete = 'Delete'
+      UILanguage.SelectAll = 'Select All'
+      UrlStyle.TextColor = clBlue
+      UrlStyle.BkColor = clWhite
+      UrlStyle.Style = [fsUnderline]
+      UseStyler = True
+      Version = '3.4.1.0'
+      WordWrap = wwNone
+      ExplicitTop = 544
     end
   end
   object BarMgr: TdxBarManager
@@ -380,7 +1334,7 @@ object FormMain: TFormMain
     object BarMgrBar2: TdxBar
       Caption = 'Info'
       CaptionButtons = <>
-      DockedLeft = 309
+      DockedLeft = 307
       DockedTop = 0
       FloatLeft = 942
       FloatTop = 8
@@ -398,9 +1352,9 @@ object FormMain: TFormMain
       WholeRow = False
     end
     object MenuBtn_01: TdxBarLargeButton
-      Caption = 'Page 1'
+      Caption = 'Start'
       Category = 0
-      Hint = 'Page 1'
+      Hint = 'Start'
       Visible = ivAlways
       OnClick = ClickMenuButton
       HotGlyph.Data = {
@@ -538,9 +1492,9 @@ object FormMain: TFormMain
     end
     object MenuBtn_02: TdxBarLargeButton
       Tag = 1
-      Caption = 'Page 2'
+      Caption = 'View'
       Category = 0
-      Hint = 'Page 2'
+      Hint = 'View'
       Visible = ivAlways
       OnClick = ClickMenuButton
       HotGlyph.Data = {
@@ -678,9 +1632,9 @@ object FormMain: TFormMain
     end
     object MenuBtn_03: TdxBarLargeButton
       Tag = 2
-      Caption = 'Page 3'
+      Caption = 'Option'
       Category = 0
-      Hint = 'Page 3'
+      Hint = 'Option'
       Visible = ivAlways
       OnClick = ClickMenuButton
       HotGlyph.Data = {
@@ -818,9 +1772,9 @@ object FormMain: TFormMain
     end
     object MenuBtn_04: TdxBarLargeButton
       Tag = 3
-      Caption = 'Page 4'
+      Caption = 'Test'
       Category = 0
-      Hint = 'Page 4'
+      Hint = 'Test'
       Visible = ivAlways
       OnClick = ClickMenuButton
       HotGlyph.Data = {

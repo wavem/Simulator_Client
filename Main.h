@@ -76,6 +76,9 @@
 #include "AdvMemo.hpp"
 #include "AdvGlassButton.hpp"
 #include "AdvEdit.hpp"
+#include "CurvyControls.hpp"
+#include "AdvSmoothComboBox.hpp"
+#include "AdvSmoothListBox.hpp"
 //---------------------------------------------------------------------------
 class CUdpSocketThread;
 class TFormMain : public TForm
@@ -86,9 +89,9 @@ __published:	// IDE-managed Components
 	TdxBarManager *BarMgr;
 	TPanel *___pnBase;
 	TNotebook *Notebook_Main;
-	TAdvMemo *memo;
-	TPanel *__pnBase_00_Default;
-	TPanel *__pnBase_01_;
+	TAdvMemo *memo_Msg;
+	TPanel *__pnBase_00_Start;
+	TPanel *__pnBase_01_View;
 	TPanel *__pnBase_02_;
 	TPanel *__pnBase_03_;
 	TPanel *__pnBase_04_;
@@ -102,6 +105,24 @@ __published:	// IDE-managed Components
 	TdxBarLargeButton *dxBarLargeButton1;
 	TAdvGlassButton *btn_Send;
 	TAdvEdit *ed_Type;
+	TAdvMemo *memo_Log;
+	TLabel *lb_Title_Start_1;
+	TAdvSmoothComboBox *cb_Protocol;
+	TLabel *lb_Title_Start_2;
+	TAdvEdit *ed_Local_IP_1;
+	TAdvEdit *ed_Local_IP_2;
+	TAdvEdit *ed_Local_IP_3;
+	TAdvEdit *ed_Local_IP_4;
+	TLabel *lb_Title_Start_3;
+	TAdvEdit *ed_Server_IP_1;
+	TAdvEdit *ed_Server_IP_2;
+	TAdvEdit *ed_Server_IP_3;
+	TAdvEdit *ed_Server_IP_4;
+	TLabel *lb_Title_Start_4;
+	TLabel *lb_Title_Start_5;
+	TAdvEdit *ed_LocalPort;
+	TAdvEdit *ed_LocalServerPort;
+	TAdvGlassButton *btn_Create;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);
