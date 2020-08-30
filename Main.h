@@ -89,11 +89,11 @@ __published:	// IDE-managed Components
 	TdxBarManager *BarMgr;
 	TPanel *___pnBase;
 	TNotebook *Notebook_Main;
-	TAdvMemo *memo_Msg;
+	TAdvMemo *memo;
 	TPanel *__pnBase_00_Start;
 	TPanel *__pnBase_01_View;
-	TPanel *__pnBase_02_;
-	TPanel *__pnBase_03_;
+	TPanel *__pnBase_02_Setting;
+	TPanel *__pnBase_03_Test;
 	TPanel *__pnBase_04_;
 	TdxBar *BarMgrBar1;
 	TdxBarLargeButton *MenuBtn_01;
@@ -103,9 +103,7 @@ __published:	// IDE-managed Components
 	TdxBarLargeButton *MenuBtn_05;
 	TdxBar *BarMgrBar2;
 	TdxBarLargeButton *dxBarLargeButton1;
-	TAdvGlassButton *btn_Send;
-	TAdvEdit *ed_Type;
-	TAdvMemo *memo_Log;
+	TAdvMemo *memo_Msg;
 	TLabel *lb_Title_Start_1;
 	TAdvSmoothComboBox *cb_Protocol;
 	TLabel *lb_Title_Start_2;
@@ -123,9 +121,12 @@ __published:	// IDE-managed Components
 	TAdvEdit *ed_LocalPort;
 	TAdvEdit *ed_LocalServerPort;
 	TAdvGlassButton *btn_Create;
+	TAdvGlassButton *btn_Send;
+	TAdvEdit *ed_Type;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);
+	void __fastcall btn_CreateClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);

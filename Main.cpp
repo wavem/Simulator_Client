@@ -118,10 +118,10 @@ void __fastcall TFormMain::InitProgram() {
 	}
 
 	// Create UDP Socket
-	if(CreateUDPSocket() == false) return;
+	//if(CreateUDPSocket() == false) return;
 
 	// Create UDP Thread
-	if(CreateUDPThread() == false) return;
+	//if(CreateUDPThread() == false) return;
 
 	PrintMsg(L"Init Complete");
 }
@@ -171,9 +171,27 @@ void __fastcall TFormMain::dxBarLargeButton1Click(TObject *Sender)
 
 bool __fastcall TFormMain::CreateUDPSocket() {
 
+	// Pre return
+	if(m_sock_UDP != INVALID_SOCKET) {
+		PrintMsg(L"Socket exists already");
+		return false;
+	}
+
 	// Common
 	UnicodeString tempStr = L"";
 	AnsiString t_AnsiStr = "";
+	unsigned short t_Port = 0;
+
+	struct sockaddr_in t_sockaddr_in;
+	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
+
+	// Extract User Input Information
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b1 = (BYTE)ed_Local_IP_1->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b2 = (BYTE)ed_Local_IP_2->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b3 = (BYTE)ed_Local_IP_3->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b4 = (BYTE)ed_Local_IP_4->IntValue;
+	t_sockaddr_in.sin_family = AF_INET;
+	t_sockaddr_in.sin_port = htons((unsigned short)ed_LocalPort->IntValue);
 
 	// Create Socket
 	m_sock_UDP = socket(AF_INET, SOCK_DGRAM, 0);
@@ -189,6 +207,14 @@ bool __fastcall TFormMain::CreateUDPSocket() {
 		return false;
 	}
 
+	// Bind
+	if(bind(m_sock_UDP, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in)) < 0) {
+		PrintMsg(L"Bind error");
+		return false;
+	}
+	tempStr = L"Bind Local IP : ";
+	tempStr += inet_ntoa(t_sockaddr_in.sin_addr);
+	PrintMsg(tempStr);
 	return true;
 }
 //---------------------------------------------------------------------------
@@ -259,6 +285,31 @@ void __fastcall TFormMain::btn_SendClick(TObject *Sender)
 	t_SendSize = sendto(m_sock_UDP, t_Buffer, 20, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
 	t_Str.sprintf(L"[SEND] Req Type : %d, Count : %d, Size : %d", t_Type, t_Counter, t_SendSize);
 	PrintMsg(t_Str);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_CreateClick(TObject *Sender)
+{
+	// Common
+	UnicodeString tempStr = L"";
+
+	// Create Socket
+	switch(cb_Protocol->SelectedItemIndex) {
+		case 0: // UDP
+			CreateUDPSocket();
+			break;
+
+		case 1:	// TCP
+			PrintMsg(L"TCP not yet");
+			break;
+
+		case 2: // Multicast
+			PrintMsg(L"Multicast not yet");
+			break;
+
+		default:
+			break;
+	}
 }
 //---------------------------------------------------------------------------
 
