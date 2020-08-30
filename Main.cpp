@@ -95,7 +95,7 @@ void __fastcall TFormMain::InitProgram() {
 
 	// Init Variables...
 	m_sock_UDP = INVALID_SOCKET;
-
+	m_UdpThread = NULL;
 
 	// Socket Init
 	WSADATA data;
@@ -116,12 +116,6 @@ void __fastcall TFormMain::InitProgram() {
 	} else {
 		PrintMsg(L"Socket init success");
 	}
-
-	// Create UDP Socket
-	//if(CreateUDPSocket() == false) return;
-
-	// Create UDP Thread
-	//if(CreateUDPThread() == false) return;
 
 	PrintMsg(L"Init Complete");
 }
