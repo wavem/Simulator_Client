@@ -136,12 +136,12 @@ void __fastcall TFormMain::ExitProgram() {
 	}
 
 	// Delete Thread
-	//if(m_ClientThread != NULL) {
-	//	m_ClientThread->DoTerminate();
-	//	m_ClientThread->Terminate();
-	//	delete m_ClientThread;
-	//	m_ClientThread = NULL;
-	//}
+	if(m_UdpThread != NULL) {
+		m_UdpThread->DoTerminate();
+		m_UdpThread->Terminate();
+		delete m_UdpThread;
+		m_UdpThread = NULL;
+	}
 
 	// Socket Clean Up
 	WSACleanup();
