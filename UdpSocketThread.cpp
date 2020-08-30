@@ -31,34 +31,16 @@ void __fastcall CUdpSocketThread::Execute() {
 
 	// Common
 	UnicodeString t_Str = L"";
-	AnsiString t_AnsiStr = "";
-	int t_errno = 0;
-	int t_ConnectTryingCount = 1;
-
-	struct sockaddr_in	t_sockaddr_in;
 	struct sockaddr_in t_from_addr;
+	memset(&t_from_addr, 0, sizeof(t_from_addr));
 	int t_fromaddrsize = sizeof(t_from_addr);
-	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
-	t_sockaddr_in.sin_family = AF_INET;
-	//t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_SERVER);
-	t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_LOCAL);
-	t_sockaddr_in.sin_port = htons(UDP_SERVER_PORT);
+	BYTE t_Buffer[1500] = {0, };
+	int t_SendSize = 0;
+	int t_ReceivedSize = 0;
 
 	t_Str = L"Thread Start";
 	SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	m_eThreadWork = THREAD_RUNNING;
-
-	BYTE t_Buffer[1500] = {0, };
-
-	int t_SendSize = 0;
-	int t_ReceivedSize = 0;
-
-	if(bind(*m_sock, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in)) < 0) {
-		t_Str = L"Bind Error";
-		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
-		return;
-	}
-
 
 	while(!Terminated) {
 		// For Thread Stop & Resume

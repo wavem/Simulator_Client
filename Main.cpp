@@ -290,13 +290,14 @@ void __fastcall TFormMain::btn_SendClick(TObject *Sender)
 
 void __fastcall TFormMain::btn_CreateClick(TObject *Sender)
 {
-	// Common
-	UnicodeString tempStr = L"";
-
 	// Create Socket
 	switch(cb_Protocol->SelectedItemIndex) {
 		case 0: // UDP
-			CreateUDPSocket();
+			if(CreateUDPSocket()) {
+				if(CreateUDPThread() == false) {
+					PrintMsg(L"Fail to Create UDP Thread");
+				}
+			}
 			break;
 
 		case 1:	// TCP
