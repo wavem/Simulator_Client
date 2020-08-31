@@ -96,6 +96,10 @@ void __fastcall TFormMain::InitProgram() {
 	// Init Variables...
 	m_sock_UDP = INVALID_SOCKET;
 	m_UdpThread = NULL;
+	m_LocalIPstr = "";
+	m_ServerIPstr = "";
+	m_ServerPort = 0;
+	m_LocalPort = 0;
 
 	// Socket Init
 	WSADATA data;

@@ -143,6 +143,11 @@ public: // Socket
 	bool __fastcall CreateUDPSocket();
 	bool __fastcall CreateUDPThread();
 	CUdpSocketThread* m_UdpThread;
+	AnsiString m_LocalIPstr;
+	AnsiString m_ServerIPstr;
+	unsigned short m_ServerPort;
+	unsigned short m_LocalPort;
+
 
 
 
