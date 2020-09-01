@@ -183,8 +183,8 @@ bool __fastcall TFormMain::CreateUDPSocket() {
 	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
 
 	// Input Comm Information
-	t_sockaddr_in.sin_addr.s_addr = inet_addr(m_LocalIPstr.c_str());
 	t_sockaddr_in.sin_family = AF_INET;
+	t_sockaddr_in.sin_addr.s_addr = inet_addr(m_LocalIPstr.c_str());
 	t_sockaddr_in.sin_port = htons(m_LocalPort);
 
 	// Create Socket
