@@ -189,7 +189,7 @@ bool __fastcall TFormMain::CreateUDPSocket() {
 	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b3 = (BYTE)ed_Local_IP_3->IntValue;
 	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b4 = (BYTE)ed_Local_IP_4->IntValue;
 	t_sockaddr_in.sin_family = AF_INET;
-	t_sockaddr_in.sin_port = htons((unsigned short)ed_LocalPort->IntValue);
+	t_sockaddr_in.sin_port = htons(m_LocalPort);
 
 	// Create Socket
 	m_sock_UDP = socket(AF_INET, SOCK_DGRAM, 0);
@@ -288,6 +288,8 @@ void __fastcall TFormMain::btn_SendClick(TObject *Sender)
 
 void __fastcall TFormMain::btn_CreateClick(TObject *Sender)
 {
+	ExtractCommInformation();
+
 	// Create Socket
 	switch(cb_Protocol->SelectedItemIndex) {
 		case 0: // UDP
@@ -309,6 +311,30 @@ void __fastcall TFormMain::btn_CreateClick(TObject *Sender)
 		default:
 			break;
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::ExtractCommInformation() {
+
+	// Common
+	struct sockaddr_in t_sockaddr_in;
+	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
+
+	// Extract User Input Information
+	m_LocalPort = (unsigned short)ed_LocalPort->IntValue;
+	m_ServerPort = (unsigned short)ed_ServerPort->IntValue;
+
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b1 = (BYTE)ed_Local_IP_1->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b2 = (BYTE)ed_Local_IP_2->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b3 = (BYTE)ed_Local_IP_3->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b4 = (BYTE)ed_Local_IP_4->IntValue;
+	m_LocalIPstr = inet_ntoa(t_sockaddr_in.sin_addr);
+
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b1 = (BYTE)ed_Server_IP_1->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b2 = (BYTE)ed_Server_IP_2->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b3 = (BYTE)ed_Server_IP_3->IntValue;
+	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b4 = (BYTE)ed_Server_IP_4->IntValue;
+	m_ServerIPstr = inet_ntoa(t_sockaddr_in.sin_addr);
 }
 //---------------------------------------------------------------------------
 

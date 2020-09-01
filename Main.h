@@ -119,7 +119,7 @@ __published:	// IDE-managed Components
 	TLabel *lb_Title_Start_4;
 	TLabel *lb_Title_Start_5;
 	TAdvEdit *ed_LocalPort;
-	TAdvEdit *ed_LocalServerPort;
+	TAdvEdit *ed_ServerPort;
 	TAdvGlassButton *btn_Create;
 	TAdvGlassButton *btn_Send;
 	TAdvEdit *ed_Type;
@@ -136,6 +136,7 @@ public:	// Basic Functions
 	void __fastcall InitProgram();
 	void __fastcall ExitProgram();
 	void __fastcall PrintMsg(UnicodeString _str);
+	void __fastcall ExtractCommInformation();
 
 
 public: // Socket

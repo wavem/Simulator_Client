@@ -847,7 +847,7 @@ object FormMain: TFormMain
             Visible = True
             Version = '3.3.5.3'
           end
-          object ed_LocalServerPort: TAdvEdit
+          object ed_ServerPort: TAdvEdit
             Left = 122
             Top = 208
             Width = 100
