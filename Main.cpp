@@ -184,10 +184,7 @@ bool __fastcall TFormMain::CreateUDPSocket() {
 	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
 
 	// Extract User Input Information
-	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b1 = (BYTE)ed_Local_IP_1->IntValue;
-	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b2 = (BYTE)ed_Local_IP_2->IntValue;
-	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b3 = (BYTE)ed_Local_IP_3->IntValue;
-	t_sockaddr_in.sin_addr.S_un.S_un_b.s_b4 = (BYTE)ed_Local_IP_4->IntValue;
+	t_sockaddr_in.sin_addr.s_addr = inet_addr(m_LocalIPstr.c_str());
 	t_sockaddr_in.sin_family = AF_INET;
 	t_sockaddr_in.sin_port = htons(m_LocalPort);
 
