@@ -3,8 +3,8 @@ object FormMain: TFormMain
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Simulator_Client'
-  ClientHeight = 771
-  ClientWidth = 1194
+  ClientHeight = 831
+  ClientWidth = 1394
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object FormMain: TFormMain
   object MainRibbonMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 1194
+    Width = 1394
     Height = 122
     Cursor = crHandPoint
     BarManager = BarMgr
@@ -32,6 +32,7 @@ object FormMain: TFormMain
     Contexts = <>
     TabOrder = 0
     TabStop = False
+    ExplicitWidth = 1194
     object MenuTab_1: TdxRibbonTab
       Active = True
       Caption = 'Menu'
@@ -48,42 +49,40 @@ object FormMain: TFormMain
   object ___pnBase: TPanel
     Left = 0
     Top = 122
-    Width = 1194
-    Height = 649
+    Width = 1394
+    Height = 709
     Align = alClient
     BevelOuter = bvNone
     Color = clBlack
     ParentBackground = False
     TabOrder = 5
-    ExplicitTop = 126
-    ExplicitWidth = 1020
-    ExplicitHeight = 592
+    ExplicitWidth = 1194
+    ExplicitHeight = 649
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
       Width = 968
-      Height = 548
+      Height = 608
       Align = alLeft
+      PageIndex = 1
       TabOrder = 0
-      ExplicitHeight = 544
+      ExplicitHeight = 548
       object TPage
         Left = 0
         Top = 0
         Caption = 'Default'
-        ExplicitWidth = 337
-        ExplicitHeight = 592
+        ExplicitHeight = 548
         object __pnBase_00_Start: TPanel
           Left = 0
           Top = 0
           Width = 968
-          Height = 548
+          Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 337
-          ExplicitHeight = 592
+          ExplicitHeight = 548
           object lb_Title_Start_1: TLabel
             Left = 32
             Top = 41
@@ -911,20 +910,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
-        ExplicitWidth = 337
-        ExplicitHeight = 592
+        ExplicitHeight = 548
         object __pnBase_01_View: TPanel
           Left = 0
           Top = 0
           Width = 968
-          Height = 548
+          Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 337
-          ExplicitHeight = 592
+          ExplicitHeight = 548
         end
       end
       object TPage
@@ -1047,10 +1044,10 @@ object FormMain: TFormMain
       end
     end
     object memo: TAdvMemo
-      Left = 974
+      Left = 1174
       Top = 0
       Width = 220
-      Height = 548
+      Height = 608
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
       ActiveLineSettings.ShowActiveLineIndicator = False
@@ -1159,12 +1156,13 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitHeight = 544
+      ExplicitLeft = 974
+      ExplicitHeight = 548
     end
     object memo_Msg: TAdvMemo
       Left = 0
-      Top = 548
-      Width = 1194
+      Top = 608
+      Width = 1394
       Height = 101
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
@@ -1280,7 +1278,8 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitTop = 544
+      ExplicitTop = 548
+      ExplicitWidth = 1194
     end
   end
   object BarMgr: TdxBarManager
