@@ -1056,6 +1056,7 @@ object FormMain: TFormMain
       AutoCompletion.StartToken = '(.'
       AutoCorrect.Active = True
       AutoHintParameterPosition = hpBelowCode
+      BkColor = 3355443
       BookmarkGlyph.Data = {
         36050000424D3605000000000000360400002800000010000000100000000100
         0800000000000001000000000000000000000001000000000000000000000000
@@ -1099,7 +1100,7 @@ object FormMain: TFormMain
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFB7BFBFB7B72525FDFDFD25BFBFBFBF
         BFBFBFBFBFB72525FDFD9A9ABFBFBFBFBFBFBFBFBFB725FDFDFDFD2525252525
         25252525252525FDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFDFD}
-      BorderStyle = bsSingle
+      BorderStyle = bsNone
       ClipboardFormats = [cfText]
       CodeFolding.Enabled = False
       CodeFolding.LineColor = clGray
@@ -1111,8 +1112,11 @@ object FormMain: TFormMain
       Gutter.Font.Height = -13
       Gutter.Font.Name = 'Courier New'
       Gutter.Font.Style = []
+      Gutter.GutterColor = 3355443
+      Gutter.GutterColorTo = 3355443
+      Gutter.LineNumberTextColor = 2129339
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clBlack
+      Font.Color = 2262986
       Font.Height = -13
       Font.Name = 'COURIER NEW'
       Font.Style = []
@@ -1250,7 +1254,7 @@ object FormMain: TFormMain
       PrintOptions.PageNr = False
       PrintOptions.PrintLineNumbers = False
       ReadOnly = True
-      RightMargin = 130
+      RightMargin = 146
       RightMarginColor = 14869218
       ScrollHint = False
       SelColor = clWhite
