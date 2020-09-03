@@ -61,27 +61,28 @@ object FormMain: TFormMain
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
-      Width = 968
+      Width = 1174
       Height = 608
       Align = alLeft
       PageIndex = 1
       TabOrder = 0
-      ExplicitHeight = 548
       object TPage
         Left = 0
         Top = 0
         Caption = 'Default'
+        ExplicitWidth = 968
         ExplicitHeight = 548
         object __pnBase_00_Start: TPanel
           Left = 0
           Top = 0
-          Width = 968
+          Width = 1174
           Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
+          ExplicitWidth = 968
           ExplicitHeight = 548
           object lb_Title_Start_1: TLabel
             Left = 32
@@ -910,18 +911,19 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
+        ExplicitWidth = 968
         ExplicitHeight = 548
         object __pnBase_01_View: TPanel
           Left = 0
           Top = 0
-          Width = 968
+          Width = 1174
           Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitHeight = 548
+          ExplicitWidth = 745
         end
       end
       object TPage
@@ -929,20 +931,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 2
         Caption = '2'
-        ExplicitWidth = 337
-        ExplicitHeight = 592
+        ExplicitWidth = 968
         object __pnBase_02_Setting: TPanel
           Left = 0
           Top = 0
-          Width = 968
-          Height = 548
+          Width = 1174
+          Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 337
-          ExplicitHeight = 592
+          ExplicitWidth = 968
         end
       end
       object TPage
@@ -950,20 +950,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = '3'
-        ExplicitWidth = 337
-        ExplicitHeight = 592
+        ExplicitWidth = 968
         object __pnBase_03_Test: TPanel
           Left = 0
           Top = 0
-          Width = 968
-          Height = 548
+          Width = 1174
+          Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 337
-          ExplicitHeight = 592
+          ExplicitWidth = 968
           object btn_Send: TAdvGlassButton
             Left = 392
             Top = 64
@@ -1026,20 +1024,18 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 4
         Caption = '4'
-        ExplicitWidth = 337
-        ExplicitHeight = 592
+        ExplicitWidth = 968
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
-          Width = 968
-          Height = 548
+          Width = 1174
+          Height = 608
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 337
-          ExplicitHeight = 592
+          ExplicitWidth = 968
         end
       end
     end
