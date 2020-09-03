@@ -3,8 +3,8 @@ object FormMain: TFormMain
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Simulator_Client'
-  ClientHeight = 831
-  ClientWidth = 1394
+  ClientHeight = 1011
+  ClientWidth = 1914
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +18,7 @@ object FormMain: TFormMain
   object MainRibbonMenu: TdxRibbon
     Left = 0
     Top = 0
-    Width = 1394
+    Width = 1914
     Height = 122
     Cursor = crHandPoint
     BarManager = BarMgr
@@ -49,8 +49,8 @@ object FormMain: TFormMain
   object ___pnBase: TPanel
     Left = 0
     Top = 122
-    Width = 1394
-    Height = 709
+    Width = 1914
+    Height = 889
     Align = alClient
     BevelOuter = bvNone
     Color = clBlack
@@ -62,10 +62,11 @@ object FormMain: TFormMain
       Left = 0
       Top = 0
       Width = 1174
-      Height = 608
+      Height = 788
       Align = alLeft
       PageIndex = 1
       TabOrder = 0
+      ExplicitHeight = 608
       object TPage
         Left = 0
         Top = 0
@@ -76,7 +77,7 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 1174
-          Height = 608
+          Height = 788
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
@@ -917,13 +918,38 @@ object FormMain: TFormMain
           Left = 0
           Top = 0
           Width = 1174
-          Height = 608
+          Height = 788
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
-          ExplicitWidth = 745
+          ExplicitTop = -6
+          ExplicitHeight = 608
+          object Notebook_Send: TNotebook
+            Left = 0
+            Top = 48
+            Width = 150
+            Height = 150
+            TabOrder = 0
+            object TPage
+              Left = 0
+              Top = 0
+              Caption = 'Default'
+            end
+          end
+          object Notebook_Recv: TNotebook
+            Left = 472
+            Top = 184
+            Width = 150
+            Height = 150
+            TabOrder = 1
+            object TPage
+              Left = 0
+              Top = 0
+              Caption = 'Default'
+            end
+          end
         end
       end
       object TPage
@@ -932,17 +958,19 @@ object FormMain: TFormMain
         HelpContext = 2
         Caption = '2'
         ExplicitWidth = 968
+        ExplicitHeight = 608
         object __pnBase_02_Setting: TPanel
           Left = 0
           Top = 0
           Width = 1174
-          Height = 608
+          Height = 788
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
           ExplicitWidth = 968
+          ExplicitHeight = 608
         end
       end
       object TPage
@@ -951,17 +979,19 @@ object FormMain: TFormMain
         HelpContext = 3
         Caption = '3'
         ExplicitWidth = 968
+        ExplicitHeight = 608
         object __pnBase_03_Test: TPanel
           Left = 0
           Top = 0
           Width = 1174
-          Height = 608
+          Height = 788
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
           ExplicitWidth = 968
+          ExplicitHeight = 608
           object btn_Send: TAdvGlassButton
             Left = 392
             Top = 64
@@ -1025,25 +1055,27 @@ object FormMain: TFormMain
         HelpContext = 4
         Caption = '4'
         ExplicitWidth = 968
+        ExplicitHeight = 608
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
           Width = 1174
-          Height = 608
+          Height = 788
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
           ExplicitWidth = 968
+          ExplicitHeight = 608
         end
       end
     end
     object memo: TAdvMemo
-      Left = 1174
+      Left = 1694
       Top = 0
       Width = 220
-      Height = 608
+      Height = 788
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False
       ActiveLineSettings.ShowActiveLineIndicator = False
@@ -1161,8 +1193,8 @@ object FormMain: TFormMain
     end
     object memo_Msg: TAdvMemo
       Left = 0
-      Top = 608
-      Width = 1394
+      Top = 788
+      Width = 1914
       Height = 101
       Cursor = crIBeam
       ActiveLineSettings.ShowActiveLine = False

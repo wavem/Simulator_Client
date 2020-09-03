@@ -123,6 +123,8 @@ __published:	// IDE-managed Components
 	TAdvGlassButton *btn_Create;
 	TAdvGlassButton *btn_Send;
 	TAdvEdit *ed_Type;
+	TNotebook *Notebook_Send;
+	TNotebook *Notebook_Recv;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);
