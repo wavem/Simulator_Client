@@ -61,12 +61,11 @@ object FormMain: TFormMain
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
-      Width = 1174
+      Width = 1694
       Height = 788
       Align = alLeft
       PageIndex = 1
       TabOrder = 0
-      ExplicitHeight = 608
       object TPage
         Left = 0
         Top = 0
@@ -76,7 +75,7 @@ object FormMain: TFormMain
         object __pnBase_00_Start: TPanel
           Left = 0
           Top = 0
-          Width = 1174
+          Width = 1694
           Height = 788
           Align = alClient
           BevelOuter = bvNone
@@ -917,7 +916,7 @@ object FormMain: TFormMain
         object __pnBase_01_View: TPanel
           Left = 0
           Top = 0
-          Width = 1174
+          Width = 1694
           Height = 788
           Align = alClient
           BevelOuter = bvNone
@@ -925,6 +924,7 @@ object FormMain: TFormMain
           ParentBackground = False
           TabOrder = 0
           ExplicitTop = -6
+          ExplicitWidth = 1174
           ExplicitHeight = 608
           object Notebook_Send: TNotebook
             Left = 0
@@ -962,7 +962,7 @@ object FormMain: TFormMain
         object __pnBase_02_Setting: TPanel
           Left = 0
           Top = 0
-          Width = 1174
+          Width = 1694
           Height = 788
           Align = alClient
           BevelOuter = bvNone
@@ -983,7 +983,7 @@ object FormMain: TFormMain
         object __pnBase_03_Test: TPanel
           Left = 0
           Top = 0
-          Width = 1174
+          Width = 1694
           Height = 788
           Align = alClient
           BevelOuter = bvNone
@@ -1059,7 +1059,7 @@ object FormMain: TFormMain
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
-          Width = 1174
+          Width = 1694
           Height = 788
           Align = alClient
           BevelOuter = bvNone
