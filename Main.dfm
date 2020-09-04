@@ -923,31 +923,34 @@ object FormMain: TFormMain
           Color = 3355443
           ParentBackground = False
           TabOrder = 0
+          ExplicitLeft = -6
           ExplicitTop = -6
-          ExplicitWidth = 1174
-          ExplicitHeight = 608
           object Notebook_Send: TNotebook
             Left = 0
             Top = 48
-            Width = 150
-            Height = 150
+            Width = 847
+            Height = 734
             TabOrder = 0
             object TPage
               Left = 0
               Top = 0
               Caption = 'Default'
+              ExplicitWidth = 150
+              ExplicitHeight = 150
             end
           end
           object Notebook_Recv: TNotebook
-            Left = 472
-            Top = 184
-            Width = 150
-            Height = 150
+            Left = 847
+            Top = 48
+            Width = 847
+            Height = 734
             TabOrder = 1
             object TPage
               Left = 0
               Top = 0
               Caption = 'Default'
+              ExplicitWidth = 150
+              ExplicitHeight = 150
             end
           end
         end
