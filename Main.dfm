@@ -930,7 +930,7 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
-            PageIndex = 1
+            PageIndex = 2
             TabOrder = 0
             object TPage
               Left = 0
@@ -985,6 +985,21 @@ object FormMain: TFormMain
               Caption = 'page 2'
               ExplicitWidth = 0
               ExplicitHeight = 0
+              object _pnBase_S_03: TPanel
+                Left = 0
+                Top = 0
+                Width = 847
+                Height = 734
+                Align = alClient
+                BevelOuter = bvNone
+                Color = 3355443
+                ParentBackground = False
+                TabOrder = 0
+                ExplicitLeft = 200
+                ExplicitTop = 208
+                ExplicitWidth = 185
+                ExplicitHeight = 41
+              end
             end
           end
           object Notebook_Recv: TNotebook
