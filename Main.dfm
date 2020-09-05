@@ -54,7 +54,9 @@ object FormMain: TFormMain
     Align = alClient
     BevelOuter = bvNone
     Color = clBlack
+    DoubleBuffered = True
     ParentBackground = False
+    ParentDoubleBuffered = False
     TabOrder = 5
     ExplicitWidth = 1194
     ExplicitHeight = 649
@@ -64,7 +66,6 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -80,7 +81,9 @@ object FormMain: TFormMain
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
+          DoubleBuffered = True
           ParentBackground = False
+          ParentDoubleBuffered = False
           TabOrder = 0
           ExplicitWidth = 968
           ExplicitHeight = 548
@@ -921,7 +924,9 @@ object FormMain: TFormMain
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
+          DoubleBuffered = True
           ParentBackground = False
+          ParentDoubleBuffered = False
           TabOrder = 0
           ExplicitLeft = -6
           ExplicitTop = -6
@@ -947,7 +952,9 @@ object FormMain: TFormMain
                 BevelOuter = bvNone
                 Caption = 'sadf'
                 Color = 3355443
+                DoubleBuffered = True
                 ParentBackground = False
+                ParentDoubleBuffered = False
                 TabOrder = 0
                 ExplicitLeft = 288
                 ExplicitTop = 200
@@ -970,7 +977,9 @@ object FormMain: TFormMain
                 Align = alClient
                 BevelOuter = bvNone
                 Color = 3355443
+                DoubleBuffered = True
                 ParentBackground = False
+                ParentDoubleBuffered = False
                 TabOrder = 0
                 ExplicitLeft = 184
                 ExplicitTop = 160
@@ -993,7 +1002,9 @@ object FormMain: TFormMain
                 Align = alClient
                 BevelOuter = bvNone
                 Color = 3355443
+                DoubleBuffered = True
                 ParentBackground = False
+                ParentDoubleBuffered = False
                 TabOrder = 0
                 ExplicitLeft = 200
                 ExplicitTop = 208
@@ -1023,7 +1034,9 @@ object FormMain: TFormMain
                 BevelOuter = bvNone
                 Caption = '2'
                 Color = 3355443
+                DoubleBuffered = True
                 ParentBackground = False
+                ParentDoubleBuffered = False
                 TabOrder = 0
                 ExplicitLeft = 112
                 ExplicitTop = 144
@@ -1038,6 +1051,23 @@ object FormMain: TFormMain
               Caption = 'page 1'
               ExplicitWidth = 0
               ExplicitHeight = 0
+              object _pnBase_R_02: TPanel
+                Left = 0
+                Top = 0
+                Width = 847
+                Height = 734
+                Align = alClient
+                BevelOuter = bvNone
+                Color = 3355443
+                DoubleBuffered = True
+                ParentBackground = False
+                ParentDoubleBuffered = False
+                TabOrder = 0
+                ExplicitLeft = 144
+                ExplicitTop = 208
+                ExplicitWidth = 185
+                ExplicitHeight = 41
+              end
             end
             object TPage
               Left = 0
@@ -1046,6 +1076,23 @@ object FormMain: TFormMain
               Caption = 'page 2'
               ExplicitWidth = 0
               ExplicitHeight = 0
+              object _pnBase_R_03: TPanel
+                Left = 0
+                Top = 0
+                Width = 847
+                Height = 734
+                Align = alClient
+                BevelOuter = bvNone
+                Color = 3355443
+                DoubleBuffered = True
+                ParentBackground = False
+                ParentDoubleBuffered = False
+                TabOrder = 0
+                ExplicitLeft = 240
+                ExplicitTop = 200
+                ExplicitWidth = 185
+                ExplicitHeight = 41
+              end
             end
           end
         end
@@ -1065,7 +1112,9 @@ object FormMain: TFormMain
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
+          DoubleBuffered = True
           ParentBackground = False
+          ParentDoubleBuffered = False
           TabOrder = 0
           ExplicitWidth = 968
           ExplicitHeight = 608
@@ -1086,7 +1135,9 @@ object FormMain: TFormMain
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
+          DoubleBuffered = True
           ParentBackground = False
+          ParentDoubleBuffered = False
           TabOrder = 0
           ExplicitWidth = 968
           ExplicitHeight = 608
@@ -1162,7 +1213,9 @@ object FormMain: TFormMain
           Align = alClient
           BevelOuter = bvNone
           Color = 3355443
+          DoubleBuffered = True
           ParentBackground = False
+          ParentDoubleBuffered = False
           TabOrder = 0
           ExplicitWidth = 968
           ExplicitHeight = 608
