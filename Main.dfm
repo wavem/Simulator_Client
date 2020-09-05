@@ -937,6 +937,38 @@ object FormMain: TFormMain
               Caption = 'Default'
               ExplicitWidth = 150
               ExplicitHeight = 150
+              object _pnBase_S_01: TPanel
+                Left = 0
+                Top = 0
+                Width = 847
+                Height = 734
+                Align = alClient
+                BevelOuter = bvNone
+                Caption = 'sadf'
+                Color = 3355443
+                ParentBackground = False
+                TabOrder = 0
+                ExplicitLeft = 288
+                ExplicitTop = 200
+                ExplicitWidth = 185
+                ExplicitHeight = 41
+              end
+            end
+            object TPage
+              Left = 0
+              Top = 0
+              HelpContext = 1
+              Caption = 'page 1'
+              ExplicitWidth = 0
+              ExplicitHeight = 0
+            end
+            object TPage
+              Left = 0
+              Top = 0
+              HelpContext = 2
+              Caption = 'page 2'
+              ExplicitWidth = 0
+              ExplicitHeight = 0
             end
           end
           object Notebook_Recv: TNotebook
@@ -951,6 +983,38 @@ object FormMain: TFormMain
               Caption = 'Default'
               ExplicitWidth = 150
               ExplicitHeight = 150
+              object _pnBase_R_01: TPanel
+                Left = 0
+                Top = 0
+                Width = 847
+                Height = 734
+                Align = alClient
+                BevelOuter = bvNone
+                Caption = '2'
+                Color = 3355443
+                ParentBackground = False
+                TabOrder = 0
+                ExplicitLeft = 112
+                ExplicitTop = 144
+                ExplicitWidth = 185
+                ExplicitHeight = 41
+              end
+            end
+            object TPage
+              Left = 0
+              Top = 0
+              HelpContext = 1
+              Caption = 'page 1'
+              ExplicitWidth = 0
+              ExplicitHeight = 0
+            end
+            object TPage
+              Left = 0
+              Top = 0
+              HelpContext = 2
+              Caption = 'page 2'
+              ExplicitWidth = 0
+              ExplicitHeight = 0
             end
           end
         end
