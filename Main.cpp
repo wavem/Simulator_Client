@@ -92,6 +92,8 @@ void __fastcall TFormMain::InitProgram() {
 
 	// Setting Default Notebook Page
 	Notebook_Main->PageIndex = 0;
+	Notebook_Send->PageIndex = 0;
+	Notebook_Recv->PageIndex = 0;
 
 	// Init Variables...
 	m_sock_UDP = INVALID_SOCKET;
