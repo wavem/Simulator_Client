@@ -936,7 +936,6 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
-            PageIndex = 2
             TabOrder = 0
             object TPage
               Left = 0
@@ -951,7 +950,6 @@ object FormMain: TFormMain
                 Height = 734
                 Align = alClient
                 BevelOuter = bvNone
-                Caption = 'sadf'
                 Color = 3355443
                 DoubleBuffered = True
                 ParentBackground = False
@@ -1033,7 +1031,6 @@ object FormMain: TFormMain
                 Height = 734
                 Align = alClient
                 BevelOuter = bvNone
-                Caption = '2'
                 Color = 3355443
                 DoubleBuffered = True
                 ParentBackground = False
