@@ -66,7 +66,6 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -891,19 +890,20 @@ object FormMain: TFormMain
             Top = 264
             Width = 100
             Height = 32
-            BackColor = clWhite
+            Cursor = crHandPoint
+            BackColor = 3355443
             Caption = 'Create'
             Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
+            Font.Color = 2262986
             Font.Height = -13
             Font.Name = 'Tahoma'
             Font.Style = [fsBold]
             ForeColor = clWhite
-            GlowColor = 16760205
+            GlowColor = clOlive
             InnerBorderColor = clBlack
             OuterBorderColor = clWhite
             ParentFont = False
-            ShineColor = clWhite
+            ShineColor = clGray
             TabOrder = 11
             Version = '1.3.0.2'
             OnClick = btn_CreateClick
