@@ -79,6 +79,10 @@
 #include "CurvyControls.hpp"
 #include "AdvSmoothComboBox.hpp"
 #include "AdvSmoothListBox.hpp"
+#include "AdvGrid.hpp"
+#include "AdvObj.hpp"
+#include "BaseGrid.hpp"
+#include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
 class CUdpSocketThread;
 class TFormMain : public TForm
@@ -131,6 +135,8 @@ __published:	// IDE-managed Components
 	TPanel *_pnBase_S_03;
 	TPanel *_pnBase_R_02;
 	TPanel *_pnBase_R_03;
+	TAdvStringGrid *grid_Protocol;
+	TAdvStringGrid *AdvStringGrid1;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);

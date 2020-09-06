@@ -74,6 +74,9 @@
 #pragma link "CurvyControls"
 #pragma link "AdvSmoothComboBox"
 #pragma link "AdvSmoothListBox"
+#pragma link "AdvGrid"
+#pragma link "AdvObj"
+#pragma link "BaseGrid"
 #pragma resource "*.dfm"
 #pragma link "libxl.lib"
 TFormMain *FormMain;
