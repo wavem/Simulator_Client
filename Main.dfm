@@ -66,6 +66,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
+      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -1437,6 +1438,50 @@ object FormMain: TFormMain
                 ExplicitHeight = 41
               end
             end
+          end
+          object btn_Back_Send: TAdvGlassButton
+            Left = 731
+            Top = 10
+            Width = 100
+            Height = 32
+            Cursor = crHandPoint
+            BackColor = 3355443
+            Caption = 'Back'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = clOlive
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
+            ParentFont = False
+            ShineColor = clGray
+            TabOrder = 2
+            Version = '1.3.0.2'
+          end
+          object btn_Back_Recv: TAdvGlassButton
+            Left = 1578
+            Top = 10
+            Width = 100
+            Height = 32
+            Cursor = crHandPoint
+            BackColor = 3355443
+            Caption = 'Back'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = clOlive
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
+            ParentFont = False
+            ShineColor = clGray
+            TabOrder = 3
+            Version = '1.3.0.2'
           end
         end
       end
