@@ -85,8 +85,8 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitWidth = 968
-          ExplicitHeight = 548
+          ExplicitLeft = -6
+          ExplicitTop = -6
           object lb_Title_Start_1: TLabel
             Left = 32
             Top = 41
@@ -900,8 +900,8 @@ object FormMain: TFormMain
             Font.Style = [fsBold]
             ForeColor = clWhite
             GlowColor = clOlive
-            InnerBorderColor = clBlack
-            OuterBorderColor = clWhite
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
             ParentFont = False
             ShineColor = clGray
             TabOrder = 11
