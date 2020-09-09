@@ -167,6 +167,9 @@ public: // Socket
 	unsigned short m_ServerPort;
 	unsigned short m_LocalPort;
 
+public: // Libxl
+
+
 
 
 
