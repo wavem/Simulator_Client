@@ -32,7 +32,6 @@ object FormMain: TFormMain
     Contexts = <>
     TabOrder = 0
     TabStop = False
-    ExplicitWidth = 1194
     object MenuTab_1: TdxRibbonTab
       Active = True
       Caption = 'Menu'
@@ -58,8 +57,6 @@ object FormMain: TFormMain
     ParentBackground = False
     ParentDoubleBuffered = False
     TabOrder = 5
-    ExplicitWidth = 1194
-    ExplicitHeight = 649
     object Notebook_Main: TNotebook
       Left = 0
       Top = 0
@@ -558,7 +555,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -593,7 +589,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -628,7 +623,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -663,7 +657,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -698,7 +691,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -733,7 +725,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -768,7 +759,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -803,7 +793,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -838,7 +827,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -873,7 +861,6 @@ object FormMain: TFormMain
             Lookup.Font.Style = []
             Lookup.Separator = ';'
             Color = clWhite
-            DoubleBuffered = True
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -15
@@ -916,8 +903,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
-        ExplicitWidth = 968
-        ExplicitHeight = 548
         object __pnBase_01_View: TPanel
           Left = 0
           Top = 0
@@ -930,8 +915,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitLeft = -6
-          ExplicitTop = -6
           object Notebook_Send: TNotebook
             Left = 0
             Top = 48
@@ -942,8 +925,6 @@ object FormMain: TFormMain
               Left = 0
               Top = 0
               Caption = 'Default'
-              ExplicitWidth = 150
-              ExplicitHeight = 150
               object _pnBase_S_01: TPanel
                 Left = 0
                 Top = 0
@@ -956,10 +937,6 @@ object FormMain: TFormMain
                 ParentBackground = False
                 ParentDoubleBuffered = False
                 TabOrder = 0
-                ExplicitLeft = 288
-                ExplicitTop = 200
-                ExplicitWidth = 185
-                ExplicitHeight = 41
                 DesignSize = (
                   847
                   734)
@@ -1360,8 +1337,6 @@ object FormMain: TFormMain
               Left = 0
               Top = 0
               Caption = 'Default'
-              ExplicitWidth = 150
-              ExplicitHeight = 150
               object _pnBase_R_01: TPanel
                 Left = 0
                 Top = 0
@@ -1374,10 +1349,6 @@ object FormMain: TFormMain
                 ParentBackground = False
                 ParentDoubleBuffered = False
                 TabOrder = 0
-                ExplicitLeft = 112
-                ExplicitTop = 144
-                ExplicitWidth = 185
-                ExplicitHeight = 41
                 DesignSize = (
                   847
                   734)
@@ -2059,8 +2030,6 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitLeft = 974
-      ExplicitHeight = 548
     end
     object memo_Msg: TAdvMemo
       Left = 0
@@ -2181,8 +2150,6 @@ object FormMain: TFormMain
       UseStyler = True
       Version = '3.4.1.0'
       WordWrap = wwNone
-      ExplicitTop = 548
-      ExplicitWidth = 1194
     end
   end
   object BarMgr: TdxBarManager

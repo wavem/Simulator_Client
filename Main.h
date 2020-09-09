@@ -168,6 +168,7 @@ public: // Socket
 	unsigned short m_LocalPort;
 
 public: // Libxl
+	libxl::Book* m_Book;
 
 
 

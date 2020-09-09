@@ -3,6 +3,7 @@
 #pragma hdrstop
 
 #include "UdpSocketThread.h"
+#include "Main.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
