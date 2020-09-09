@@ -963,7 +963,7 @@ object FormMain: TFormMain
                 DesignSize = (
                   847
                   734)
-                object AdvStringGrid2: TAdvStringGrid
+                object grid_SendProtocolList: TAdvStringGrid
                   Left = 11
                   Top = 16
                   Width = 820
@@ -1381,7 +1381,7 @@ object FormMain: TFormMain
                 DesignSize = (
                   847
                   734)
-                object AdvStringGrid3: TAdvStringGrid
+                object grid_RecvProtocolList: TAdvStringGrid
                   Left = 11
                   Top = 16
                   Width = 820
