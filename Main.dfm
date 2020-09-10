@@ -69,8 +69,6 @@ object FormMain: TFormMain
         Left = 0
         Top = 0
         Caption = 'Default'
-        ExplicitWidth = 968
-        ExplicitHeight = 548
         object __pnBase_00_Start: TPanel
           Left = 0
           Top = 0
@@ -83,8 +81,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitLeft = -6
-          ExplicitTop = -6
           object lb_Title_Start_1: TLabel
             Left = 32
             Top = 41
@@ -1111,8 +1107,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 1
               Caption = 'page 1'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_S_02: TPanel
                 Left = 0
                 Top = 0
@@ -1125,7 +1119,6 @@ object FormMain: TFormMain
                 ParentBackground = False
                 ParentDoubleBuffered = False
                 TabOrder = 0
-                ExplicitLeft = -6
                 DesignSize = (
                   847
                   734)
@@ -1306,8 +1299,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 2
               Caption = 'page 2'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_S_03: TPanel
                 Left = 0
                 Top = 0
@@ -1320,10 +1311,6 @@ object FormMain: TFormMain
                 ParentBackground = False
                 ParentDoubleBuffered = False
                 TabOrder = 0
-                ExplicitLeft = 200
-                ExplicitTop = 208
-                ExplicitWidth = 185
-                ExplicitHeight = 41
               end
             end
           end
@@ -1523,8 +1510,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 1
               Caption = 'page 1'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_R_02: TPanel
                 Left = 0
                 Top = 0
@@ -1537,10 +1522,6 @@ object FormMain: TFormMain
                 ParentBackground = False
                 ParentDoubleBuffered = False
                 TabOrder = 0
-                ExplicitLeft = 144
-                ExplicitTop = 208
-                ExplicitWidth = 185
-                ExplicitHeight = 41
                 DesignSize = (
                   847
                   734)
@@ -1721,8 +1702,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 2
               Caption = 'page 2'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_R_03: TPanel
                 Left = 0
                 Top = 0
@@ -1735,10 +1714,6 @@ object FormMain: TFormMain
                 ParentBackground = False
                 ParentDoubleBuffered = False
                 TabOrder = 0
-                ExplicitLeft = 240
-                ExplicitTop = 200
-                ExplicitWidth = 185
-                ExplicitHeight = 41
               end
             end
           end
@@ -1793,8 +1768,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 2
         Caption = '2'
-        ExplicitWidth = 968
-        ExplicitHeight = 608
         object __pnBase_02_Setting: TPanel
           Left = 0
           Top = 0
@@ -1807,8 +1780,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitWidth = 968
-          ExplicitHeight = 608
         end
       end
       object TPage
@@ -1816,8 +1787,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = '3'
-        ExplicitWidth = 968
-        ExplicitHeight = 608
         object __pnBase_03_Test: TPanel
           Left = 0
           Top = 0
@@ -1830,8 +1799,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitWidth = 968
-          ExplicitHeight = 608
           object btn_Send: TAdvGlassButton
             Left = 392
             Top = 64
@@ -1894,8 +1861,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 4
         Caption = '4'
-        ExplicitWidth = 968
-        ExplicitHeight = 608
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
@@ -1908,8 +1873,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitWidth = 968
-          ExplicitHeight = 608
         end
       end
     end

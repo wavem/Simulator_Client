@@ -155,6 +155,7 @@ public:	// Basic Functions
 	void __fastcall ExitProgram();
 	void __fastcall PrintMsg(UnicodeString _str);
 	void __fastcall ExtractCommInformation();
+	void __fastcall InitGrids();
 
 
 public: // Socket

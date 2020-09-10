@@ -107,6 +107,9 @@ void __fastcall TFormMain::InitProgram() {
 	m_ServerPort = 0;
 	m_LocalPort = 0;
 
+	// Init Grids
+	InitGrids();
+
 	// Socket Init
 	WSADATA data;
 	WORD version;
@@ -505,4 +508,17 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 }
 //---------------------------------------------------------------------------
 
+
 #endif
+
+void __fastcall TFormMain::InitGrids() {
+
+	grid_SendProtocolList->Cells[0][0] = L"Idx";
+	grid_SendProtocolList->Cells[1][0] = L"Protocol Name";
+	grid_SendProtocolList->Cells[2][0] = L"Size(Byte)";
+
+	grid_RecvProtocolList->Cells[0][0] = L"Idx";
+	grid_RecvProtocolList->Cells[1][0] = L"Protocol Name";
+	grid_RecvProtocolList->Cells[2][0] = L"Size(Byte)";
+}
+//---------------------------------------------------------------------------
