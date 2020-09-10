@@ -130,7 +130,9 @@ void __fastcall TFormMain::InitProgram() {
 	PrintMsg(L"Init Complete");
 
 	// Config Excel File Init
-	InitConfigExcelFile();
+	if(InitConfigExcelFile()) {
+    	// Load Sheet Routine
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -343,7 +345,7 @@ void __fastcall TFormMain::ExtractCommInformation() {
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormMain::InitConfigExcelFile() {
+bool __fastcall TFormMain::InitConfigExcelFile() {
 
 	m_Book = xlCreateXMLBook();
 	if(m_Book) {
