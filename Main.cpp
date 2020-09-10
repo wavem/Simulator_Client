@@ -127,7 +127,7 @@ void __fastcall TFormMain::InitProgram() {
 		PrintMsg(L"Socket init success");
 	}
 
-	PrintMsg(L"Init Complete");
+
 
 	// Config Excel File Init
 	if(InitConfigExcelFile()) {
@@ -139,6 +139,8 @@ void __fastcall TFormMain::InitProgram() {
 
 		// Load Protocol Sheet Routine
 	}
+
+	PrintMsg(L"Init Complete");
 }
 //---------------------------------------------------------------------------
 
@@ -360,22 +362,66 @@ bool __fastcall TFormMain::InitConfigExcelFile() {
 			//if(LoadSheet(L"Test")) PrintMsg(L"Success to load sheet");
 		} else {
 			PrintMsg(L"Fail to Load Excel File");
-			return;
+			return false;
 		}
 	} else {
 		PrintMsg(L"Fail to Create Book");
-		return;
+		return false;
 	}
 	PrintMsg(L"Config File Init Complete");
+	return true;
 }
 //---------------------------------------------------------------------------
 
 bool __fastcall TFormMain::LoadConfigSheet() {
 
+	// Common
+	UnicodeString tempStr = L"";
+	libxl::Sheet* t_pSheet = NULL;
+	libxl::Format* t_pFormat = NULL;
+	int t_RowLast = 0;
+
+	int t_RowStart = 0;
+	int t_RowEnd = 0;
+	int t_ColStart = 0;
+	int t_ColEnd = 0;
+
+	int t_gridRow = 0;
+	int t_gridCol = 0;
+
+	// Load Sheet
+	t_pSheet = getSheetByName(m_Book, L"Config");
+	if(!t_pSheet) {
+		return false;
+	}
+
+#if 0
+	// Get Last Row Information
+	t_RowLast = t_pSheet->lastRow();
+	tempStr.sprintf(L"Last Row : %d", t_RowLast);
+	PrintMsg(tempStr);
+
+	// Get Row/Col Information
+	t_RowStart = DEFAULT_PROTOCOL_INFO_LINE_COUNT;
+	t_RowEnd = t_RowLast;
+	t_ColStart = DEFAULT_PROTOCOL_COL_START + 1; // +1 means real data area.
+	t_ColEnd = DEFAULT_PROTOCOL_COL_START + 9; // 8 + 1 == 9
+
+	// Set Row Count
+	t_TotalByteCount = t_RowLast - DEFAULT_PROTOCOL_INFO_LINE_COUNT;
+	grid_Protocol->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
+
+	// Load Byte Index and Print it into Grid
+	for(int i = 0 ; i < t_TotalByteCount ; i++) {
+		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
+		grid_Protocol->Cells[0][i + 1] = tempStr;
+	}
+#endif
 
 	return true;
 }
 //---------------------------------------------------------------------------
+
 #if 0
 bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 
