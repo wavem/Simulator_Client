@@ -128,6 +128,9 @@ void __fastcall TFormMain::InitProgram() {
 	}
 
 	PrintMsg(L"Init Complete");
+
+	// Config Excel File Init
+	InitConfigExcelFile();
 }
 //---------------------------------------------------------------------------
 
@@ -340,3 +343,21 @@ void __fastcall TFormMain::ExtractCommInformation() {
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::InitConfigExcelFile() {
+
+	m_Book = xlCreateXMLBook();
+	if(m_Book) {
+		m_Book->setKey(L"JungWook Son", L"windows-2124230806c1e30f66bf6365a7l1hdm8");
+		if(m_Book->load(L"Config.xlsx")) {
+			//if(LoadSheet(L"Test")) PrintMsg(L"Success to load sheet");
+		} else {
+			PrintMsg(L"Fail to Load Excel File");
+			return;
+		}
+	} else {
+		PrintMsg(L"Fail to Create Book");
+		return;
+	}
+	PrintMsg(L"Config File Init Complete");
+}
+//---------------------------------------------------------------------------
