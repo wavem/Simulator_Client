@@ -382,15 +382,9 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 	UnicodeString tempStr = L"";
 	libxl::Sheet* t_pSheet = NULL;
 	libxl::Format* t_pFormat = NULL;
-	int t_RowLast = 0;
-
-	int t_RowStart = 0;
+	int t_RowStart = 3; // USER DEFINE
 	int t_RowEnd = 0;
-	int t_ColStart = 0;
-	int t_ColEnd = 0;
-
-	int t_gridRow = 0;
-	int t_gridCol = 0;
+	int t_gridRow = 1;
 
 	// Load Sheet
 	t_pSheet = getSheetByName(m_Book, L"Config");
@@ -398,12 +392,40 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 		return false;
 	}
 
-#if 0
 	// Get Last Row Information
-	t_RowLast = t_pSheet->lastRow();
-	tempStr.sprintf(L"Last Row : %d", t_RowLast);
-	PrintMsg(tempStr);
+	t_RowEnd = t_pSheet->lastRow();
+	//tempStr.sprintf(L"Last Row : %d", t_RowEnd);
+	//PrintMsg(tempStr);
 
+	// Load Send Protocol List
+	for(int i = t_RowStart ; i < t_RowEnd ; i++) {
+
+		// Pre Break;
+		tempStr = getCellValue(t_pSheet, i, 1);
+		if(tempStr == L"") break;
+
+		grid_SendProtocolList->Cells[0][t_gridRow] = getCellValue(t_pSheet, i, 1);
+		grid_SendProtocolList->Cells[1][t_gridRow] = getCellValue(t_pSheet, i, 2);
+		grid_SendProtocolList->Cells[2][t_gridRow] = getCellValue(t_pSheet, i, 4);
+		t_gridRow++;
+	}
+
+	// Load Recv Protocol List
+	t_gridRow = 1; // USER DEFINE
+	for(int i = t_RowStart ; i < t_RowEnd ; i++) {
+
+		// Pre Break;
+		tempStr = getCellValue(t_pSheet, i, 1);
+		if(tempStr == L"") break;
+
+		grid_RecvProtocolList->Cells[0][t_gridRow] = getCellValue(t_pSheet, i, 8);
+		grid_RecvProtocolList->Cells[1][t_gridRow] = getCellValue(t_pSheet, i, 9);
+		grid_RecvProtocolList->Cells[2][t_gridRow] = getCellValue(t_pSheet, i, 11);
+		t_gridRow++;
+	}
+
+
+#if 0
 	// Get Row/Col Information
 	t_RowStart = DEFAULT_PROTOCOL_INFO_LINE_COUNT;
 	t_RowEnd = t_RowLast;
