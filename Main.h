@@ -170,6 +170,7 @@ public: // Socket
 public: // Libxl
 	libxl::Book* m_Book;
 	bool __fastcall InitConfigExcelFile();
+	bool __fastcall LoadConfigSheet();
 
 
 
