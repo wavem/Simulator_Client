@@ -424,25 +424,6 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 		t_gridRow++;
 	}
 
-
-#if 0
-	// Get Row/Col Information
-	t_RowStart = DEFAULT_PROTOCOL_INFO_LINE_COUNT;
-	t_RowEnd = t_RowLast;
-	t_ColStart = DEFAULT_PROTOCOL_COL_START + 1; // +1 means real data area.
-	t_ColEnd = DEFAULT_PROTOCOL_COL_START + 9; // 8 + 1 == 9
-
-	// Set Row Count
-	t_TotalByteCount = t_RowLast - DEFAULT_PROTOCOL_INFO_LINE_COUNT;
-	grid_Protocol->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
-
-	// Load Byte Index and Print it into Grid
-	for(int i = 0 ; i < t_TotalByteCount ; i++) {
-		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
-		grid_Protocol->Cells[0][i + 1] = tempStr;
-	}
-#endif
-
 	return true;
 }
 //---------------------------------------------------------------------------
