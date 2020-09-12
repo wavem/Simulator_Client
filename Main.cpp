@@ -539,8 +539,13 @@ void __fastcall TFormMain::InitGrids() {
 void __fastcall TFormMain::grid_SendProtocolListDblClickCell(TObject *Sender, int ARow,
 		  int ACol)
 {
+	// Common
+	UnicodeString tempStr = L"";
+
 	// Pre Return
 	if(ARow == 0 || ACol == 0) return;
+	tempStr = grid_SendProtocolList->Cells[ACol][ARow];
+	if(tempStr == L"") return;
 
 	Notebook_Send->PageIndex = 1;
 }
@@ -549,8 +554,13 @@ void __fastcall TFormMain::grid_SendProtocolListDblClickCell(TObject *Sender, in
 void __fastcall TFormMain::grid_RecvProtocolListDblClickCell(TObject *Sender, int ARow,
 		  int ACol)
 {
+	// Common
+	UnicodeString tempStr = L"";
+
 	// Pre Return
 	if(ARow == 0 || ACol == 0) return;
+	tempStr = grid_SendProtocolList->Cells[ACol][ARow];
+	if(tempStr == L"") return;
 
 	Notebook_Recv->PageIndex = 1;
 }
