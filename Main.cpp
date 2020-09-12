@@ -535,3 +535,37 @@ void __fastcall TFormMain::InitGrids() {
 	grid_RecvProtocolList->Cells[3][0] = L"Size(Byte)";
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::grid_SendProtocolListDblClickCell(TObject *Sender, int ARow,
+		  int ACol)
+{
+	// Pre Return
+	if(ARow == 0 || ACol == 0) return;
+
+	Notebook_Send->PageIndex = 1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::grid_RecvProtocolListDblClickCell(TObject *Sender, int ARow,
+		  int ACol)
+{
+	// Pre Return
+	if(ARow == 0 || ACol == 0) return;
+
+	Notebook_Recv->PageIndex = 1;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_Back_SendClick(TObject *Sender)
+{
+	Notebook_Send->PageIndex = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_Back_RecvClick(TObject *Sender)
+{
+	Notebook_Recv->PageIndex = 0;
+}
+//---------------------------------------------------------------------------
+
+

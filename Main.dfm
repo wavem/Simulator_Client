@@ -957,6 +957,7 @@ object FormMain: TFormMain
                   ScrollBars = ssVertical
                   TabOrder = 0
                   HoverRowCells = [hcNormal, hcSelected]
+                  OnDblClickCell = grid_SendProtocolListDblClickCell
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
@@ -1361,6 +1362,7 @@ object FormMain: TFormMain
                   ScrollBars = ssVertical
                   TabOrder = 0
                   HoverRowCells = [hcNormal, hcSelected]
+                  OnDblClickCell = grid_RecvProtocolListDblClickCell
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
@@ -1740,6 +1742,7 @@ object FormMain: TFormMain
             ShineColor = clGray
             TabOrder = 2
             Version = '1.3.0.2'
+            OnClick = btn_Back_SendClick
           end
           object btn_Back_Recv: TAdvGlassButton
             Left = 1578
@@ -1762,6 +1765,7 @@ object FormMain: TFormMain
             ShineColor = clGray
             TabOrder = 3
             Version = '1.3.0.2'
+            OnClick = btn_Back_RecvClick
           end
         end
       end
