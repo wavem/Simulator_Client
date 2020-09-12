@@ -165,6 +165,12 @@ void __fastcall TFormMain::ExitProgram() {
 
 	// Socket Clean Up
 	WSACleanup();
+
+	// Release Libxl
+	if(m_Book) {
+		m_Book->release();
+		m_Book = NULL;
+	}
 }
 //---------------------------------------------------------------------------
 
