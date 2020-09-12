@@ -401,12 +401,13 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 	for(int i = t_RowStart ; i < t_RowEnd ; i++) {
 
 		// Pre Break;
-		tempStr = getCellValue(t_pSheet, i, 1);
+		tempStr = getCellValue(t_pSheet, i, 2);
 		if(tempStr == L"") break;
 
 		grid_SendProtocolList->Cells[0][t_gridRow] = getCellValue(t_pSheet, i, 1);
 		grid_SendProtocolList->Cells[1][t_gridRow] = getCellValue(t_pSheet, i, 2);
-		grid_SendProtocolList->Cells[2][t_gridRow] = getCellValue(t_pSheet, i, 4);
+		grid_SendProtocolList->Cells[2][t_gridRow] = getCellValue(t_pSheet, i, 3);
+		grid_SendProtocolList->Cells[3][t_gridRow] = getCellValue(t_pSheet, i, 4);
 		t_gridRow++;
 	}
 
@@ -415,12 +416,13 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 	for(int i = t_RowStart ; i < t_RowEnd ; i++) {
 
 		// Pre Break;
-		tempStr = getCellValue(t_pSheet, i, 1);
+		tempStr = getCellValue(t_pSheet, i, 9);
 		if(tempStr == L"") break;
 
 		grid_RecvProtocolList->Cells[0][t_gridRow] = getCellValue(t_pSheet, i, 8);
 		grid_RecvProtocolList->Cells[1][t_gridRow] = getCellValue(t_pSheet, i, 9);
-		grid_RecvProtocolList->Cells[2][t_gridRow] = getCellValue(t_pSheet, i, 11);
+		grid_RecvProtocolList->Cells[2][t_gridRow] = getCellValue(t_pSheet, i, 10);
+		grid_RecvProtocolList->Cells[3][t_gridRow] = getCellValue(t_pSheet, i, 11);
 		t_gridRow++;
 	}
 
@@ -518,10 +520,12 @@ void __fastcall TFormMain::InitGrids() {
 
 	grid_SendProtocolList->Cells[0][0] = L"Idx";
 	grid_SendProtocolList->Cells[1][0] = L"Protocol Name";
-	grid_SendProtocolList->Cells[2][0] = L"Size(Byte)";
+	grid_SendProtocolList->Cells[2][0] = L"Sheet Name";
+	grid_SendProtocolList->Cells[3][0] = L"Size(Byte)";
 
 	grid_RecvProtocolList->Cells[0][0] = L"Idx";
 	grid_RecvProtocolList->Cells[1][0] = L"Protocol Name";
-	grid_RecvProtocolList->Cells[2][0] = L"Size(Byte)";
+	grid_RecvProtocolList->Cells[2][0] = L"Sheet Name";
+	grid_RecvProtocolList->Cells[3][0] = L"Size(Byte)";
 }
 //---------------------------------------------------------------------------

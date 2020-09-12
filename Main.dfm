@@ -943,7 +943,7 @@ object FormMain: TFormMain
                   Height = 698
                   Cursor = crDefault
                   Anchors = [akLeft, akTop, akRight, akBottom]
-                  ColCount = 3
+                  ColCount = 4
                   DefaultColWidth = 94
                   DrawingStyle = gdsClassic
                   RowCount = 40
@@ -1056,8 +1056,9 @@ object FormMain: TFormMain
                   Version = '7.8.0.1'
                   ColWidths = (
                     47
-                    644
-                    107)
+                    325
+                    325
+                    102)
                   RowHeights = (
                     34
                     22
@@ -1346,7 +1347,7 @@ object FormMain: TFormMain
                   Height = 698
                   Cursor = crDefault
                   Anchors = [akLeft, akTop, akRight, akBottom]
-                  ColCount = 3
+                  ColCount = 4
                   DefaultColWidth = 94
                   DrawingStyle = gdsClassic
                   RowCount = 40
@@ -1459,8 +1460,9 @@ object FormMain: TFormMain
                   Version = '7.8.0.1'
                   ColWidths = (
                     47
-                    644
-                    107)
+                    325
+                    325
+                    102)
                   RowHeights = (
                     34
                     22
