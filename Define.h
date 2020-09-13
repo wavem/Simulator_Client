@@ -16,6 +16,9 @@
 
 #define MSG_LOG_FROM_THREAD 10000
 
+#define DEFAULT_PROTOCOL_INFO_LINE_COUNT	6
+#define DEFAULT_PROTOCOL_COL_START	2
+
 
 //---------------------------------------------------------------------------
 #endif

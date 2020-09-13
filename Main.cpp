@@ -436,9 +436,10 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 }
 //---------------------------------------------------------------------------
 
-#if 0
 bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 
+	return true;
+#if 0
 	// Common
 	UnicodeString tempStr = L"";
 	libxl::Sheet* t_pSheet = NULL;
@@ -516,11 +517,10 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
 	}
 
 	return true;
+
+	#endif
 }
 //---------------------------------------------------------------------------
-
-
-#endif
 
 void __fastcall TFormMain::InitGrids() {
 
@@ -546,6 +546,14 @@ void __fastcall TFormMain::grid_SendProtocolListDblClickCell(TObject *Sender, in
 	if(ARow == 0 || ACol == 0) return;
 	tempStr = grid_SendProtocolList->Cells[ACol][ARow];
 	if(tempStr == L"") return;
+
+	// Extract Target Sheet Name
+	tempStr = grid_SendProtocolList->Cells[2][ARow];
+
+	if(LoadSheet(tempStr) == false) {
+		ShowMessage(L"There is no sheet");
+		return;
+	}
 
 	Notebook_Send->PageIndex = 1;
 }
