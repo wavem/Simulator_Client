@@ -436,7 +436,7 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 }
 //---------------------------------------------------------------------------
 
-bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName) {
+bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName, int _tag) {
 
 	return true;
 #if 0
@@ -598,7 +598,7 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 	// Extract Target Sheet Name
 	tempStr = p_grid->Cells[2][ARow];
 
-	if(LoadSheet(tempStr) == false) {
+	if(LoadSheet(tempStr, t_Tag) == false) {
 		ShowMessage(L"There is no sheet");
 		return;
 	}

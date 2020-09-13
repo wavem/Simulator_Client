@@ -180,7 +180,7 @@ public: // Libxl
 	libxl::Book* m_Book;
 	bool __fastcall InitConfigExcelFile();
 	bool __fastcall LoadConfigSheet();
-	bool __fastcall LoadSheet(UnicodeString _SheetName);
+	bool __fastcall LoadSheet(UnicodeString _SheetName, int _tag);
 
 
 
