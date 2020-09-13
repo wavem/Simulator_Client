@@ -438,10 +438,15 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 
 bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName, int _tag) {
 
-	return true;
-#if 0
 	// Common
+	TAdvStringGrid* p_grid = NULL;
 	UnicodeString tempStr = L"";
+	if(_tag == 0) {
+		p_grid = grid_Protocol_Send;
+	} else {
+		p_grid = grid_Protocol_Recv;
+	}
+
 	libxl::Sheet* t_pSheet = NULL;
 	libxl::Format* t_pFormat = NULL;
 	int t_RowLast = 0;
@@ -486,12 +491,12 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName, int _tag) {
 
 	// Set Row Count
 	t_TotalByteCount = t_RowLast - DEFAULT_PROTOCOL_INFO_LINE_COUNT;
-	grid_Protocol->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
+	p_grid->RowCount = t_TotalByteCount + 1; // +1 is Fixed Row
 
 	// Load Byte Index and Print it into Grid
 	for(int i = 0 ; i < t_TotalByteCount ; i++) {
 		tempStr = getCellValue(t_pSheet, i + DEFAULT_PROTOCOL_INFO_LINE_COUNT, 2);
-		grid_Protocol->Cells[0][i + 1] = tempStr;
+		p_grid->Cells[0][i + 1] = tempStr;
 	}
 
 	// Merge Sync
@@ -502,12 +507,12 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName, int _tag) {
 			t_bIsMerge = t_pSheet->getMerge(row, col, &t_merge_row_first, &t_merge_row_last, &t_merge_col_first, &t_merge_col_last);
 			t_gridCol = col - t_ColStart + 1;
 			tempStr = getCellValue(t_pSheet, row, col);
-			grid_Protocol->Cells[t_gridCol][t_gridRow] = tempStr;
+			p_grid->Cells[t_gridCol][t_gridRow] = tempStr;
 
 			if(t_bIsMerge) {
 				t_H_gap = t_merge_col_last - t_merge_col_first + 1; // +1 is essential
 				t_V_gap = t_merge_row_last - t_merge_row_first;
-				grid_Protocol->MergeCells(t_gridCol, t_gridRow, t_H_gap, t_V_gap + 1);
+				p_grid->MergeCells(t_gridCol, t_gridRow, t_H_gap, t_V_gap + 1);
 				col += (t_H_gap - 1);
 				row += t_V_gap;
 				t_gridRow += t_V_gap;
@@ -517,8 +522,6 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName, int _tag) {
 	}
 
 	return true;
-
-	#endif
 }
 //---------------------------------------------------------------------------
 
