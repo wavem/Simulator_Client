@@ -141,6 +141,8 @@ __published:	// IDE-managed Components
 	TAdvGlassButton *btn_Back_Recv;
 	TAdvStringGrid *grid_SendProtocolList;
 	TAdvStringGrid *grid_RecvProtocolList;
+	TLabel *lb_Send_Title;
+	TLabel *lb_Recv_Title;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);

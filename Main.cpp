@@ -562,12 +562,14 @@ void __fastcall TFormMain::InitGrids() {
 void __fastcall TFormMain::btn_Back_SendClick(TObject *Sender)
 {
 	Notebook_Send->PageIndex = 0;
+	lb_Send_Title->Caption = L"Send Protocol List";
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFormMain::btn_Back_RecvClick(TObject *Sender)
 {
 	Notebook_Recv->PageIndex = 0;
+	lb_Recv_Title->Caption = L"Recv Protocol List";
 }
 //---------------------------------------------------------------------------
 
@@ -604,6 +606,8 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 	// Common
 	TAdvStringGrid* p_grid = (TAdvStringGrid*)Sender;
 	UnicodeString tempStr = L"";
+	UnicodeString t_ProtocolName = L"";
+	UnicodeString t_ProtocolSize = L"";
 	int t_Tag = p_grid->Tag;
 	if(t_Tag == 0) {
 		// Send Protocol List
@@ -617,6 +621,10 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 	if(ARow == 0 || ACol == 0) return;
 	tempStr = p_grid->Cells[ACol][ARow];
 	if(tempStr == L"") return;
+
+	// Extract Target Protocol Information (for print information into title label)
+	t_ProtocolName = p_grid->Cells[1][ARow];
+	t_ProtocolSize = p_grid->Cells[3][ARow];
 
 	// Extract Target Sheet Name
 	tempStr = p_grid->Cells[2][ARow];
@@ -633,9 +641,21 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 	if(t_Tag == 0) {
 		// Send Protocol List
 		Notebook_Send->PageIndex = 1;
+		tempStr = L"Send Protocol Name : ";
+		tempStr += t_ProtocolName;
+		tempStr += L"            Size : ";
+		tempStr += t_ProtocolSize;
+		tempStr += L" Byte";
+		lb_Send_Title->Caption = tempStr;
 	} else {
 		// Recv Protocol List
 		Notebook_Recv->PageIndex = 1;
+		tempStr = L"Recv Protocol Name : ";
+		tempStr += t_ProtocolName;
+		tempStr += L"            Size : ";
+		tempStr += t_ProtocolSize;
+		tempStr += L" Byte";
+		lb_Recv_Title->Caption = tempStr;
 	}
 }
 //---------------------------------------------------------------------------

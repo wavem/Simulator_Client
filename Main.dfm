@@ -911,6 +911,36 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
+          object lb_Send_Title: TLabel
+            Left = 26
+            Top = 18
+            Width = 63
+            Height = 18
+            Caption = 'Protocol'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Recv_Title: TLabel
+            Left = 873
+            Top = 18
+            Width = 63
+            Height = 18
+            Caption = 'Protocol'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -15
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
           object Notebook_Send: TNotebook
             Left = 0
             Top = 48
@@ -1325,7 +1355,7 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
-            PageIndex = 2
+            PageIndex = 1
             TabOrder = 1
             object TPage
               Left = 0
