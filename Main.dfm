@@ -1363,6 +1363,8 @@ object FormMain: TFormMain
                   ParentFont = False
                   ScrollBars = ssVertical
                   TabOrder = 0
+                  OnMouseLeave = ChangeMouseCursor_ProtocolList_Out
+                  OnMouseMove = ChangeMouseCursor_ProtocolList
                   HoverRowCells = [hcNormal, hcSelected]
                   OnDblClickCell = grid_RecvProtocolListDblClickCell
                   ActiveCellFont.Charset = DEFAULT_CHARSET
