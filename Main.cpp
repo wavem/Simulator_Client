@@ -536,6 +536,26 @@ void __fastcall TFormMain::InitGrids() {
 	grid_RecvProtocolList->Cells[1][0] = L"Protocol Name";
 	grid_RecvProtocolList->Cells[2][0] = L"Sheet Name";
 	grid_RecvProtocolList->Cells[3][0] = L"Size(Byte)";
+
+	grid_Protocol_Send->Cells[0][0] = L"BYTE";
+	grid_Protocol_Send->Cells[1][0] = L"Bit 7";
+	grid_Protocol_Send->Cells[2][0] = L"Bit 6";
+	grid_Protocol_Send->Cells[3][0] = L"Bit 5";
+	grid_Protocol_Send->Cells[4][0] = L"Bit 4";
+	grid_Protocol_Send->Cells[5][0] = L"Bit 3";
+	grid_Protocol_Send->Cells[6][0] = L"Bit 2";
+	grid_Protocol_Send->Cells[7][0] = L"Bit 1";
+	grid_Protocol_Send->Cells[8][0] = L"Bit 0";
+
+	grid_Protocol_Recv->Cells[0][0] = L"BYTE";
+	grid_Protocol_Recv->Cells[1][0] = L"Bit 7";
+	grid_Protocol_Recv->Cells[2][0] = L"Bit 6";
+	grid_Protocol_Recv->Cells[3][0] = L"Bit 5";
+	grid_Protocol_Recv->Cells[4][0] = L"Bit 4";
+	grid_Protocol_Recv->Cells[5][0] = L"Bit 3";
+	grid_Protocol_Recv->Cells[6][0] = L"Bit 2";
+	grid_Protocol_Recv->Cells[7][0] = L"Bit 1";
+	grid_Protocol_Recv->Cells[8][0] = L"Bit 0";
 }
 //---------------------------------------------------------------------------
 
