@@ -916,7 +916,6 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
-            PageIndex = 1
             TabOrder = 0
             object TPage
               Left = 0
@@ -1127,7 +1126,7 @@ object FormMain: TFormMain
                 DesignSize = (
                   847
                   734)
-                object grid_Protocol: TAdvStringGrid
+                object grid_Protocol_Send: TAdvStringGrid
                   Left = 11
                   Top = 16
                   Width = 820
@@ -1345,6 +1344,7 @@ object FormMain: TFormMain
                   847
                   734)
                 object grid_RecvProtocolList: TAdvStringGrid
+                  Tag = 1
                   Left = 11
                   Top = 16
                   Width = 820
@@ -1534,7 +1534,7 @@ object FormMain: TFormMain
                 DesignSize = (
                   847
                   734)
-                object AdvStringGrid1: TAdvStringGrid
+                object grid_Protocol_Recv: TAdvStringGrid
                   Left = 11
                   Top = 16
                   Width = 820

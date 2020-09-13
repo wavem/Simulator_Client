@@ -135,8 +135,8 @@ __published:	// IDE-managed Components
 	TPanel *_pnBase_S_03;
 	TPanel *_pnBase_R_02;
 	TPanel *_pnBase_R_03;
-	TAdvStringGrid *grid_Protocol;
-	TAdvStringGrid *AdvStringGrid1;
+	TAdvStringGrid *grid_Protocol_Send;
+	TAdvStringGrid *grid_Protocol_Recv;
 	TAdvGlassButton *btn_Back_Send;
 	TAdvGlassButton *btn_Back_Recv;
 	TAdvStringGrid *grid_SendProtocolList;
