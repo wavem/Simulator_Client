@@ -151,6 +151,8 @@ __published:	// IDE-managed Components
           int X, int Y);
 	void __fastcall ChangeMouseCursor_ProtocolList_Out(TObject *Sender);
 	void __fastcall ProtocolListDbClick(TObject *Sender, int ARow, int ACol);
+	void __fastcall GetAlignment_ProtocolGrid(TObject *Sender, int ARow, int ACol, TAlignment &HAlign,
+          TVAlignment &VAlign);
 
 
 private:	// User declarations

@@ -620,3 +620,11 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::GetAlignment_ProtocolGrid(TObject *Sender, int ARow, int ACol,
+          TAlignment &HAlign, TVAlignment &VAlign)
+{
+	HAlign = taCenter;
+	VAlign = vtaCenter;
+}
+//---------------------------------------------------------------------------
+

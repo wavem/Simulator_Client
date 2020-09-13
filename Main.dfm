@@ -916,6 +916,7 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
+            PageIndex = 1
             TabOrder = 0
             object TPage
               Left = 0
@@ -1147,6 +1148,7 @@ object FormMain: TFormMain
                   ScrollBars = ssVertical
                   TabOrder = 0
                   HoverRowCells = [hcNormal, hcSelected]
+                  OnGetAlignment = GetAlignment_ProtocolGrid
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
@@ -1323,6 +1325,7 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
+            PageIndex = 2
             TabOrder = 1
             object TPage
               Left = 0
@@ -1555,6 +1558,7 @@ object FormMain: TFormMain
                   ScrollBars = ssVertical
                   TabOrder = 0
                   HoverRowCells = [hcNormal, hcSelected]
+                  OnGetAlignment = GetAlignment_ProtocolGrid
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
