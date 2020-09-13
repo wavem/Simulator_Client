@@ -536,44 +536,6 @@ void __fastcall TFormMain::InitGrids() {
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormMain::grid_SendProtocolListDblClickCell(TObject *Sender, int ARow,
-		  int ACol)
-{
-	// Common
-	UnicodeString tempStr = L"";
-
-	// Pre Return
-	if(ARow == 0 || ACol == 0) return;
-	tempStr = grid_SendProtocolList->Cells[ACol][ARow];
-	if(tempStr == L"") return;
-
-	// Extract Target Sheet Name
-	tempStr = grid_SendProtocolList->Cells[2][ARow];
-
-	if(LoadSheet(tempStr) == false) {
-		ShowMessage(L"There is no sheet");
-		return;
-	}
-
-	Notebook_Send->PageIndex = 1;
-}
-//---------------------------------------------------------------------------
-
-void __fastcall TFormMain::grid_RecvProtocolListDblClickCell(TObject *Sender, int ARow,
-		  int ACol)
-{
-	// Common
-	UnicodeString tempStr = L"";
-
-	// Pre Return
-	if(ARow == 0 || ACol == 0) return;
-	tempStr = grid_SendProtocolList->Cells[ACol][ARow];
-	if(tempStr == L"") return;
-
-	Notebook_Recv->PageIndex = 1;
-}
-//---------------------------------------------------------------------------
-
 void __fastcall TFormMain::btn_Back_SendClick(TObject *Sender)
 {
 	Notebook_Send->PageIndex = 0;
@@ -611,6 +573,47 @@ void __fastcall TFormMain::ChangeMouseCursor_ProtocolList_Out(TObject *Sender)
 {
 	TAdvStringGrid *p_grid = (TAdvStringGrid*)Sender;
 	p_grid->Cursor = crDefault;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int ACol)
+{
+	// Common
+	TAdvStringGrid* p_grid = (TAdvStringGrid*)Sender;
+	UnicodeString tempStr = L"";
+	int t_Tag = p_grid->Tag;
+	if(t_Tag == 0) {
+		// Send Protocol List
+		p_grid = grid_SendProtocolList;
+	} else {
+		// Recv Protocol List
+		p_grid = grid_RecvProtocolList;
+	}
+
+	// Pre Return
+	if(ARow == 0 || ACol == 0) return;
+	tempStr = p_grid->Cells[ACol][ARow];
+	if(tempStr == L"") return;
+
+	// Extract Target Sheet Name
+	tempStr = p_grid->Cells[2][ARow];
+
+	if(LoadSheet(tempStr) == false) {
+		ShowMessage(L"There is no sheet");
+		return;
+	}
+
+
+
+
+	// Final Routine
+	if(t_Tag == 0) {
+		// Send Protocol List
+		Notebook_Send->PageIndex = 1;
+	} else {
+		// Recv Protocol List
+		Notebook_Recv->PageIndex = 1;
+	}
 }
 //---------------------------------------------------------------------------
 

@@ -145,13 +145,12 @@ __published:	// IDE-managed Components
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
-	void __fastcall grid_SendProtocolListDblClickCell(TObject *Sender, int ARow, int ACol);
 	void __fastcall btn_Back_SendClick(TObject *Sender);
 	void __fastcall btn_Back_RecvClick(TObject *Sender);
-	void __fastcall grid_RecvProtocolListDblClickCell(TObject *Sender, int ARow, int ACol);
 	void __fastcall ChangeMouseCursor_ProtocolList(TObject *Sender, TShiftState Shift,
           int X, int Y);
 	void __fastcall ChangeMouseCursor_ProtocolList_Out(TObject *Sender);
+	void __fastcall ProtocolListDbClick(TObject *Sender, int ARow, int ACol);
 
 
 private:	// User declarations

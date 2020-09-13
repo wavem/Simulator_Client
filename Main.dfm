@@ -959,7 +959,7 @@ object FormMain: TFormMain
                   OnMouseLeave = ChangeMouseCursor_ProtocolList_Out
                   OnMouseMove = ChangeMouseCursor_ProtocolList
                   HoverRowCells = [hcNormal, hcSelected]
-                  OnDblClickCell = grid_SendProtocolListDblClickCell
+                  OnDblClickCell = ProtocolListDbClick
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
@@ -1367,7 +1367,7 @@ object FormMain: TFormMain
                   OnMouseLeave = ChangeMouseCursor_ProtocolList_Out
                   OnMouseMove = ChangeMouseCursor_ProtocolList
                   HoverRowCells = [hcNormal, hcSelected]
-                  OnDblClickCell = grid_RecvProtocolListDblClickCell
+                  OnDblClickCell = ProtocolListDbClick
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
