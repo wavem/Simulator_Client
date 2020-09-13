@@ -149,6 +149,9 @@ __published:	// IDE-managed Components
 	void __fastcall btn_Back_SendClick(TObject *Sender);
 	void __fastcall btn_Back_RecvClick(TObject *Sender);
 	void __fastcall grid_RecvProtocolListDblClickCell(TObject *Sender, int ARow, int ACol);
+	void __fastcall ChangeMouseCursor_ProtocolList(TObject *Sender, TShiftState Shift,
+          int X, int Y);
+	void __fastcall ChangeMouseCursor_ProtocolList_Out(TObject *Sender);
 
 
 private:	// User declarations

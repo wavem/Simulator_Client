@@ -578,4 +578,31 @@ void __fastcall TFormMain::btn_Back_RecvClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::ChangeMouseCursor_ProtocolList(TObject *Sender, TShiftState Shift,
+		  int X, int Y)
+{
+	TAdvStringGrid* p_grid = (TAdvStringGrid*)Sender;
+
+	int t_Row = 0;
+	int t_Col = 0;
+
+	p_grid->MouseToCell(X, Y, t_Col, t_Row);
+	if(t_Col < 0 || t_Row < 0) {
+	    p_grid->Cursor = crDefault;
+		return;
+	}
+	if(t_Col == 0 || t_Row == 0 || p_grid->Cells[t_Col][t_Row] == L"") {
+		p_grid->Cursor = crDefault;
+	} else {
+		p_grid->Cursor = crHandPoint;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::ChangeMouseCursor_ProtocolList_Out(TObject *Sender)
+{
+	TAdvStringGrid *p_grid = (TAdvStringGrid*)Sender;
+	p_grid->Cursor = crDefault;
+}
+//---------------------------------------------------------------------------
 
