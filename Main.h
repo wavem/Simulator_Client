@@ -179,6 +179,8 @@ public: // Socket
 	AnsiString m_ServerIPstr;
 	unsigned short m_ServerPort;
 	unsigned short m_LocalPort;
+	BYTE m_SendBuf[1500];
+	BYTE m_RecvBuf[1500];
 
 public: // Libxl
 	libxl::Book* m_Book;

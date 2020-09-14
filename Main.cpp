@@ -106,6 +106,9 @@ void __fastcall TFormMain::InitProgram() {
 	m_ServerIPstr = "";
 	m_ServerPort = 0;
 	m_LocalPort = 0;
+	memset(m_SendBuf, 0, UDP_SEND_BUF_SIZE);
+	memset(m_RecvBuf, 0, UDP_RECV_BUF_SIZE);
+
 
 	// Init Grids
 	InitGrids();
