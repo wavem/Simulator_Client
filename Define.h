@@ -20,6 +20,10 @@
 #define DEFAULT_PROTOCOL_INFO_LINE_COUNT	6
 #define DEFAULT_PROTOCOL_COL_START	2
 
+#define SEND_PROTOCOL_TYPE	1
+#define RECV_PROTOCOL_TYPE	2
+
+
 
 
 //---------------------------------------------------------------------------

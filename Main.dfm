@@ -3077,4 +3077,10 @@ object FormMain: TFormMain
       Width = 60
     end
   end
+  object tm_SendDataView: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = tm_SendDataViewTimer
+    Left = 492
+  end
 end

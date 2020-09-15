@@ -108,6 +108,8 @@ void __fastcall TFormMain::InitProgram() {
 	m_LocalPort = 0;
 	memset(m_SendBuf, 0, UDP_SEND_BUF_SIZE);
 	memset(m_RecvBuf, 0, UDP_RECV_BUF_SIZE);
+	m_SendProtocolSize = 0;
+	m_RecvProtocolSize = 0;
 
 
 	// Init Grids
@@ -649,6 +651,7 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		tempStr += L"            Size : ";
 		tempStr += t_ProtocolSize;
 		tempStr += L" Byte";
+		m_SendProtocolSize = StrToInt(t_ProtocolSize);
 		lb_Send_Title->Caption = tempStr;
 	} else {
 		// Recv Protocol List
@@ -658,6 +661,7 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		tempStr += L"            Size : ";
 		tempStr += t_ProtocolSize;
 		tempStr += L" Byte";
+		m_RecvProtocolSize = StrToInt(t_ProtocolSize);
 		lb_Recv_Title->Caption = tempStr;
 	}
 }
@@ -737,6 +741,38 @@ void __fastcall TFormMain::OnClickCell_Protocol(TObject *Sender, int ARow, int A
 {
 	m_ClickedRow = ARow;
 	m_ClickedCol = ACol;
+
+
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::tm_SendDataViewTimer(TObject *Sender)
+{
+	DisplayBufferDataIntoGrid(SEND_PROTOCOL_TYPE);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
+
+	// Common
+	UnicodeString tempStr = L"";
+	TAdvStringGrid* p_grid = NULL;
+	int t_DataSize = 0;
+	int t_GridRow = 0;
+
+	if(_type == SEND_PROTOCOL_TYPE) {
+		p_grid = grid_Protocol_Send;
+		t_DataSize = m_SendProtocolSize;
+	} else if(_type == SEND_PROTOCOL_TYPE) {
+		p_grid = grid_Protocol_Recv;
+		t_DataSize = m_RecvProtocolSize;
+	}
+
+	for(int i = 0 ; i < t_DataSize ; i++) {
+		t_GridRow++;
+	}
+
 }
 //---------------------------------------------------------------------------
 
