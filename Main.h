@@ -155,6 +155,10 @@ __published:	// IDE-managed Components
 	void __fastcall ProtocolListDbClick(TObject *Sender, int ARow, int ACol);
 	void __fastcall GetAlignment_ProtocolGrid(TObject *Sender, int ARow, int ACol, TAlignment &HAlign,
           TVAlignment &VAlign);
+	void __fastcall RightClick_Protocol(TObject *Sender, int ARow, int ACol);
+	void __fastcall OnMouseMove_Protocol(TObject *Sender, TShiftState Shift, int X,
+          int Y);
+	void __fastcall OnClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 
 
 private:	// User declarations
@@ -162,6 +166,12 @@ public:		// User declarations
 	__fastcall TFormMain(TComponent* Owner);
 
 // START
+public: // Basic Member Variables
+	int m_ClickedX; // For Right Click on Protocol Grid
+	int m_ClickedY; // For Right Click on Protocol Grid
+	int m_ClickedRow;
+	int m_ClickedCol;
+
 public:	// Basic Functions
 	void __fastcall InitProgram();
 	void __fastcall ExitProgram();

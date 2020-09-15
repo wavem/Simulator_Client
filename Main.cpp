@@ -671,3 +671,72 @@ void __fastcall TFormMain::GetAlignment_ProtocolGrid(TObject *Sender, int ARow, 
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int ACol)
+{
+	// Right Click Routine
+
+
+	// Pre Return
+	if(ARow <= 0 || ACol <= 0) return;
+
+	// Common
+	TAdvStringGrid* p_grid = (TAdvStringGrid*)Sender;
+	int t_Tag = p_grid->Tag;
+	DWORD t_dword = 0; // Parameter For Func : SendMessage().
+
+	WORD t_Lword = m_ClickedX; // X
+	WORD t_Hword = m_ClickedY; // Y
+
+	t_dword = t_Hword;
+	t_dword = (t_dword << 16) | t_Lword;
+
+	SendMessage(p_grid->Handle, WM_LBUTTONDOWN, MK_LBUTTON, t_dword);
+
+
+	// HB Test Routine Start
+	//if(m_bProtocolGridCtrlKeyDown) {
+	//	CheckandRunORStopHB(m_ClickedRow, m_ClickedCol);
+	//	return;
+	//}
+	// HB Test Routine END
+
+
+
+	// Real Processing...
+	DWORD t_Option = 0;
+
+	// Declare & Init Variables
+	//bool t_bTurnOn = false;
+	//if(p_grid->Colors[m_ClickedCol][m_ClickedRow] == clLime) {
+	//	t_bTurnOn = false;
+	//} else {
+	//	t_bTurnOn = true;
+	//}
+
+	//DoTestDeviceProtocol(p_grid, m_ClickedRow, m_ClickedCol, t_bTurnOn, t_Option);
+	//SendMessage(p_grid->Handle, WM_LBUTTONUP, MK_LBUTTON, t_dword); // Release Mouse Clicked Status (2019-05-13 mjw)
+	//return;
+	//UnicodeString tempStr;
+	//tempStr.sprintf(L"R : %d, C : %d",m_ClickedRow, m_ClickedCol);
+
+	p_grid->Colors[m_ClickedCol][m_ClickedRow] = clLime;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::OnMouseMove_Protocol(TObject *Sender, TShiftState Shift,
+          int X, int Y)
+{
+	// Mouse Move
+	m_ClickedX = X;
+	m_ClickedY = Y;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::OnClickCell_Protocol(TObject *Sender, int ARow, int ACol)
+{
+	m_ClickedRow = ARow;
+	m_ClickedCol = ACol;
+}
+//---------------------------------------------------------------------------
+
