@@ -714,7 +714,7 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 	//}
 
 	//DoTestDeviceProtocol(p_grid, m_ClickedRow, m_ClickedCol, t_bTurnOn, t_Option);
-	//SendMessage(p_grid->Handle, WM_LBUTTONUP, MK_LBUTTON, t_dword); // Release Mouse Clicked Status (2019-05-13 mjw)
+	SendMessage(p_grid->Handle, WM_LBUTTONUP, MK_LBUTTON, t_dword); // Release Mouse Clicked Status (2019-05-13 mjw)
 	//return;
 	//UnicodeString tempStr;
 	//tempStr.sprintf(L"R : %d, C : %d",m_ClickedRow, m_ClickedCol);
