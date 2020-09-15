@@ -741,9 +741,6 @@ void __fastcall TFormMain::OnClickCell_Protocol(TObject *Sender, int ARow, int A
 {
 	m_ClickedRow = ARow;
 	m_ClickedCol = ACol;
-
-
-
 }
 //---------------------------------------------------------------------------
 
