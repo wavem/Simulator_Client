@@ -756,7 +756,12 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	UnicodeString tempStr = L"";
 	TAdvStringGrid* p_grid = NULL;
 	int t_DataSize = 0;
-	int t_GridRow = 0;
+	int t_GridRow = 1;
+	int t_GridCol = 1;
+
+	TPoint t_point;
+	int t_Span_X = 0;
+	int t_Span_Y = 0;
 
 	if(_type == SEND_PROTOCOL_TYPE) {
 		p_grid = grid_Protocol_Send;
@@ -766,10 +771,35 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 		t_DataSize = m_RecvProtocolSize;
 	}
 
-	for(int i = 0 ; i < t_DataSize ; i++) {
-		t_GridRow++;
+	// Memory Allocate
+	BYTE* t_Buffer = new BYTE[t_DataSize];
+
+
+	while(t_GridRow <= t_DataSize) {
+
+		// Check Cell is Merged
+		if(p_grid->IsMergedCell(t_GridCol, t_GridRow)) {
+			t_point = p_grid->CellSpan(t_GridCol, t_GridRow);
+			t_Span_X = t_point.x;
+			t_Span_Y = t_point.y;
+		}
+
+
+
+		if(++t_GridCol == 9) {
+			t_GridCol = 1;
+			t_GridRow++;
+		}
 	}
 
+
+
+
+
+
+
+	// Release Allocated Memory
+	delete t_Buffer;
 }
 //---------------------------------------------------------------------------
 
