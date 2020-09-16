@@ -791,6 +791,13 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 
 
+		if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
+
+		}
+
+
+
+
 		if(++t_GridCol == 9) {
 			t_GridCol = 1;
 			t_GridRow++;
