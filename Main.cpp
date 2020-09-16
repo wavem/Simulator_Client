@@ -6,6 +6,7 @@
 #include "Main.h"
 #include "Dlg_Version.h"
 #include "libxl_functions.h"
+#include "common_functions.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "cxClasses"
