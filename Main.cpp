@@ -676,6 +676,22 @@ void __fastcall TFormMain::GetAlignment_ProtocolGrid(TObject *Sender, int ARow, 
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::OnMouseMove_Protocol(TObject *Sender, TShiftState Shift,
+		  int X, int Y)
+{
+	// Mouse Move
+	m_ClickedX = X;
+	m_ClickedY = Y;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::OnClickCell_Protocol(TObject *Sender, int ARow, int ACol)
+{
+	m_ClickedRow = ARow;
+	m_ClickedCol = ACol;
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int ACol)
 {
 	// Right Click Routine
@@ -720,36 +736,63 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 
 	//DoTestDeviceProtocol(p_grid, m_ClickedRow, m_ClickedCol, t_bTurnOn, t_Option);
 	SendMessage(p_grid->Handle, WM_LBUTTONUP, MK_LBUTTON, t_dword); // Release Mouse Clicked Status (2019-05-13 mjw)
-	//return;
-	//UnicodeString tempStr;
-	//tempStr.sprintf(L"R : %d, C : %d",m_ClickedRow, m_ClickedCol);
-
-	p_grid->Colors[m_ClickedCol][m_ClickedRow] = clLime;
 
 
 	// Test Code
+	//p_grid->Colors[m_ClickedCol][m_ClickedRow] = clLime;
 	UnicodeString tempStr = L"";
 	tempStr.sprintf(L"ARow : %d, ACol : %d", ARow, ACol);
 	PrintMsg(tempStr);
 
 	tempStr.sprintf(L"CRow : %d, CCol : %d", m_ClickedRow, m_ClickedCol);
 	PrintMsg(tempStr);
+
+	ToggleBufferData(p_grid, m_ClickedRow, m_ClickedCol);
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormMain::OnMouseMove_Protocol(TObject *Sender, TShiftState Shift,
-          int X, int Y)
-{
-	// Mouse Move
-	m_ClickedX = X;
-	m_ClickedY = Y;
-}
-//---------------------------------------------------------------------------
+void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, int _Col) {
 
-void __fastcall TFormMain::OnClickCell_Protocol(TObject *Sender, int ARow, int ACol)
-{
-	m_ClickedRow = ARow;
-	m_ClickedCol = ACol;
+	// Common
+	TAdvStringGrid* p_grid = _pGrid;
+	int t_Tag = p_grid->Tag;
+	int t_DataSize = 0;
+	BYTE* t_pBuffer = NULL;
+
+	if(t_Tag == SEND_PROTOCOL_TYPE) {
+		t_DataSize = m_SendProtocolSize;
+		t_pBuffer = m_SendBuf;
+	} else if(t_Tag == RECV_PROTOCOL_TYPE) {
+		t_DataSize = m_RecvProtocolSize;
+		t_pBuffer = m_RecvBuf;
+	}
+
+
+
+
+
+
+	#if 0
+extern BYTE _BitSetting(BYTE _src, int _bitIdx, bool _bool) {
+	BYTE t_byte = _src;
+	BYTE t_01 = 0x01;
+	t_01 <<= _bitIdx;
+	if(_bool) t_byte |= t_01;
+	else t_byte &= ~t_01; // if toggle : t_byte ^= t_01
+	return t_byte;
+
+	#endif
+
+
+
+	// Check Merge
+	if(p_grid->IsMergedCell(_Col, _Row)) {
+
+	} else {
+		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], _Col - 1);
+	}
+	DisplayBufferDataIntoGrid(SEND_PROTOCOL_TYPE);
+
 }
 //---------------------------------------------------------------------------
 
@@ -785,6 +828,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 	// Memory Allocate
 	BYTE* t_Buffer = new BYTE[t_DataSize];
+	memcpy(t_Buffer, m_SendBuf, t_DataSize);
 
 
 	while(t_GridRow <= t_DataSize) {

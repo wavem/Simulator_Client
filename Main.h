@@ -178,6 +178,8 @@ public: // Basic Member Variables
 
 public: // Data Parsing
 	void __fastcall DisplayBufferDataIntoGrid(int _type);
+	//void __fastcall InputDataIntoBuffer(int _ByteIdx, int _BitIdx)
+	void __fastcall ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, int _Col);
 
 public:	// Basic Functions
 	void __fastcall InitProgram();

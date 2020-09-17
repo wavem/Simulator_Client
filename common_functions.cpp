@@ -25,3 +25,12 @@ extern BYTE _BitSetting(BYTE _src, int _bitIdx, bool _bool) {
 	return t_byte;
 }
 //---------------------------------------------------------------------------
+
+extern BYTE _BitToggle(BYTE _src, int _bitIdx) {
+	BYTE t_byte = _src;
+	BYTE t_01 = 0x01;
+	t_01 <<= _bitIdx;
+	t_byte ^= t_01;
+	return t_byte;
+}
+//---------------------------------------------------------------------------

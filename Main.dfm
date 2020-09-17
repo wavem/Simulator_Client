@@ -1158,6 +1158,7 @@ object FormMain: TFormMain
                   847
                   734)
                 object grid_Protocol_Send: TAdvStringGrid
+                  Tag = 1
                   Left = 11
                   Top = 16
                   Width = 820
@@ -1571,6 +1572,7 @@ object FormMain: TFormMain
                   847
                   734)
                 object grid_Protocol_Recv: TAdvStringGrid
+                  Tag = 2
                   Left = 11
                   Top = 16
                   Width = 820
