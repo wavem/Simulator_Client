@@ -807,7 +807,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 		p_grid = grid_Protocol_Send;
 		t_DataSize = m_SendProtocolSize;
 		t_pBuffer = m_SendBuf;
-	} else if(_type == SEND_PROTOCOL_TYPE) {
+	} else if(_type == RECV_PROTOCOL_TYPE) {
 		p_grid = grid_Protocol_Recv;
 		t_DataSize = m_RecvProtocolSize;
 		t_pBuffer = m_RecvBuf;
