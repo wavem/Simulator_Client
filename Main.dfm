@@ -1167,6 +1167,7 @@ object FormMain: TFormMain
                   Anchors = [akLeft, akTop, akRight, akBottom]
                   ColCount = 9
                   DefaultColWidth = 94
+                  DefaultRowHeight = 44
                   DrawingStyle = gdsClassic
                   RowCount = 40
                   Font.Charset = DEFAULT_CHARSET
@@ -1292,45 +1293,45 @@ object FormMain: TFormMain
                     94)
                   RowHeights = (
                     34
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22
-                    22)
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44
+                    44)
                 end
               end
             end
