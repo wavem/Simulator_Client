@@ -832,13 +832,13 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 				switch(t_Span_Y) {
 					case 1: // 2 BTYE
 						// Color Setting
-						if(t_Buffer[t_GridRow - 1] == 0) {
+						if(t_Buffer[t_GridRow - 1] == 0 && t_Buffer[t_GridRow - 1 + 1] == 0) {
 							p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
 						} else {
 							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
 						}
 
-						// String
+						// Value Setting
 						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
 						tempStr.sprintf(L"\n%02X%02X", t_Buffer[t_GridRow - 1], t_Buffer[t_GridRow + 1 - 1]);
 						t_FinalStr += tempStr;
@@ -860,6 +860,20 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						break;
 
 					case 7: // (8 Bit : 1 Byte)
+						// Color Setting
+						if(t_Buffer[t_GridRow - 1] == 0) {
+							p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+						} else {
+							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
+						}
+
+						// Value Setting
+						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
+						tempStr.sprintf(L"\n%02X", t_Buffer[t_GridRow - 1]);
+						t_FinalStr += tempStr;
+						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
+						t_GridRow++;
+						continue;
 						break;
 
 					case 4:
