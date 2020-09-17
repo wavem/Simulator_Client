@@ -829,13 +829,14 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 			t_Span_Y = t_point.y;
 		}
 
-
-
-		if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
-			p_grid->Colors[t_GridCol][t_GridRow] = clLime;
-		} else {
-			p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+		if(t_bIsMergedCell == false) {
+			if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
+				p_grid->Colors[t_GridCol][t_GridRow] = clLime;
+			} else {
+				p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+			}
 		}
+
 
 
 
