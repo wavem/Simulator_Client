@@ -726,6 +726,14 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 
 	p_grid->Colors[m_ClickedCol][m_ClickedRow] = clLime;
 
+
+	// Test Code
+	UnicodeString tempStr = L"";
+	tempStr.sprintf(L"ARow : %d, ACol : %d", ARow, ACol);
+	PrintMsg(tempStr);
+
+	tempStr.sprintf(L"CRow : %d, CCol : %d", m_ClickedRow, m_ClickedCol);
+	PrintMsg(tempStr);
 }
 //---------------------------------------------------------------------------
 
