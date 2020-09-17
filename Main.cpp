@@ -795,6 +795,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	int t_DataSize = 0;
 	int t_GridRow = 1;
 	int t_GridCol = 1;
+	BYTE* t_pBuffer = NULL;
 
 	// Cell Merge Variables
 	bool t_bIsMergedCell = false;
@@ -806,14 +807,16 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	if(_type == SEND_PROTOCOL_TYPE) {
 		p_grid = grid_Protocol_Send;
 		t_DataSize = m_SendProtocolSize;
+		t_pBuffer = m_SendBuf;
 	} else if(_type == SEND_PROTOCOL_TYPE) {
 		p_grid = grid_Protocol_Recv;
 		t_DataSize = m_RecvProtocolSize;
+		t_pBuffer = m_RecvBuf;
 	}
 
 	// Memory Allocate
 	BYTE* t_Buffer = new BYTE[t_DataSize];
-	memcpy(t_Buffer, m_SendBuf, t_DataSize);
+	memcpy(t_Buffer, t_pBuffer, t_DataSize);
 
 
 	while(t_GridRow <= t_DataSize) {
