@@ -791,6 +791,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 	// Common
 	UnicodeString tempStr = L"";
+	UnicodeString t_FinalStr = L"";
 	TAdvStringGrid* p_grid = NULL;
 	int t_DataSize = 0;
 	int t_GridRow = 1;
@@ -837,7 +838,13 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
 						}
 
-
+						// String
+						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
+						tempStr.sprintf(L"\n%02X%02X", t_Buffer[t_GridRow - 1], t_Buffer[t_GridRow + 1 - 1]);
+						t_FinalStr += tempStr;
+						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
+						t_GridRow += 2;
+						continue;
 						break;
 
 					case 3:
@@ -888,3 +895,14 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 }
 //---------------------------------------------------------------------------
 
+UnicodeString TFormMain::ExtractOriginSignalName(UnicodeString _str) {
+	UnicodeString t_FinalStr = _str;
+	for(int i = 0 ; i < _str.Length() ; i++) {
+		if(_str.IsDelimiter(L"\n", i)) {
+			t_FinalStr = _str.SubString(0, i - 1);
+			break;
+		}
+	}
+	return t_FinalStr;
+}
+//---------------------------------------------------------------------------
