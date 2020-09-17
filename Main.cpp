@@ -767,32 +767,17 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 		t_pBuffer = m_RecvBuf;
 	}
 
-
-
-
-
-
-	#if 0
-extern BYTE _BitSetting(BYTE _src, int _bitIdx, bool _bool) {
-	BYTE t_byte = _src;
-	BYTE t_01 = 0x01;
-	t_01 <<= _bitIdx;
-	if(_bool) t_byte |= t_01;
-	else t_byte &= ~t_01; // if toggle : t_byte ^= t_01
-	return t_byte;
-
-	#endif
-
-
-
 	// Check Merge
 	if(p_grid->IsMergedCell(_Col, _Row)) {
-
+		if(t_pBuffer[_Row - 1] == 0) {
+			t_pBuffer[_Row - 1] = 0xFF;
+		} else {
+			t_pBuffer[_Row - 1] = 0x00;
+		}
 	} else {
 		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], _Col - 1);
 	}
-	DisplayBufferDataIntoGrid(SEND_PROTOCOL_TYPE);
-
+	DisplayBufferDataIntoGrid(t_Tag);
 }
 //---------------------------------------------------------------------------
 
