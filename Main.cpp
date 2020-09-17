@@ -798,7 +798,6 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	BYTE* t_pBuffer = NULL;
 
 	// Cell Merge Variables
-	bool t_bIsMergedCell = false;
 	TPoint t_point;
 	int t_Span_X = 0;
 	int t_Span_Y = 0;
@@ -822,8 +821,8 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	while(t_GridRow <= t_DataSize) {
 
 		// Check Cell is Merged
-		t_bIsMergedCell = p_grid->IsMergedCell(t_GridCol, t_GridRow);
-		if(t_bIsMergedCell) {
+
+		if(p_grid->IsMergedCell(t_GridCol, t_GridRow)) {
 			t_point = p_grid->CellSpan(t_GridCol, t_GridRow);
 			t_Span_X = t_point.x;
 			t_Span_Y = t_point.y;
