@@ -826,8 +826,45 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 			t_point = p_grid->CellSpan(t_GridCol, t_GridRow);
 			t_Span_X = t_point.x;
 			t_Span_Y = t_point.y;
+
+			if(t_Span_Y > 0) { // More than 1 Byte Merge
+				switch(t_Span_Y) {
+					case 1: // 2 BTYE
+						// Color Setting
+						if(t_Buffer[t_GridRow - 1] == 0) {
+							p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+						} else {
+							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
+						}
+
+
+						break;
+
+					case 3:
+						// Later...
+						break;
+
+					default:
+						break;
+				}
+			} else { // Less than 1 Byte Merge
+				switch(t_Span_X) {
+					default:
+						break;
+
+					case 7: // (8 Bit : 1 Byte)
+						break;
+
+					case 4:
+						break;
+
+
+				}
+
+			}
+
 		} else {
-            if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
+			if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
 				p_grid->Colors[t_GridCol][t_GridRow] = clLime;
 			} else {
 				p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
