@@ -817,18 +817,12 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 					break;
 
 				case 3: // 4 Bit
-					tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
-					PrintMsg(tempStr);
 					t_Byte = (t_pBuffer[_Row - 1] & (0x0F << (5 - _Col)));
-					tempStr.sprintf(L"%02X", t_Byte);
-					PrintMsg(tempStr);
 					if(t_Byte == 0) {
 						t_pBuffer[_Row - 1] |= (0x0F << (5 - _Col));
 					} else {
 						t_pBuffer[_Row - 1] &= ~(0x0F << (5 - _Col));
 					}
-					tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
-					PrintMsg(tempStr);
 					break;
 			}
 
@@ -836,9 +830,13 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 
 	} else {
 		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], 8 - _Col);
-		tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
-		PrintMsg(tempStr);
 	}
+
+	// Test Print Out
+	tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
+	PrintMsg(tempStr);
+
+	// Display Routine
 	DisplayBufferDataIntoGrid(t_Tag);
 }
 //---------------------------------------------------------------------------
