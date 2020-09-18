@@ -816,6 +816,15 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 					}
 					break;
 
+				case 4: // 5 Bit
+					t_Byte = (t_pBuffer[_Row - 1] & (0x1F << (4 - _Col)));
+					if(t_Byte == 0) {
+						t_pBuffer[_Row - 1] |= (0x1F << (4 - _Col));
+					} else {
+						t_pBuffer[_Row - 1] &= ~(0x1F << (4 - _Col));
+					}
+					break;
+
 				case 3: // 4 Bit
 					t_Byte = (t_pBuffer[_Row - 1] & (0x0F << (5 - _Col)));
 					if(t_Byte == 0) {
