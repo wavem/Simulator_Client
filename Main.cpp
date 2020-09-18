@@ -835,7 +835,9 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 		}
 
 	} else {
-		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], _Col - 1);
+		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], 8 - _Col);
+		tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
+		PrintMsg(tempStr);
 	}
 	DisplayBufferDataIntoGrid(t_Tag);
 }
@@ -938,9 +940,11 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						break;
 
 					case 6: // 7 Bit
+						t_GridCol += 6;
 						break;
 
 					case 5: // 6 Bit
+						t_GridCol += 5;
 						break;
 
 					case 4: // 5 Bit
@@ -978,6 +982,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						break;
 
 					case 2: // 3 Bit
+						t_GridCol += 2;
 						break;
 
 					case 1: // 1 Bit
@@ -986,7 +991,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 				}
 			}
 		} else {
-			if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
+			if(_BitCheck(t_Buffer[t_GridRow - 1], 8 - t_GridCol)) {
 				p_grid->Colors[t_GridCol][t_GridRow] = clLime;
 			} else {
 				p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
