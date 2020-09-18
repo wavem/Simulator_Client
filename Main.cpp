@@ -754,10 +754,17 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, int _Col) {
 
 	// Common
+	UnicodeString tempStr = L"";
 	TAdvStringGrid* p_grid = _pGrid;
 	int t_Tag = p_grid->Tag;
 	int t_DataSize = 0;
 	BYTE* t_pBuffer = NULL;
+	BYTE t_Byte = 0;
+
+	// Cell Merge Variables
+	TPoint t_point;
+	int t_Span_X = 0;
+	int t_Span_Y = 0;
 
 	if(t_Tag == SEND_PROTOCOL_TYPE) {
 		t_DataSize = m_SendProtocolSize;
@@ -767,13 +774,66 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 		t_pBuffer = m_RecvBuf;
 	}
 
+
+
 	// Check Merge
 	if(p_grid->IsMergedCell(_Col, _Row)) {
-		if(t_pBuffer[_Row - 1] == 0) {
-			t_pBuffer[_Row - 1] = 0xFF;
+		t_point = p_grid->CellSpan(_Col, _Row);
+		t_Span_X = t_point.x;
+		t_Span_Y = t_point.y;
+
+		if(t_Span_Y >0) { // More than 1 Byte Merge
+			switch(t_Span_Y) {
+				case 1: // 2 BTYE
+					if(t_pBuffer[_Row - 1] == 0 && t_pBuffer[_Row - 1 + 1] == 0) {
+						memset(&(t_pBuffer[_Row - 1]), 0xFF, 2);
+					} else {
+						memset(&(t_pBuffer[_Row - 1]), 0x00, 2);
+					}
+					break;
+
+				case 3: // 4 BYTE
+					if(t_pBuffer[_Row - 1] == 0 && t_pBuffer[_Row - 1 + 1] == 0 && t_pBuffer[_Row - 1 + 2] == 0 && t_pBuffer[_Row - 1 + 3] == 0) {
+						memset(&(t_pBuffer[_Row - 1]), 0xFF, 4);
+					} else {
+						memset(&(t_pBuffer[_Row - 1]), 0x00, 4);
+					}
+					break;
+
+				default:
+					break;
+			}
 		} else {
-			t_pBuffer[_Row - 1] = 0x00;
+			switch(t_Span_X) {
+				default:
+					break;
+
+				case 7: // 8 Bit (1 BYTE)
+					if(t_pBuffer[_Row - 1] == 0) {
+						t_pBuffer[_Row - 1] = 0xFF;
+					} else {
+						t_pBuffer[_Row - 1] = 0x00;
+					}
+					break;
+
+				case 3: // 4 Bit
+					tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
+					PrintMsg(tempStr);
+					t_Byte = (t_pBuffer[_Row - 1] & (0x0F << (5 - _Col)));
+					tempStr.sprintf(L"%02X", t_Byte);
+					PrintMsg(tempStr);
+					if(t_Byte == 0) {
+						t_pBuffer[_Row - 1] |= (0x0F << (5 - _Col));
+					} else {
+						t_pBuffer[_Row - 1] &= ~(0x0F << (5 - _Col));
+					}
+					tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
+					PrintMsg(tempStr);
+					break;
+			}
+
 		}
+
 	} else {
 		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], _Col - 1);
 	}
@@ -897,7 +957,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						tempStr.sprintf(L"\n%02X", t_Byte);
 						t_FinalStr += tempStr;
 						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
-						t_GridCol += 5;
+						t_GridCol += 4;
 						break;
 
 					case 3: // 4 Bit
@@ -911,10 +971,10 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 						// Value Setting
 						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
-						tempStr.sprintf(L"\n%02X", t_Byte);
+						tempStr.sprintf(L"\n%X", t_Byte);
 						t_FinalStr += tempStr;
 						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
-						t_GridCol += 4;
+						t_GridCol += 3;
 						break;
 
 					case 2: // 3 Bit
