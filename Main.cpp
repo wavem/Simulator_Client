@@ -797,6 +797,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	int t_GridRow = 1;
 	int t_GridCol = 1;
 	BYTE* t_pBuffer = NULL;
+	BYTE t_Byte = 0;
 
 	// Cell Merge Variables
 	TPoint t_point;
@@ -876,14 +877,41 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						continue;
 						break;
 
-					case 4:
+					case 6: // 7 Bit
 						break;
 
+					case 5: // 6 Bit
+						break;
 
+					case 4: // 5 Bit
+						break;
+
+					case 3: // 4 Bit
+
+						// Color Setting
+						t_Byte = ((t_Buffer[t_GridRow - 1] >> (5 - t_GridCol)) & 0x0F);
+						if(t_Byte == 0) {
+							p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+						} else {
+							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
+						}
+
+						// Value Setting
+						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
+						tempStr.sprintf(L"\n%02X", t_Byte);
+						t_FinalStr += tempStr;
+						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
+						t_GridCol += 4;
+						break;
+
+					case 2: // 3 Bit
+						break;
+
+					case 1: // 1 Bit
+						// Do Nothing
+						break;
 				}
-
 			}
-
 		} else {
 			if(_BitCheck(t_Buffer[t_GridRow - 1], t_GridCol - 1)) {
 				p_grid->Colors[t_GridCol][t_GridRow] = clLime;
@@ -894,7 +922,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 
 
-		if(++t_GridCol == 9) {
+		if(++t_GridCol >= 9) {
 			t_GridCol = 1;
 			t_GridRow++;
 		}
