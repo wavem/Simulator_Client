@@ -851,6 +851,15 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 						t_pBuffer[_Row - 1] &= ~(0x0F << (5 - _Col));
 					}
 					break;
+
+				case 2: // 3 Bit
+					t_Byte = (t_pBuffer[_Row - 1] & (0x07 << (6 - _Col)));
+					if(t_Byte == 0) {
+						t_pBuffer[_Row - 1] |= (0x07 << (6 - _Col));
+					} else {
+						t_pBuffer[_Row - 1] &= ~(0x07 << (6 - _Col));
+					}
+					break;
 			}
 
 		}
@@ -1033,11 +1042,25 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						break;
 
 					case 2: // 3 Bit
+						// Color Setting
+						t_Byte = ((t_Buffer[t_GridRow - 1] >> (6 - t_GridCol)) & 0x07);
+						if(t_Byte == 0) {
+							p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+						} else {
+							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
+						}
+
+						// Value Setting
+						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
+						tempStr.sprintf(L"\n%X", t_Byte);
+						t_FinalStr += tempStr;
+						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
 						t_GridCol += 2;
 						break;
 
-					case 1: // 1 Bit
+					case 1: // 2 Bit
 						// Do Nothing
+						t_GridCol += 1;
 						break;
 				}
 			}
