@@ -161,6 +161,7 @@ __published:	// IDE-managed Components
           int Y);
 	void __fastcall OnClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 	void __fastcall tm_SendDataViewTimer(TObject *Sender);
+	void __fastcall OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 
 
 private:	// User declarations

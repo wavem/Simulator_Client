@@ -1121,3 +1121,10 @@ UnicodeString TFormMain::ExtractOriginSignalName(UnicodeString _str) {
 	return t_FinalStr;
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol)
+{
+	// Double Click Routine
+}
+//---------------------------------------------------------------------------
+

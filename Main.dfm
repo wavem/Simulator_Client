@@ -1184,6 +1184,7 @@ object FormMain: TFormMain
                   OnGetAlignment = GetAlignment_ProtocolGrid
                   OnClickCell = OnClickCell_Protocol
                   OnRightClickCell = RightClick_Protocol
+                  OnDblClickCell = OnDbClickCell_Protocol
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
