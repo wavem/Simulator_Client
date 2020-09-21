@@ -6,10 +6,12 @@
 #include "Dlg_DataInputEdit.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
+#pragma link "AdvEdit"
+#pragma link "AdvGlassButton"
 #pragma resource "*.dfm"
-TForm1 *Form1;
+TFormDataInputEdit *FormDataInputEdit;
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
+__fastcall TFormDataInputEdit::TFormDataInputEdit(TComponent* Owner)
 	: TForm(Owner)
 {
 }

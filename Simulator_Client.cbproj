@@ -127,7 +127,7 @@
             <BuildOrder>4</BuildOrder>
         </CppCompile>
         <CppCompile Include="Dlg_DataInputEdit.cpp">
-            <Form>Form1</Form>
+            <Form>FormDataInputEdit</Form>
             <FormType>dfm</FormType>
             <DependentOn>Dlg_DataInputEdit.h</DependentOn>
             <BuildOrder>8</BuildOrder>
