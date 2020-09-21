@@ -1125,6 +1125,12 @@ UnicodeString TFormMain::ExtractOriginSignalName(UnicodeString _str) {
 void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol)
 {
 	// Double Click Routine
+	// Common
+	UnicodeString tempStr = L"";
+	tempStr.sprintf(L"ARow : %d, ACol : %d", ARow, ACol);
+	PrintMsg(tempStr);
+	tempStr.sprintf(L"CRow : %d, CCol : %d", m_ClickedRow, m_ClickedCol);
+	PrintMsg(tempStr);
 }
 //---------------------------------------------------------------------------
 
