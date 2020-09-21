@@ -1124,8 +1124,22 @@ UnicodeString TFormMain::ExtractOriginSignalName(UnicodeString _str) {
 
 void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol)
 {
-	// Double Click Routine
+	// Pre-Return
+	if(ARow == 0 || ACol == 0) return;
+
 	// Common
+	TAdvStringGrid* p_grid = (TAdvStringGrid*)Sender;
+	int t_Tag = p_grid->Tag;
+	int t_Row = m_ClickedRow;
+	int t_Col = m_ClickedCol;
+
+	// If the cell is not merged : return
+	if(p_grid->IsMergedCell(t_Col, t_Row) == false) return;
+
+	// Routine Here...
+
+
+	// Test Code
 	UnicodeString tempStr = L"";
 	tempStr.sprintf(L"ARow : %d, ACol : %d", ARow, ACol);
 	PrintMsg(tempStr);
