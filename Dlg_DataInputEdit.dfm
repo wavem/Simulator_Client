@@ -12,6 +12,7 @@ object FormDataInputEdit: TFormDataInputEdit
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poOwnerFormCenter
   PixelsPerInch = 96
   TextHeight = 13
   object ___pnBase_DataInputEdit: TPanel

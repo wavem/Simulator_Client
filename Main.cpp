@@ -7,6 +7,7 @@
 #include "Dlg_Version.h"
 #include "libxl_functions.h"
 #include "common_functions.h"
+#include "Dlg_DataInputEdit.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "cxClasses"
@@ -1138,6 +1139,10 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 
 	// Routine Here...
 
+	// Create Data Input Dialog
+	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(NULL);
+	p_dlg->ShowModal();
+	delete p_dlg;
 
 	// Test Code
 	UnicodeString tempStr = L"";
