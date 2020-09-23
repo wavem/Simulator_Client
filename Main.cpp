@@ -1134,7 +1134,6 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 	int t_Row = m_ClickedRow;
 	int t_Col = m_ClickedCol;
 	BYTE* t_pBuffer = NULL;
-	BYTE t_Byte = 0;
 
 	// If the cell is not merged : return
 	if(p_grid->IsMergedCell(t_Col, t_Row) == false) return;
