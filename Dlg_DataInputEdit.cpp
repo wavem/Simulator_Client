@@ -16,3 +16,12 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+__fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize)
+	: TForm(Owner)
+{
+
+}
+//---------------------------------------------------------------------------
+
+

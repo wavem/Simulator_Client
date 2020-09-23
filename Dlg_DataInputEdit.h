@@ -20,6 +20,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormDataInputEdit(TComponent* Owner);
+	__fastcall TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormDataInputEdit *FormDataInputEdit;

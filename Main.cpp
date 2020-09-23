@@ -1139,6 +1139,16 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 
 	// Routine Here...
 
+	BYTE* t_pBuffer = NULL;
+	BYTE t_Byte = 0;
+
+	// Cell Merge Variables
+	TPoint t_point;
+	int t_Span_X = 0;
+	int t_Span_Y = 0;
+
+
+
 	// Create Data Input Dialog
 	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(NULL);
 	p_dlg->ShowModal();
