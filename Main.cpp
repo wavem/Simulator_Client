@@ -1133,24 +1133,34 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 	int t_Tag = p_grid->Tag;
 	int t_Row = m_ClickedRow;
 	int t_Col = m_ClickedCol;
+	BYTE* t_pBuffer = NULL;
+	BYTE t_Byte = 0;
 
 	// If the cell is not merged : return
 	if(p_grid->IsMergedCell(t_Col, t_Row) == false) return;
 
 	// Routine Here...
 
-	BYTE* t_pBuffer = NULL;
-	BYTE t_Byte = 0;
+	// Determine Send or Recv Protocol
+	if(t_Tag == SEND_PROTOCOL_TYPE) {
+		t_pBuffer = m_SendBuf;
+	} else if(t_Tag == RECV_PROTOCOL_TYPE) {
+		t_pBuffer = m_RecvBuf;
+	} else return;
 
 	// Cell Merge Variables
 	TPoint t_point;
 	int t_Span_X = 0;
 	int t_Span_Y = 0;
 
+	t_point = p_grid->CellSpan(t_Col, t_Row);
+	t_Span_X = t_point.x;
+	t_Span_Y = t_point.y;
+
 
 
 	// Create Data Input Dialog
-	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(NULL);
+	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(t_pBuffer, t_Row - 1, t_Span_Y, t_Col, t_Span_X);
 	p_dlg->ShowModal();
 	delete p_dlg;
 
