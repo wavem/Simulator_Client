@@ -46,12 +46,16 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 5) & 0x3F;
 					break;
 				case 5:
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 4) & 0x1F;
 					break;
 				case 4:
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 3) & 0x0F;
 					break;
 				case 3:
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 2) & 0x07;
 					break;
 				case 2:
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 1) & 0x03;
 					break;
 			}
 			break;
