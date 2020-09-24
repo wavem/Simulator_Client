@@ -62,9 +62,11 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 		}
 
 		case 2:
+			memcpy(&t_CurrentValue, &(m_pBuffer[m_ByteIdx]), 2);
 			break;
 
 		case 4:
+			memcpy(&t_CurrentValue, &(m_pBuffer[m_ByteIdx]), 4);
 			break;
 	}
 
