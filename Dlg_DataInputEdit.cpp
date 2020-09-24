@@ -43,6 +43,7 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 6) & 0x7F;
 					break;
 				case 6:
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 5) & 0x3F;
 					break;
 				case 5:
 					break;
