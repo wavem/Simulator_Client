@@ -20,7 +20,35 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(TComponent* Owner)
 __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize)
 	: TForm(Owner)
 {
+	// Common
+	m_pBuffer = _pBuffer;
+	m_ByteIdx = _ByteIdx;
+	m_BitIdx = _BitIdx;
+	m_ByteSize = _ByteSize;
+	m_BitSize = _BitSize;
 
+	int t_CurrentValue = 0;
+
+	switch(m_ByteSize) {
+		default:
+			break;
+
+		case 1:
+		{
+			if(m_BitSize == 8) {
+				t_CurrentValue = m_pBuffer[m_ByteIdx];
+			}
+			break;
+		}
+
+		case 2:
+			break;
+
+		case 4:
+			break;
+	}
+
+	ed_Data->Text = IntToStr(t_CurrentValue);
 }
 //---------------------------------------------------------------------------
 
