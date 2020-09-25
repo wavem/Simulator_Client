@@ -76,6 +76,50 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 
 void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 {
+	// Common
+	int t_Value = ed_Data->IntValue;
+
+	// Input Value Routine
+	switch(m_ByteSize) {
+		default:
+			break;
+
+		case 1:
+		{
+			switch(m_BitSize) {
+				case 8:
+					memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 1);
+					break;
+				case 7:
+					//t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 6) & 0x7F;
+					break;
+				case 6:
+
+					break;
+				case 5:
+
+					break;
+				case 4:
+
+					break;
+				case 3:
+
+					break;
+				case 2:
+
+					break;
+			}
+			break;
+		}
+
+		case 2:
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 2);
+			break;
+
+		case 4:
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 4);
+			break;
+	}
 
 	this->Close();
 }

@@ -1169,6 +1169,8 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 	PrintMsg(tempStr);
 	tempStr.sprintf(L"CRow : %d, CCol : %d", m_ClickedRow, m_ClickedCol);
 	PrintMsg(tempStr);
+
+	DisplayBufferDataIntoGrid(t_Tag);
 }
 //---------------------------------------------------------------------------
 
