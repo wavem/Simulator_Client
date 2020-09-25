@@ -1165,11 +1165,9 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 
 	// Test Code
 	UnicodeString tempStr = L"";
-	tempStr.sprintf(L"ARow : %d, ACol : %d", ARow, ACol);
+	tempStr.sprintf(L"[%d] : %d, [%d] : %d", t_Row - 1, t_pBuffer[t_Row - 1], t_Row, t_pBuffer[t_Row]);
 	PrintMsg(tempStr);
-	tempStr.sprintf(L"CRow : %d, CCol : %d", m_ClickedRow, m_ClickedCol);
-	PrintMsg(tempStr);
-
+	
 	DisplayBufferDataIntoGrid(t_Tag);
 }
 //---------------------------------------------------------------------------
