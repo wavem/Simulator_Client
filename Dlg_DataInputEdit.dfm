@@ -82,6 +82,7 @@ object FormDataInputEdit: TFormDataInputEdit
       ShineColor = clGray
       TabOrder = 1
       Version = '1.3.0.2'
+      OnClick = btn_InputClick
     end
   end
 end

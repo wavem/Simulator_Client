@@ -17,6 +17,7 @@ __published:	// IDE-managed Components
 	TPanel *___pnBase_DataInputEdit;
 	TAdvEdit *ed_Data;
 	TAdvGlassButton *btn_Input;
+	void __fastcall btn_InputClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormDataInputEdit(TComponent* Owner);

@@ -73,3 +73,11 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 	ed_Data->Text = IntToStr(t_CurrentValue);
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
+{
+
+	this->Close();
+}
+//---------------------------------------------------------------------------
+
