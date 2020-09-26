@@ -40,22 +40,22 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 					t_CurrentValue = m_pBuffer[m_ByteIdx];
 					break;
 				case 7:
-					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 6) & 0x7F;
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 6) & 0x7F;
 					break;
 				case 6:
-					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 5) & 0x3F;
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 5) & 0x3F;
 					break;
 				case 5:
-					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 4) & 0x1F;
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 4) & 0x1F;
 					break;
 				case 4:
-					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 3) & 0x0F;
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 3) & 0x0F;
 					break;
 				case 3:
-					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 2) & 0x07;
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 2) & 0x07;
 					break;
 				case 2:
-					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 1) & 0x03;
+					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 1) & 0x03;
 					break;
 			}
 			break;
@@ -78,6 +78,8 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 {
 	// Common
 	int t_Value = ed_Data->IntValue;
+	BYTE t_CurrentByte = 0;
+	BYTE t_InputByte = 0;
 
 	// Input Value Routine
 	switch(m_ByteSize) {
@@ -86,12 +88,18 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 
 		case 1:
 		{
+			t_CurrentByte = m_pBuffer[m_ByteIdx];
+			t_InputByte = t_Value;
 			switch(m_BitSize) {
+				default:
+					break;
 				case 8:
-					memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 1);
+					//memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 1);
 					break;
 				case 7:
-					//t_CurrentValue = m_pBuffer[m_ByteIdx] >> (_BitIdx - 6) & 0x7F;
+					t_InputByte = t_InputByte << (m_BitIdx - 6) & (0x7F << (m_BitIdx - 6));
+					t_CurrentByte = t_CurrentByte & (0x01 << ((7 - m_BitIdx) * 7));
+					t_InputByte |= t_CurrentByte;
 					break;
 				case 6:
 
@@ -109,6 +117,7 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 
 					break;
 			}
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_InputByte, 1);
 			break;
 		}
 
