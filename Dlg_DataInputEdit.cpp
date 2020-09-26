@@ -37,24 +37,31 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 		{
 			switch(m_BitSize) {
 				case 8:
+					ed_Data->MaxValue = 255;
 					t_CurrentValue = m_pBuffer[m_ByteIdx];
 					break;
 				case 7:
+					ed_Data->MaxValue = 127;
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 6) & 0x7F;
 					break;
 				case 6:
+					ed_Data->MaxValue = 63;
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 5) & 0x3F;
 					break;
 				case 5:
+					ed_Data->MaxValue = 31;
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 4) & 0x1F;
 					break;
 				case 4:
+					ed_Data->MaxValue = 15;
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 3) & 0x0F;
 					break;
 				case 3:
+					ed_Data->MaxValue = 7;
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 2) & 0x07;
 					break;
 				case 2:
+					ed_Data->MaxValue = 3;
 					t_CurrentValue = m_pBuffer[m_ByteIdx] >> (m_BitIdx - 1) & 0x03;
 					break;
 			}
@@ -62,10 +69,12 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 		}
 
 		case 2:
+			ed_Data->MaxValue = 65535;
 			memcpy(&t_CurrentValue, &(m_pBuffer[m_ByteIdx]), 2);
 			break;
 
 		case 4:
+			ed_Data->MaxValue = UINT_MAX;
 			memcpy(&t_CurrentValue, &(m_pBuffer[m_ByteIdx]), 4);
 			break;
 	}
