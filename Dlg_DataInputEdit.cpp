@@ -107,11 +107,13 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 					break;
 				case 7:
 					t_InputByte = t_InputByte << (m_BitIdx - 6) & (0x7F << (m_BitIdx - 6));
-					t_CurrentByte = t_CurrentByte & (0x01 << ((7 - m_BitIdx) * 7));
+					t_CurrentByte = t_CurrentByte & (0x0101 >> (7 - m_BitIdx));
 					t_InputByte |= t_CurrentByte;
 					break;
 				case 6:
-
+					t_InputByte = t_InputByte << (m_BitIdx - 5) & (0x3F << (m_BitIdx - 5));
+					t_CurrentByte = t_CurrentByte & (0x0303 >> (7 - m_BitIdx));
+					t_InputByte |= t_CurrentByte;
 					break;
 				case 5:
 
