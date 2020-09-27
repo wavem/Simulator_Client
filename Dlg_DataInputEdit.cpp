@@ -103,7 +103,7 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 				default:
 					break;
 				case 8:
-					//memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 1);
+					// Do Nothing
 					break;
 				case 7:
 					t_InputByte = t_InputByte << (m_BitIdx - 6) & (0x7F << (m_BitIdx - 6));
