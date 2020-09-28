@@ -1595,11 +1595,8 @@ object FormMain: TFormMain
                   ParentFont = False
                   ScrollBars = ssVertical
                   TabOrder = 0
-                  OnMouseMove = OnMouseMove_Protocol
                   HoverRowCells = [hcNormal, hcSelected]
                   OnGetAlignment = GetAlignment_ProtocolGrid
-                  OnClickCell = OnClickCell_Protocol
-                  OnRightClickCell = RightClick_Protocol
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
