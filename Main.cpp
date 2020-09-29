@@ -648,6 +648,8 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		tempStr += L" Byte";
 		m_SendProtocolSize = StrToInt(t_ProtocolSize);
 		lb_Send_Title->Caption = tempStr;
+		memset(m_SendBuf, 0, m_SendProtocolSize);
+		DisplayBufferDataIntoGrid(SEND_PROTOCOL_TYPE);
 	} else {
 		// Recv Protocol List
 		Notebook_Recv->PageIndex = 1;
@@ -658,6 +660,8 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		tempStr += L" Byte";
 		m_RecvProtocolSize = StrToInt(t_ProtocolSize);
 		lb_Recv_Title->Caption = tempStr;
+		memset(m_RecvBuf, 0, m_RecvProtocolSize);
+		DisplayBufferDataIntoGrid(RECV_PROTOCOL_TYPE);
 	}
 }
 //---------------------------------------------------------------------------
