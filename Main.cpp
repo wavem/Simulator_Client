@@ -407,8 +407,6 @@ bool __fastcall TFormMain::LoadConfigSheet() {
 
 	// Get Last Row Information
 	t_RowEnd = t_pSheet->lastRow();
-	//tempStr.sprintf(L"Last Row : %d", t_RowEnd);
-	//PrintMsg(tempStr);
 
 	// Load Send Protocol List
 	for(int i = t_RowStart ; i < t_RowEnd ; i++) {
@@ -641,9 +639,6 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		return;
 	}
 
-
-
-
 	// Final Routine
 	if(t_Tag == 0) {
 		// Send Protocol List
@@ -680,7 +675,6 @@ void __fastcall TFormMain::GetAlignment_ProtocolGrid(TObject *Sender, int ARow, 
 void __fastcall TFormMain::OnMouseMove_Protocol(TObject *Sender, TShiftState Shift,
 		  int X, int Y)
 {
-	// Mouse Move
 	m_ClickedX = X;
 	m_ClickedY = Y;
 }
@@ -695,9 +689,6 @@ void __fastcall TFormMain::OnClickCell_Protocol(TObject *Sender, int ARow, int A
 
 void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int ACol)
 {
-	// Right Click Routine
-
-
 	// Pre Return
 	if(ARow <= 0 || ACol <= 0) return;
 
@@ -705,15 +696,11 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 	TAdvStringGrid* p_grid = (TAdvStringGrid*)Sender;
 	int t_Tag = p_grid->Tag;
 	DWORD t_dword = 0; // Parameter For Func : SendMessage().
-
 	WORD t_Lword = m_ClickedX; // X
 	WORD t_Hword = m_ClickedY; // Y
-
 	t_dword = t_Hword;
 	t_dword = (t_dword << 16) | t_Lword;
-
 	SendMessage(p_grid->Handle, WM_LBUTTONDOWN, MK_LBUTTON, t_dword);
-
 
 	// HB Test Routine Start
 	//if(m_bProtocolGridCtrlKeyDown) {
@@ -721,8 +708,6 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 	//	return;
 	//}
 	// HB Test Routine END
-
-
 
 	// Real Processing...
 	DWORD t_Option = 0;
@@ -737,16 +722,6 @@ void __fastcall TFormMain::RightClick_Protocol(TObject *Sender, int ARow, int AC
 
 	//DoTestDeviceProtocol(p_grid, m_ClickedRow, m_ClickedCol, t_bTurnOn, t_Option);
 	SendMessage(p_grid->Handle, WM_LBUTTONUP, MK_LBUTTON, t_dword); // Release Mouse Clicked Status (2019-05-13 mjw)
-
-
-	// Test Code
-	//p_grid->Colors[m_ClickedCol][m_ClickedRow] = clLime;
-	UnicodeString tempStr = L"";
-	tempStr.sprintf(L"ARow : %d, ACol : %d", ARow, ACol);
-	PrintMsg(tempStr);
-
-	tempStr.sprintf(L"CRow : %d, CCol : %d", m_ClickedRow, m_ClickedCol);
-	PrintMsg(tempStr);
 
 	ToggleBufferData(p_grid, m_ClickedRow, m_ClickedCol);
 }
@@ -774,8 +749,6 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 		t_DataSize = m_RecvProtocolSize;
 		t_pBuffer = m_RecvBuf;
 	}
-
-
 
 	// Check Merge
 	if(p_grid->IsMergedCell(_Col, _Row)) {
@@ -871,16 +844,10 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 					}
 					break;
 			}
-
 		}
-
 	} else {
 		t_pBuffer[_Row - 1] = _BitToggle(t_pBuffer[_Row - 1], 8 - _Col);
 	}
-
-	// Test Print Out
-	tempStr.sprintf(L"%02X", t_pBuffer[_Row - 1]);
-	PrintMsg(tempStr);
 
 	// Display Routine
 	DisplayBufferDataIntoGrid(t_Tag);
@@ -910,7 +877,6 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	int t_Span_X = 0;
 	int t_Span_Y = 0;
 
-
 	if(_type == SEND_PROTOCOL_TYPE) {
 		p_grid = grid_Protocol_Send;
 		t_DataSize = m_SendProtocolSize;
@@ -925,11 +891,8 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	BYTE* t_Buffer = new BYTE[t_DataSize];
 	memcpy(t_Buffer, t_pBuffer, t_DataSize);
 
-
 	while(t_GridRow <= t_DataSize) {
-
 		// Check Cell is Merged
-
 		if(p_grid->IsMergedCell(t_GridCol, t_GridRow)) {
 			t_point = p_grid->CellSpan(t_GridCol, t_GridRow);
 			t_Span_X = t_point.x;
@@ -1094,17 +1057,11 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 			}
 		}
 
-
-
 		if(++t_GridCol >= 9) {
 			t_GridCol = 1;
 			t_GridRow++;
 		}
 	}
-
-
-
-
 
 	// Release Allocated Memory
 	delete t_Buffer;
@@ -1156,17 +1113,10 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 	t_Span_X = t_point.x;
 	t_Span_Y = t_point.y;
 
-
-
 	// Create Data Input Dialog
 	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(t_pBuffer, t_Row - 1, t_Span_Y + 1, 8 - t_Col, t_Span_X + 1);
 	p_dlg->ShowModal();
 	delete p_dlg;
-
-	// Test Code
-	UnicodeString tempStr = L"";
-	tempStr.sprintf(L"[%d] : %d, [%d] : %d", t_Row - 1, t_pBuffer[t_Row - 1], t_Row, t_pBuffer[t_Row]);
-	PrintMsg(tempStr);
 	
 	DisplayBufferDataIntoGrid(t_Tag);
 }
