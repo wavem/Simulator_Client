@@ -485,8 +485,6 @@ bool __fastcall TFormMain::LoadSheet(UnicodeString _SheetName, int _tag) {
 
 	// Get Last Row Information
 	t_RowLast = t_pSheet->lastRow();
-	tempStr.sprintf(L"Last Row : %d", t_RowLast);
-	PrintMsg(tempStr);
 
 	// Get Row/Col Information
 	t_RowStart = DEFAULT_PROTOCOL_INFO_LINE_COUNT;
