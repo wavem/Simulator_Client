@@ -856,12 +856,6 @@ void __fastcall TFormMain::ToggleBufferData(TAdvStringGrid* _pGrid, int _Row, in
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormMain::tm_SendDataViewTimer(TObject *Sender)
-{
-	DisplayBufferDataIntoGrid(SEND_PROTOCOL_TYPE);
-}
-//---------------------------------------------------------------------------
-
 void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 	// Common

@@ -143,7 +143,6 @@ __published:	// IDE-managed Components
 	TAdvStringGrid *grid_RecvProtocolList;
 	TLabel *lb_Send_Title;
 	TLabel *lb_Recv_Title;
-	TTimer *tm_SendDataView;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);
@@ -160,7 +159,6 @@ __published:	// IDE-managed Components
 	void __fastcall OnMouseMove_Protocol(TObject *Sender, TShiftState Shift, int X,
           int Y);
 	void __fastcall OnClickCell_Protocol(TObject *Sender, int ARow, int ACol);
-	void __fastcall tm_SendDataViewTimer(TObject *Sender);
 	void __fastcall OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 
 
