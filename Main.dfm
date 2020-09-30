@@ -2142,7 +2142,7 @@ object FormMain: TFormMain
       PrintOptions.PageNr = False
       PrintOptions.PrintLineNumbers = False
       ReadOnly = True
-      RightMargin = 146
+      RightMargin = 211
       RightMarginColor = 14869218
       ScrollHint = False
       SelColor = clWhite
