@@ -946,7 +946,6 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
-            PageIndex = 1
             TabOrder = 0
             object TPage
               Left = 0
@@ -983,7 +982,7 @@ object FormMain: TFormMain
                   Font.Height = -11
                   Font.Name = 'Tahoma'
                   Font.Style = []
-                  Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+                  Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect]
                   ParentFont = False
                   ScrollBars = ssVertical
                   TabOrder = 0
@@ -1085,7 +1084,7 @@ object FormMain: TFormMain
                   SearchFooter.HintFindPrev = 'Find previous occurrence'
                   SearchFooter.HintHighlight = 'Highlight occurrences'
                   SearchFooter.MatchCaseCaption = 'Match case'
-                  ShowSelection = False
+                  SelectionColor = 7514857
                   SortSettings.DefaultFormat = ssAutomatic
                   Version = '7.8.0.1'
                   ColWidths = (
@@ -1361,7 +1360,6 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
-            PageIndex = 1
             TabOrder = 1
             object TPage
               Left = 0
@@ -1399,7 +1397,7 @@ object FormMain: TFormMain
                   Font.Height = -11
                   Font.Name = 'Tahoma'
                   Font.Style = []
-                  Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine]
+                  Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect]
                   ParentFont = False
                   ScrollBars = ssVertical
                   TabOrder = 0
@@ -1501,7 +1499,7 @@ object FormMain: TFormMain
                   SearchFooter.HintFindPrev = 'Find previous occurrence'
                   SearchFooter.HintHighlight = 'Highlight occurrences'
                   SearchFooter.MatchCaseCaption = 'Match case'
-                  ShowSelection = False
+                  SelectionColor = 7514857
                   SortSettings.DefaultFormat = ssAutomatic
                   Version = '7.8.0.1'
                   ColWidths = (
