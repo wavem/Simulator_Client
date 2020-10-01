@@ -573,6 +573,7 @@ void __fastcall TFormMain::btn_Back_RecvClick(TObject *Sender)
 {
 	Notebook_Recv->PageIndex = 0;
 	lb_Recv_Title->Caption = L"Recv Protocol List";
+	tm_RefreshRecvBufferViewer->Enabled = false;
 }
 //---------------------------------------------------------------------------
 
@@ -662,6 +663,7 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		lb_Recv_Title->Caption = tempStr;
 		memset(m_RecvBuf, 0, m_RecvProtocolSize);
 		DisplayBufferDataIntoGrid(RECV_PROTOCOL_TYPE);
+		tm_RefreshRecvBufferViewer->Enabled = true;
 	}
 }
 //---------------------------------------------------------------------------
@@ -1115,6 +1117,13 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 	delete p_dlg;
 	
 	DisplayBufferDataIntoGrid(t_Tag);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::tm_RefreshRecvBufferViewerTimer(TObject *Sender)
+{
+	// Refresh Receive Protocol Viewer Grid
+	DisplayBufferDataIntoGrid(RECV_PROTOCOL_TYPE);
 }
 //---------------------------------------------------------------------------
 

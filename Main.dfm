@@ -3082,4 +3082,10 @@ object FormMain: TFormMain
       Width = 60
     end
   end
+  object tm_RefreshRecvBufferViewer: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = tm_RefreshRecvBufferViewerTimer
+    Left = 492
+  end
 end
