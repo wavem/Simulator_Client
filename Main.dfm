@@ -63,7 +63,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 1
+      PageIndex = 3
       TabOrder = 0
       object TPage
         Left = 0
@@ -1811,6 +1811,29 @@ object FormMain: TFormMain
             TabOrder = 3
             Version = '1.3.0.2'
             OnClick = btn_Back_RecvClick
+          end
+          object btn_Send_Protocol: TAdvGlassButton
+            Left = 625
+            Top = 10
+            Width = 100
+            Height = 32
+            Cursor = crHandPoint
+            BackColor = 3355443
+            Caption = 'Send'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = clOlive
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
+            ParentFont = False
+            ShineColor = clGray
+            TabOrder = 4
+            Version = '1.3.0.2'
+            OnClick = btn_Send_ProtocolClick
           end
         end
       end

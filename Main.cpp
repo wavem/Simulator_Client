@@ -1127,3 +1127,30 @@ void __fastcall TFormMain::tm_RefreshRecvBufferViewerTimer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::btn_Send_ProtocolClick(TObject *Sender)
+{
+	// Pre Return
+	if(m_sock_UDP == INVALID_SOCKET) {
+		PrintMsg(L"There is no socket");
+		return;
+	}
+
+	// Common
+	UnicodeString t_Str = L"";
+	AnsiString t_AnsiStr = "";
+	static unsigned char t_Counter = 0;
+	unsigned char t_Type = StrToInt(ed_Type->Text);
+	int t_SendSize = 0;
+
+	struct sockaddr_in	t_sockaddr_in;
+	memset(&t_sockaddr_in, 0, sizeof(t_sockaddr_in));
+	t_sockaddr_in.sin_family = AF_INET;
+	t_sockaddr_in.sin_addr.s_addr = inet_addr(IP_SERVER);
+	t_sockaddr_in.sin_port = htons(UDP_SERVER_PORT);
+
+	t_SendSize = sendto(m_sock_UDP, m_SendBuf, m_SendProtocolSize, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
+	t_Str.sprintf(L"[SEND] Size : %d", t_SendSize);
+	PrintMsg(t_Str);
+}
+//---------------------------------------------------------------------------
+

@@ -144,6 +144,7 @@ __published:	// IDE-managed Components
 	TLabel *lb_Send_Title;
 	TLabel *lb_Recv_Title;
 	TTimer *tm_RefreshRecvBufferViewer;
+	TAdvGlassButton *btn_Send_Protocol;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_SendClick(TObject *Sender);
@@ -162,6 +163,7 @@ __published:	// IDE-managed Components
 	void __fastcall OnClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 	void __fastcall OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 	void __fastcall tm_RefreshRecvBufferViewerTimer(TObject *Sender);
+	void __fastcall btn_Send_ProtocolClick(TObject *Sender);
 
 
 private:	// User declarations
