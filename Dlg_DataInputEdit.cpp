@@ -85,6 +85,13 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 
 void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 {
+	InputDataRoutine();
+	this->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDataInputEdit::InputDataRoutine() {
+
 	// Common
 	int t_Value = ed_Data->IntValue;
 	BYTE t_CurrentByte = 0;
@@ -148,8 +155,15 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 			memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 4);
 			break;
 	}
+}
+//---------------------------------------------------------------------------
 
-	this->Close();
+void __fastcall TFormDataInputEdit::ed_DataKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+{
+	if(Key == VK_RETURN) {
+		InputDataRoutine();
+		this->Close();
+	}
 }
 //---------------------------------------------------------------------------
 

@@ -59,6 +59,7 @@ object FormDataInputEdit: TFormDataInputEdit
       TabOrder = 0
       Text = '0'
       Visible = True
+      OnKeyDown = ed_DataKeyDown
       Version = '3.3.5.3'
     end
     object btn_Input: TAdvGlassButton

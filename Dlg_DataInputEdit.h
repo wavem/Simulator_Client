@@ -18,6 +18,7 @@ __published:	// IDE-managed Components
 	TAdvEdit *ed_Data;
 	TAdvGlassButton *btn_Input;
 	void __fastcall btn_InputClick(TObject *Sender);
+	void __fastcall ed_DataKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormDataInputEdit(TComponent* Owner);
@@ -29,6 +30,9 @@ public: // Member Variables
 	int m_BitIdx;
 	int m_ByteSize;
 	int m_BitSize;
+
+public: // Member Functions
+	void __fastcall InputDataRoutine();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormDataInputEdit *FormDataInputEdit;
