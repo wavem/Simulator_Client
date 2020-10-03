@@ -3,8 +3,8 @@ object FormDataInputEdit: TFormDataInputEdit
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Data Input Edit'
-  ClientHeight = 129
-  ClientWidth = 186
+  ClientHeight = 220
+  ClientWidth = 262
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object FormDataInputEdit: TFormDataInputEdit
   object ___pnBase_DataInputEdit: TPanel
     Left = 0
     Top = 0
-    Width = 186
-    Height = 129
+    Width = 262
+    Height = 220
     Align = alClient
     BevelOuter = bvNone
     Color = 2171169
@@ -30,8 +30,8 @@ object FormDataInputEdit: TFormDataInputEdit
     ExplicitWidth = 185
     ExplicitHeight = 41
     object ed_Data: TAdvEdit
-      Left = 24
-      Top = 24
+      Left = 64
+      Top = 95
       Width = 136
       Height = 27
       EditAlign = eaRight
@@ -63,8 +63,8 @@ object FormDataInputEdit: TFormDataInputEdit
       Version = '3.3.5.3'
     end
     object btn_Input: TAdvGlassButton
-      Left = 40
-      Top = 66
+      Left = 80
+      Top = 154
       Width = 100
       Height = 32
       Cursor = crHandPoint
@@ -84,6 +84,100 @@ object FormDataInputEdit: TFormDataInputEdit
       TabOrder = 1
       Version = '1.3.0.2'
       OnClick = btn_InputClick
+    end
+    object Slider_HexDec: TAdvSmoothSlider
+      Left = 88
+      Top = 40
+      Width = 80
+      Height = 30
+      AppearanceOn.Fill.Color = 11196927
+      AppearanceOn.Fill.ColorTo = 7257087
+      AppearanceOn.Fill.ColorMirror = 4370174
+      AppearanceOn.Fill.ColorMirrorTo = 8053246
+      AppearanceOn.Fill.GradientType = gtVertical
+      AppearanceOn.Fill.GradientMirrorType = gtVertical
+      AppearanceOn.Fill.BorderColor = 4370174
+      AppearanceOn.Fill.Rounding = 4
+      AppearanceOn.Fill.RoundingType = rtLeft
+      AppearanceOn.Fill.ShadowOffset = 0
+      AppearanceOn.Fill.Glow = gmNone
+      AppearanceOn.FillDisabled.ColorMirror = clNone
+      AppearanceOn.FillDisabled.ColorMirrorTo = clNone
+      AppearanceOn.FillDisabled.GradientType = gtVertical
+      AppearanceOn.FillDisabled.GradientMirrorType = gtSolid
+      AppearanceOn.FillDisabled.BorderColor = clNone
+      AppearanceOn.FillDisabled.Rounding = 4
+      AppearanceOn.FillDisabled.ShadowOffset = 0
+      AppearanceOn.FillDisabled.Glow = gmNone
+      AppearanceOn.Caption = 'On'
+      AppearanceOn.Font.Charset = DEFAULT_CHARSET
+      AppearanceOn.Font.Color = clBlack
+      AppearanceOn.Font.Height = -11
+      AppearanceOn.Font.Name = 'Tahoma'
+      AppearanceOn.Font.Style = []
+      AppearanceOff.Fill.Color = 16773091
+      AppearanceOff.Fill.ColorTo = 16768452
+      AppearanceOff.Fill.ColorMirror = 16765357
+      AppearanceOff.Fill.ColorMirrorTo = 16767936
+      AppearanceOff.Fill.GradientType = gtVertical
+      AppearanceOff.Fill.GradientMirrorType = gtVertical
+      AppearanceOff.Fill.BorderColor = clNone
+      AppearanceOff.Fill.Rounding = 4
+      AppearanceOff.Fill.RoundingType = rtRight
+      AppearanceOff.Fill.ShadowOffset = 0
+      AppearanceOff.Fill.Glow = gmNone
+      AppearanceOff.FillDisabled.ColorMirror = clNone
+      AppearanceOff.FillDisabled.ColorMirrorTo = clNone
+      AppearanceOff.FillDisabled.GradientType = gtVertical
+      AppearanceOff.FillDisabled.GradientMirrorType = gtSolid
+      AppearanceOff.FillDisabled.BorderColor = clNone
+      AppearanceOff.FillDisabled.Rounding = 4
+      AppearanceOff.FillDisabled.ShadowOffset = 0
+      AppearanceOff.FillDisabled.Glow = gmNone
+      AppearanceOff.Caption = 'Off'
+      AppearanceOff.Font.Charset = DEFAULT_CHARSET
+      AppearanceOff.Font.Color = clBlack
+      AppearanceOff.Font.Height = -11
+      AppearanceOff.Font.Name = 'Tahoma'
+      AppearanceOff.Font.Style = []
+      ButtonAppearance.Fill.Color = 16773091
+      ButtonAppearance.Fill.ColorTo = 16765615
+      ButtonAppearance.Fill.ColorMirror = clNone
+      ButtonAppearance.Fill.ColorMirrorTo = clNone
+      ButtonAppearance.Fill.GradientType = gtVertical
+      ButtonAppearance.Fill.GradientMirrorType = gtSolid
+      ButtonAppearance.Fill.BorderColor = 16765615
+      ButtonAppearance.Fill.Rounding = 4
+      ButtonAppearance.Fill.ShadowOffset = 0
+      ButtonAppearance.Fill.Glow = gmNone
+      ButtonAppearance.FillDisabled.ColorMirror = clNone
+      ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+      ButtonAppearance.FillDisabled.GradientType = gtVertical
+      ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
+      ButtonAppearance.FillDisabled.BorderColor = clBlack
+      ButtonAppearance.FillDisabled.Rounding = 4
+      ButtonAppearance.FillDisabled.ShadowOffset = 0
+      ButtonAppearance.FillDisabled.Glow = gmNone
+      Fill.ColorMirror = clNone
+      Fill.ColorMirrorTo = clNone
+      Fill.GradientType = gtVertical
+      Fill.GradientMirrorType = gtSolid
+      Fill.BorderColor = clNone
+      Fill.Rounding = 4
+      Fill.ShadowOffset = 0
+      Fill.Glow = gmNone
+      FillDisabled.Color = 15921906
+      FillDisabled.ColorTo = 11974326
+      FillDisabled.ColorMirror = clNone
+      FillDisabled.ColorMirrorTo = clNone
+      FillDisabled.GradientType = gtVertical
+      FillDisabled.GradientMirrorType = gtVertical
+      FillDisabled.BorderColor = 9841920
+      FillDisabled.Rounding = 4
+      FillDisabled.ShadowOffset = 0
+      FillDisabled.Glow = gmNone
+      TabOrder = 2
+      TMSStyle = 4
     end
   end
 end

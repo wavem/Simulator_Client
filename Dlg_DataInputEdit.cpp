@@ -8,6 +8,7 @@
 #pragma package(smart_init)
 #pragma link "AdvEdit"
 #pragma link "AdvGlassButton"
+#pragma link "AdvSmoothSlider"
 #pragma resource "*.dfm"
 TFormDataInputEdit *FormDataInputEdit;
 //---------------------------------------------------------------------------

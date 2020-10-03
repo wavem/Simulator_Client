@@ -10,6 +10,7 @@
 #include <Vcl.ExtCtrls.hpp>
 #include "AdvEdit.hpp"
 #include "AdvGlassButton.hpp"
+#include "AdvSmoothSlider.hpp"
 //---------------------------------------------------------------------------
 class TFormDataInputEdit : public TForm
 {
@@ -17,6 +18,7 @@ __published:	// IDE-managed Components
 	TPanel *___pnBase_DataInputEdit;
 	TAdvEdit *ed_Data;
 	TAdvGlassButton *btn_Input;
+	TAdvSmoothSlider *Slider_HexDec;
 	void __fastcall btn_InputClick(TObject *Sender);
 	void __fastcall ed_DataKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 private:	// User declarations
