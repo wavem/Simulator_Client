@@ -3,8 +3,8 @@ object FormDataInputEdit: TFormDataInputEdit
   Top = 0
   BorderStyle = bsDialog
   Caption = 'Data Input Edit'
-  ClientHeight = 220
-  ClientWidth = 262
+  ClientHeight = 175
+  ClientWidth = 189
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,8 +18,8 @@ object FormDataInputEdit: TFormDataInputEdit
   object ___pnBase_DataInputEdit: TPanel
     Left = 0
     Top = 0
-    Width = 262
-    Height = 220
+    Width = 189
+    Height = 175
     Align = alClient
     BevelOuter = bvNone
     Color = 2171169
@@ -30,8 +30,8 @@ object FormDataInputEdit: TFormDataInputEdit
     ExplicitWidth = 185
     ExplicitHeight = 41
     object ed_Data: TAdvEdit
-      Left = 64
-      Top = 95
+      Left = 27
+      Top = 71
       Width = 136
       Height = 27
       EditAlign = eaRight
@@ -63,8 +63,8 @@ object FormDataInputEdit: TFormDataInputEdit
       Version = '3.3.5.3'
     end
     object btn_Input: TAdvGlassButton
-      Left = 80
-      Top = 154
+      Left = 45
+      Top = 113
       Width = 100
       Height = 32
       Cursor = crHandPoint
@@ -86,9 +86,9 @@ object FormDataInputEdit: TFormDataInputEdit
       OnClick = btn_InputClick
     end
     object Slider_HexDec: TAdvSmoothSlider
-      Left = 75
-      Top = 40
-      Width = 94
+      Left = 45
+      Top = 24
+      Width = 100
       Height = 30
       AppearanceOn.Fill.Color = 3355443
       AppearanceOn.Fill.ColorTo = cl3DDkShadow
