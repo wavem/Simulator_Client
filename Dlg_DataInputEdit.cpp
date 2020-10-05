@@ -28,6 +28,7 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 	m_ByteSize = _ByteSize;
 	m_BitSize = _BitSize;
 	int t_CurrentValue = 0;
+	m_IsHex = false;
 
 	// Extract Current Value Routine
 	switch(m_ByteSize) {
@@ -164,6 +165,29 @@ void __fastcall TFormDataInputEdit::ed_DataKeyDown(TObject *Sender, WORD &Key, T
 	if(Key == VK_RETURN) {
 		InputDataRoutine();
 		this->Close();
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDataInputEdit::Slider_HexDecStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+		  double Value)
+{
+	ChangeHexDecMode();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormDataInputEdit::ChangeHexDecMode() {
+
+	// Common
+	UnicodeString tempStr = L"Data Input Edit";
+	if(Slider_HexDec->State == ssOn) {
+		tempStr += L" (DEC)";
+		this->Caption = tempStr;
+		m_IsHex = false;
+	} else {
+		tempStr += L" (HEX)";
+		this->Caption = tempStr;
+		m_IsHex = true;
 	}
 }
 //---------------------------------------------------------------------------

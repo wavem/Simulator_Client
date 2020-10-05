@@ -21,6 +21,8 @@ __published:	// IDE-managed Components
 	TAdvSmoothSlider *Slider_HexDec;
 	void __fastcall btn_InputClick(TObject *Sender);
 	void __fastcall ed_DataKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
+	void __fastcall Slider_HexDecStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+          double Value);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormDataInputEdit(TComponent* Owner);
@@ -32,9 +34,11 @@ public: // Member Variables
 	int m_BitIdx;
 	int m_ByteSize;
 	int m_BitSize;
+	bool m_IsHex;
 
 public: // Member Functions
 	void __fastcall InputDataRoutine();
+	void __fastcall ChangeHexDecMode();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormDataInputEdit *FormDataInputEdit;

@@ -177,6 +177,7 @@ object FormDataInputEdit: TFormDataInputEdit
       FillDisabled.Rounding = 4
       FillDisabled.ShadowOffset = 0
       FillDisabled.Glow = gmNone
+      OnStateChanged = Slider_HexDecStateChanged
       TabOrder = 2
       TMSStyle = 4
     end
