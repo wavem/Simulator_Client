@@ -2,7 +2,7 @@ object FormDataInputEdit: TFormDataInputEdit
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = 'Data Input Edit'
+  Caption = 'Data Input Edit (DEC)'
   ClientHeight = 175
   ClientWidth = 189
   Color = clBtnFace

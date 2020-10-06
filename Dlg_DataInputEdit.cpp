@@ -178,15 +178,11 @@ void __fastcall TFormDataInputEdit::Slider_HexDecStateChanged(TObject *Sender, T
 
 void __fastcall TFormDataInputEdit::ChangeHexDecMode() {
 
-	// Common
-	UnicodeString tempStr = L"Data Input Edit";
 	if(Slider_HexDec->State == ssOn) {
-		tempStr += L" (DEC)";
-		this->Caption = tempStr;
+		this->Caption = L"Data Input Edit (DEC)";
 		m_IsHex = false;
 	} else {
-		tempStr += L" (HEX)";
-		this->Caption = tempStr;
+		this->Caption = L"Data Input Edit (HEX)";
 		m_IsHex = true;
 	}
 }
