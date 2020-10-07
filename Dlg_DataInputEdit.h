@@ -34,7 +34,6 @@ public: // Member Variables
 	int m_BitIdx;
 	int m_ByteSize;
 	int m_BitSize;
-	bool m_IsHex;
 
 public: // Member Functions
 	void __fastcall InputDataRoutine();
