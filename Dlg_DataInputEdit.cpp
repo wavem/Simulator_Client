@@ -28,7 +28,6 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 	m_ByteSize = _ByteSize;
 	m_BitSize = _BitSize;
 	int t_CurrentValue = 0;
-	m_IsHex = false;
 
 	// Extract Current Value Routine
 	switch(m_ByteSize) {
