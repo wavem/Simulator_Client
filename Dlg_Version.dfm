@@ -23,7 +23,7 @@ object FormVersion: TFormVersion
     Height = 137
     Align = alClient
     BevelOuter = bvNone
-    Color = clBlack
+    Color = 3355443
     ParentBackground = False
     TabOrder = 0
     object lb_Version: TLabel
@@ -33,7 +33,7 @@ object FormVersion: TFormVersion
       Height = 16
       Caption = 'Version : 0.08'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
+      Font.Color = 2262986
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
@@ -46,7 +46,7 @@ object FormVersion: TFormVersion
       Height = 16
       Caption = 'Last Update : 2020-10-08 AM 11:30'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
+      Font.Color = 2262986
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
@@ -59,7 +59,7 @@ object FormVersion: TFormVersion
       Height = 25
       Caption = 'Simulator Client'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWhite
+      Font.Color = 2262986
       Font.Height = -21
       Font.Name = 'Tahoma'
       Font.Style = [fsBold]
