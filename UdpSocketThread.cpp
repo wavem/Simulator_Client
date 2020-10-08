@@ -56,15 +56,6 @@ void __fastcall CUdpSocketThread::Execute() {
 
 		t_Str.sprintf(L"[RECV] Size : %d", t_ReceivedSize);
 		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
-
-		//t_Str.sprintf(L"[RECV] Req Type : %d, Count : %d, Length : %d, Size : %d", t_Buffer[5], t_Buffer[4], t_Buffer[6], t_ReceivedSize);
-		//SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
-		//t_Str.sprintf(L"[RECV] Date : 20%02d-%02d-%02d  %02d:%02d:%02d", t_Buffer[7], t_Buffer[8], t_Buffer[9], t_Buffer[10], t_Buffer[11], t_Buffer[12]);
-		//SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
-		//t_Str.sprintf(L"[RECV] Car Num : %02X %02X", t_Buffer[15], t_Buffer[16]);
-		//SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
-		//t_Str.sprintf(L"");
-		//SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	}
 
 	return;

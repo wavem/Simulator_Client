@@ -31,7 +31,7 @@ object FormVersion: TFormVersion
       Top = 72
       Width = 90
       Height = 16
-      Caption = 'Version : 0.07'
+      Caption = 'Version : 0.08'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -13
@@ -42,9 +42,9 @@ object FormVersion: TFormVersion
     object lb_UpdateDate: TLabel
       Left = 160
       Top = 94
-      Width = 231
+      Width = 233
       Height = 16
-      Caption = 'Last Update : 2020-10-05 PM 18:20'
+      Caption = 'Last Update : 2020-10-08 AM 11:30'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWhite
       Font.Height = -13
