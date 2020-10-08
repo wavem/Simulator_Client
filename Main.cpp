@@ -1112,7 +1112,7 @@ void __fastcall TFormMain::OnDbClickCell_Protocol(TObject *Sender, int ARow, int
 	t_Span_Y = t_point.y;
 
 	// Create Data Input Dialog
-	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(t_pBuffer, t_Row - 1, t_Span_Y + 1, 8 - t_Col, t_Span_X + 1);
+	TFormDataInputEdit* p_dlg = new TFormDataInputEdit(t_pBuffer, t_Row - 1, t_Span_Y + 1, 8 - t_Col, t_Span_X + 1, t_Tag);
 	p_dlg->ShowModal();
 	delete p_dlg;
 	

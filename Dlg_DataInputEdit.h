@@ -26,7 +26,7 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormDataInputEdit(TComponent* Owner);
-	__fastcall TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize);
+	__fastcall TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize, int _ProtocolType);
 
 public: // Member Variables
 	BYTE* m_pBuffer;
@@ -34,6 +34,7 @@ public: // Member Variables
 	int m_BitIdx;
 	int m_ByteSize;
 	int m_BitSize;
+	int m_ProtocolType;
 
 public: // Member Functions
 	void __fastcall InputDataRoutine();

@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "Dlg_DataInputEdit.h"
+#include "Define.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "AdvEdit"
@@ -18,7 +19,7 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-__fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize)
+__fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, int _ByteSize, int _BitIdx, int _BitSize, int _ProtocolType)
 	: TForm(Owner)
 {
 	// Common
@@ -27,7 +28,11 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 	m_BitIdx = _BitIdx;
 	m_ByteSize = _ByteSize;
 	m_BitSize = _BitSize;
+	m_ProtocolType = _ProtocolType;
 	int t_CurrentValue = 0;
+
+	// Prevent Exception
+	if(m_ProtocolType == RECV_PROTOCOL_TYPE) btn_Input->Enabled = false;
 
 	// Extract Current Value Routine
 	switch(m_ByteSize) {
@@ -161,6 +166,7 @@ void __fastcall TFormDataInputEdit::InputDataRoutine() {
 
 void __fastcall TFormDataInputEdit::ed_DataKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
 {
+	if(m_ProtocolType == RECV_PROTOCOL_TYPE) return;
 	if(Key == VK_RETURN) {
 		InputDataRoutine();
 		this->Close();
