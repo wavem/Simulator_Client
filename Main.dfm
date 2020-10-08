@@ -1876,61 +1876,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          object btn_Send: TAdvGlassButton
-            Left = 392
-            Top = 64
-            Width = 100
-            Height = 32
-            BackColor = clWhite
-            Caption = 'Send'
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = [fsBold]
-            ForeColor = clWhite
-            GlowColor = 16760205
-            InnerBorderColor = clBlack
-            OuterBorderColor = clWhite
-            ParentFont = False
-            ShineColor = clWhite
-            TabOrder = 0
-            Version = '1.3.0.2'
-            OnClick = btn_SendClick
-          end
-          object ed_Type: TAdvEdit
-            Left = 498
-            Top = 64
-            Width = 49
-            Height = 24
-            EditAlign = eaRight
-            EditType = etNumeric
-            EmptyTextStyle = []
-            MaxValue = 255
-            LabelFont.Charset = DEFAULT_CHARSET
-            LabelFont.Color = clWindowText
-            LabelFont.Height = -11
-            LabelFont.Name = 'Tahoma'
-            LabelFont.Style = []
-            Lookup.Font.Charset = DEFAULT_CHARSET
-            Lookup.Font.Color = clWindowText
-            Lookup.Font.Height = -11
-            Lookup.Font.Name = 'Arial'
-            Lookup.Font.Style = []
-            Lookup.Separator = ';'
-            Color = clWindow
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = [fsBold]
-            MaxLength = 2
-            ParentFont = False
-            TabOrder = 1
-            Text = '0'
-            Visible = True
-            Version = '3.3.5.3'
-          end
         end
       end
       object TPage
