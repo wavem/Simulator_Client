@@ -63,6 +63,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
+      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -945,6 +946,7 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
+            PageIndex = 1
             TabOrder = 0
             object TPage
               Left = 0
@@ -1359,6 +1361,7 @@ object FormMain: TFormMain
             Top = 48
             Width = 847
             Height = 734
+            PageIndex = 1
             TabOrder = 1
             object TPage
               Left = 0
@@ -1594,6 +1597,8 @@ object FormMain: TFormMain
                   TabOrder = 0
                   HoverRowCells = [hcNormal, hcSelected]
                   OnGetAlignment = GetAlignment_ProtocolGrid
+                  OnClickCell = OnClickCell_Protocol
+                  OnDblClickCell = OnDbClickCell_Protocol
                   ActiveCellFont.Charset = DEFAULT_CHARSET
                   ActiveCellFont.Color = clWindowText
                   ActiveCellFont.Height = -11
