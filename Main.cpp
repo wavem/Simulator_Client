@@ -1137,9 +1137,6 @@ void __fastcall TFormMain::btn_Send_ProtocolClick(TObject *Sender)
 
 	// Common
 	UnicodeString t_Str = L"";
-	AnsiString t_AnsiStr = "";
-	static unsigned char t_Counter = 0;
-	unsigned char t_Type = StrToInt(ed_Type->Text);
 	int t_SendSize = 0;
 
 	struct sockaddr_in	t_sockaddr_in;
