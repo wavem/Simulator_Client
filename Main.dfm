@@ -63,7 +63,6 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 3
       TabOrder = 0
       object TPage
         Left = 0
