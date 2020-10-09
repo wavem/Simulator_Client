@@ -2636,7 +2636,7 @@ object FormMain: TFormMain
       Caption = 'Test'
       Category = 0
       Hint = 'Test'
-      Visible = ivAlways
+      Visible = ivNever
       OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
@@ -2776,7 +2776,7 @@ object FormMain: TFormMain
       Caption = 'Temp'
       Category = 0
       Hint = 'Temp'
-      Visible = ivAlways
+      Visible = ivNever
       OnClick = ClickMenuButton
       HotGlyph.Data = {
         36100000424D3610000000000000360000002800000020000000200000000100
