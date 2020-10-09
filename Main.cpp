@@ -80,6 +80,7 @@
 #pragma link "AdvGrid"
 #pragma link "AdvObj"
 #pragma link "BaseGrid"
+#pragma link "AdvSmoothSlider"
 #pragma resource "*.dfm"
 #pragma link "libxl.lib"
 TFormMain *FormMain;

@@ -83,6 +83,7 @@
 #include "AdvObj.hpp"
 #include "BaseGrid.hpp"
 #include <Vcl.Grids.hpp>
+#include "AdvSmoothSlider.hpp"
 //---------------------------------------------------------------------------
 class CUdpSocketThread;
 class TFormMain : public TForm
@@ -143,6 +144,13 @@ __published:	// IDE-managed Components
 	TLabel *lb_Recv_Title;
 	TTimer *tm_RefreshRecvBufferViewer;
 	TAdvGlassButton *btn_Send_Protocol;
+	TLabel *Label2;
+	TLabel *Label1;
+	TAdvSmoothComboBox *AdvSmoothComboBox1;
+	TAdvSmoothSlider *Slider_HexDec;
+	TLabel *Label3;
+	TAdvSmoothSlider *AdvSmoothSlider1;
+	TAdvSmoothSlider *AdvSmoothSlider2;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
