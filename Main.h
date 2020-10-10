@@ -151,6 +151,9 @@ __published:	// IDE-managed Components
 	TLabel *Label3;
 	TAdvSmoothSlider *AdvSmoothSlider1;
 	TAdvSmoothSlider *AdvSmoothSlider2;
+	TLabel *Label4;
+	TLabel *Label5;
+	TAdvSmoothComboBox *AdvSmoothComboBox2;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
