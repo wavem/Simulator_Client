@@ -1861,7 +1861,7 @@ object FormMain: TFormMain
           TabOrder = 0
           ExplicitLeft = -6
           ExplicitTop = -6
-          object Label2: TLabel
+          object lb_Setting_Title_AutoSend: TLabel
             Left = 32
             Top = 44
             Width = 66
@@ -1876,7 +1876,7 @@ object FormMain: TFormMain
             ParentColor = False
             ParentFont = False
           end
-          object Label1: TLabel
+          object lb_Setting_Title_Endian: TLabel
             Left = 57
             Top = 78
             Width = 41
@@ -1891,7 +1891,7 @@ object FormMain: TFormMain
             ParentColor = False
             ParentFont = False
           end
-          object Label3: TLabel
+          object lb_Setting_Title_Log: TLabel
             Left = 52
             Top = 116
             Width = 46
@@ -1906,7 +1906,7 @@ object FormMain: TFormMain
             ParentColor = False
             ParentFont = False
           end
-          object Label4: TLabel
+          object lb_Setting_Title_SendPeriod: TLabel
             Left = 253
             Top = 44
             Width = 74
@@ -1921,7 +1921,7 @@ object FormMain: TFormMain
             ParentColor = False
             ParentFont = False
           end
-          object Label5: TLabel
+          object lb_Setting_Title_RecvPeriod: TLabel
             Left = 255
             Top = 78
             Width = 72
@@ -1936,7 +1936,7 @@ object FormMain: TFormMain
             ParentColor = False
             ParentFont = False
           end
-          object AdvSmoothComboBox1: TAdvSmoothComboBox
+          object cb_SendPeriod: TAdvSmoothComboBox
             Left = 346
             Top = 36
             Width = 103
@@ -2311,7 +2311,7 @@ object FormMain: TFormMain
             DropDownWidth = 112
             TMSStyle = 4
           end
-          object Slider_HexDec: TAdvSmoothSlider
+          object sd_AutoSend: TAdvSmoothSlider
             Left = 117
             Top = 36
             Width = 104
@@ -2406,7 +2406,7 @@ object FormMain: TFormMain
             TabOrder = 1
             TMSStyle = 4
           end
-          object AdvSmoothSlider1: TAdvSmoothSlider
+          object sd_Endian: TAdvSmoothSlider
             Left = 117
             Top = 72
             Width = 104
@@ -2501,7 +2501,7 @@ object FormMain: TFormMain
             TabOrder = 2
             TMSStyle = 4
           end
-          object AdvSmoothSlider2: TAdvSmoothSlider
+          object sd_LogFile: TAdvSmoothSlider
             Left = 117
             Top = 108
             Width = 104
@@ -2596,7 +2596,7 @@ object FormMain: TFormMain
             TabOrder = 3
             TMSStyle = 4
           end
-          object AdvSmoothComboBox2: TAdvSmoothComboBox
+          object cb_RecvPeriod: TAdvSmoothComboBox
             Left = 346
             Top = 72
             Width = 103
