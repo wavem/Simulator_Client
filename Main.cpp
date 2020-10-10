@@ -530,6 +530,7 @@ void __fastcall TFormMain::btn_Back_SendClick(TObject *Sender)
 {
 	Notebook_Send->PageIndex = 0;
 	lb_Send_Title->Caption = L"Send Protocol List";
+	btn_Send_Protocol->Visible = false;
 }
 //---------------------------------------------------------------------------
 
@@ -615,6 +616,7 @@ void __fastcall TFormMain::ProtocolListDbClick(TObject *Sender, int ARow, int AC
 		lb_Send_Title->Caption = tempStr;
 		memset(m_SendBuf, 0, m_SendProtocolSize);
 		DisplayBufferDataIntoGrid(SEND_PROTOCOL_TYPE);
+		btn_Send_Protocol->Visible = true;
 	} else {
 		// Recv Protocol List
 		Notebook_Recv->PageIndex = 1;

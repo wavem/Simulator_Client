@@ -64,7 +64,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 2
+      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -1836,6 +1836,7 @@ object FormMain: TFormMain
             ShineColor = clGray
             TabOrder = 4
             Version = '1.3.0.2'
+            Visible = False
             OnClick = btn_Send_ProtocolClick
           end
         end
