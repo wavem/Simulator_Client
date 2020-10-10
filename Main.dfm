@@ -29,6 +29,7 @@ object FormMain: TFormMain
     Fonts.GroupHeader.Height = -12
     Fonts.GroupHeader.Name = #47569#51008' '#44256#46357
     Fonts.GroupHeader.Style = []
+    PopupMenuItems = [rpmiMinimizeRibbon]
     Contexts = <>
     TabOrder = 0
     TabStop = False
@@ -2897,7 +2898,7 @@ object FormMain: TFormMain
       WholeRow = False
     end
     object BarMgrBar2: TdxBar
-      Caption = 'Info'
+      Caption = ' '
       CaptionButtons = <>
       DockedLeft = 307
       DockedTop = 0
