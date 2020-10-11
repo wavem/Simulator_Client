@@ -881,7 +881,20 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 						break;
 
 					case 3:
-						// Later...
+						// Color Setting
+						if(t_Buffer[t_GridRow - 1] == 0 && t_Buffer[t_GridRow - 1 + 1] == 0 && t_Buffer[t_GridRow - 1 + 2] == 0 && t_Buffer[t_GridRow - 1 + 3] == 0) {
+							p_grid->Colors[t_GridCol][t_GridRow] = clWhite;
+						} else {
+							p_grid->Colors[t_GridCol][t_GridRow] = clLime;
+						}
+
+						// Value Setting
+						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
+						tempStr.sprintf(L"\n%02X%02X %02X%02X", t_Buffer[t_GridRow - 1], t_Buffer[t_GridRow - 1 + 1], t_Buffer[t_GridRow - 1 + 2], t_Buffer[t_GridRow - 1 + 3]);
+						t_FinalStr += tempStr;
+						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
+						t_GridRow += 4;
+						continue;
 						break;
 
 					default:
