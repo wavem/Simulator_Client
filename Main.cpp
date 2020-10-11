@@ -114,7 +114,6 @@ void __fastcall TFormMain::InitProgram() {
 	m_SendProtocolSize = 0;
 	m_RecvProtocolSize = 0;
 
-
 	// Init Grids
 	InitGrids();
 
@@ -1095,10 +1094,16 @@ void __fastcall TFormMain::tm_RefreshRecvBufferViewerTimer(TObject *Sender)
 
 void __fastcall TFormMain::btn_Send_ProtocolClick(TObject *Sender)
 {
+	SendPacket();
+}
+//---------------------------------------------------------------------------
+
+int __fastcall TFormMain::SendPacket() {
+
 	// Pre Return
 	if(m_sock_UDP == INVALID_SOCKET) {
 		PrintMsg(L"There is no socket");
-		return;
+		return -1;
 	}
 
 	// Common
@@ -1114,13 +1119,20 @@ void __fastcall TFormMain::btn_Send_ProtocolClick(TObject *Sender)
 	t_SendSize = sendto(m_sock_UDP, m_SendBuf, m_SendProtocolSize, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
 	t_Str.sprintf(L"[SEND] Size : %d", t_SendSize);
 	PrintMsg(t_Str);
+
+	return t_SendSize;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::tm_AutoSendTimer(TObject *Sender)
+{
+	SendPacket();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFormMain::cb_SendPeriodItemSelected(TObject *Sender, int itemindex)
 {
-	TAdvSmoothComboBox* p_cb = (TAdvSmoothComboBox*)Sender;
-	switch(p_cb->SelectedItemIndex) {
+	switch(itemindex) {
 		default:
 			break;
 		case 0: // 1000ms
@@ -1138,8 +1150,7 @@ void __fastcall TFormMain::cb_SendPeriodItemSelected(TObject *Sender, int itemin
 
 void __fastcall TFormMain::cb_RecvPeriodItemSelected(TObject *Sender, int itemindex)
 {
-	TAdvSmoothComboBox* p_cb = (TAdvSmoothComboBox*)Sender;
-	switch(p_cb->SelectedItemIndex) {
+	switch(itemindex) {
 		default:
 			break;
 		case 0: // 250ms
@@ -1155,3 +1166,13 @@ void __fastcall TFormMain::cb_RecvPeriodItemSelected(TObject *Sender, int itemin
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::sd_AutoSendStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+		  double Value)
+{
+	if(State == ssOn) { // OFF
+		tm_AutoSend->Enabled = false;
+	} else { // ON
+		tm_AutoSend->Enabled = true;
+	}
+}
+//---------------------------------------------------------------------------

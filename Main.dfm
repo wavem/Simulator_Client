@@ -64,7 +64,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 2
+      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -912,6 +912,8 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
+          ExplicitLeft = -6
+          ExplicitTop = -6
           object lb_Send_Title: TLabel
             Left = 26
             Top = 18
@@ -2404,6 +2406,7 @@ object FormMain: TFormMain
             FillDisabled.Rounding = 4
             FillDisabled.ShadowOffset = 0
             FillDisabled.Glow = gmNone
+            OnStateChanged = sd_AutoSendStateChanged
             TabOrder = 1
             TMSStyle = 4
           end
@@ -4175,6 +4178,7 @@ object FormMain: TFormMain
   end
   object tm_AutoSend: TTimer
     Enabled = False
+    OnTimer = tm_AutoSendTimer
     Left = 463
   end
 end

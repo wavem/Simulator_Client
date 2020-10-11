@@ -172,9 +172,12 @@ __published:	// IDE-managed Components
 	void __fastcall OnClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 	void __fastcall OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 	void __fastcall tm_RefreshRecvBufferViewerTimer(TObject *Sender);
-	void __fastcall btn_Send_ProtocolClick(TObject *Sender);
 	void __fastcall cb_RecvPeriodItemSelected(TObject *Sender, int itemindex);
 	void __fastcall cb_SendPeriodItemSelected(TObject *Sender, int itemindex);
+	void __fastcall sd_AutoSendStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+          double Value);
+	void __fastcall tm_AutoSendTimer(TObject *Sender);
+	void __fastcall btn_Send_ProtocolClick(TObject *Sender);
 
 
 private:	// User declarations
@@ -215,6 +218,7 @@ public: // Socket
 	unsigned short m_LocalPort;
 	BYTE m_SendBuf[1500];
 	BYTE m_RecvBuf[1500];
+	int __fastcall SendPacket();
 
 public: // Libxl
 	libxl::Book* m_Book;
