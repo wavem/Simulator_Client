@@ -2229,6 +2229,7 @@ object FormMain: TFormMain
             Footer.Font.Style = []
             Footer.Visible = False
             ScrollIndicator.Visible = False
+            OnItemSelected = cb_SendPeriodItemSelected
             DefaultItem.Caption = 'Item 0'
             DefaultItem.CaptionFont.Charset = DEFAULT_CHARSET
             DefaultItem.CaptionFont.Color = 2129339
@@ -2889,6 +2890,7 @@ object FormMain: TFormMain
             Footer.Font.Style = []
             Footer.Visible = False
             ScrollIndicator.Visible = False
+            OnItemSelected = cb_RecvPeriodItemSelected
             DefaultItem.Caption = 'Item 0'
             DefaultItem.CaptionFont.Charset = DEFAULT_CHARSET
             DefaultItem.CaptionFont.Color = 2129339
@@ -4170,5 +4172,9 @@ object FormMain: TFormMain
     Interval = 250
     OnTimer = tm_RefreshRecvBufferViewerTimer
     Left = 435
+  end
+  object tm_AutoSend: TTimer
+    Enabled = False
+    Left = 463
   end
 end

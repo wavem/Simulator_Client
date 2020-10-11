@@ -154,6 +154,7 @@ __published:	// IDE-managed Components
 	TLabel *lb_Setting_Title_SendPeriod;
 	TLabel *lb_Setting_Title_RecvPeriod;
 	TAdvSmoothComboBox *cb_RecvPeriod;
+	TTimer *tm_AutoSend;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
@@ -172,6 +173,8 @@ __published:	// IDE-managed Components
 	void __fastcall OnDbClickCell_Protocol(TObject *Sender, int ARow, int ACol);
 	void __fastcall tm_RefreshRecvBufferViewerTimer(TObject *Sender);
 	void __fastcall btn_Send_ProtocolClick(TObject *Sender);
+	void __fastcall cb_RecvPeriodItemSelected(TObject *Sender, int itemindex);
+	void __fastcall cb_SendPeriodItemSelected(TObject *Sender, int itemindex);
 
 
 private:	// User declarations

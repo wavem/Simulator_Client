@@ -1116,3 +1116,42 @@ void __fastcall TFormMain::btn_Send_ProtocolClick(TObject *Sender)
 	PrintMsg(t_Str);
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::cb_SendPeriodItemSelected(TObject *Sender, int itemindex)
+{
+	TAdvSmoothComboBox* p_cb = (TAdvSmoothComboBox*)Sender;
+	switch(p_cb->SelectedItemIndex) {
+		default:
+			break;
+		case 0: // 1000ms
+			tm_AutoSend->Interval = 1000;
+			break;
+		case 1: // 500ms
+			tm_AutoSend->Interval = 500;
+			break;
+		case 2: // 250ms
+			tm_AutoSend->Interval = 250;
+			break;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::cb_RecvPeriodItemSelected(TObject *Sender, int itemindex)
+{
+	TAdvSmoothComboBox* p_cb = (TAdvSmoothComboBox*)Sender;
+	switch(p_cb->SelectedItemIndex) {
+		default:
+			break;
+		case 0: // 250ms
+			tm_RefreshRecvBufferViewer->Interval = 250;
+			break;
+		case 1: // 500ms
+			tm_RefreshRecvBufferViewer->Interval = 500;
+			break;
+		case 2: // 1000ms
+			tm_RefreshRecvBufferViewer->Interval = 1000;
+			break;
+	}
+}
+//---------------------------------------------------------------------------
+
