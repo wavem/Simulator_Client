@@ -64,7 +64,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 1
+      PageIndex = 2
       TabOrder = 0
       object TPage
         Left = 0
@@ -2502,6 +2502,7 @@ object FormMain: TFormMain
             FillDisabled.Rounding = 4
             FillDisabled.ShadowOffset = 0
             FillDisabled.Glow = gmNone
+            OnStateChanged = sd_EndianStateChanged
             TabOrder = 2
             TMSStyle = 4
           end
@@ -2597,6 +2598,7 @@ object FormMain: TFormMain
             FillDisabled.Rounding = 4
             FillDisabled.ShadowOffset = 0
             FillDisabled.Glow = gmNone
+            OnStateChanged = sd_LogFileStateChanged
             TabOrder = 3
             TMSStyle = 4
           end

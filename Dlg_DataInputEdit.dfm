@@ -25,10 +25,6 @@ object FormDataInputEdit: TFormDataInputEdit
     Color = 2171169
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 72
-    ExplicitTop = 56
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object ed_Data: TAdvEdit
       Left = 27
       Top = 71

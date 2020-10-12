@@ -99,7 +99,7 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 void __fastcall TFormDataInputEdit::InputDataRoutine() {
 
 	// Common
-	int t_Value = ed_Data->IntValue;
+	unsigned int t_Value = ed_Data->IntValue;
 	BYTE t_CurrentByte = 0;
 	BYTE t_InputByte = 0;
 

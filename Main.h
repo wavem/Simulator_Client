@@ -178,6 +178,10 @@ __published:	// IDE-managed Components
           double Value);
 	void __fastcall tm_AutoSendTimer(TObject *Sender);
 	void __fastcall btn_Send_ProtocolClick(TObject *Sender);
+	void __fastcall sd_EndianStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+          double Value);
+	void __fastcall sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+          double Value);
 
 
 private:	// User declarations
@@ -192,6 +196,8 @@ public: // Basic Member Variables
 	int m_ClickedCol;
 	int m_SendProtocolSize;
 	int m_RecvProtocolSize;
+	bool m_bIsBigEndian;
+	bool m_bIsOnLogFile;
 
 public: // Data Parsing
 	void __fastcall DisplayBufferDataIntoGrid(int _type);

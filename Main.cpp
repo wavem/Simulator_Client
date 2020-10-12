@@ -113,6 +113,8 @@ void __fastcall TFormMain::InitProgram() {
 	memset(m_RecvBuf, 0, UDP_RECV_BUF_SIZE);
 	m_SendProtocolSize = 0;
 	m_RecvProtocolSize = 0;
+	m_bIsBigEndian = false;
+	m_bIsOnLogFile = false;
 
 	// Init Grids
 	InitGrids();
@@ -1189,3 +1191,26 @@ void __fastcall TFormMain::sd_AutoSendStateChanged(TObject *Sender, TAdvSmoothSl
 	}
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormMain::sd_EndianStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+		  double Value)
+{
+	if(State == ssOn) { // Little Endian
+		m_bIsBigEndian = false;
+	} else { // Big Endian
+		m_bIsBigEndian = true;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+		  double Value)
+{
+	if(State == ssOn) { // Log File OFF
+		m_bIsOnLogFile = false;
+	} else { // Log File ON
+		m_bIsOnLogFile = true;
+	}
+}
+//---------------------------------------------------------------------------
+
