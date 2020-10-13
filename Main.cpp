@@ -190,10 +190,42 @@ void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::PrintMemo(UnicodeString _str) {
+	int t_Line = memo->Lines->Add(_str);
+	memo->SetCursor(0, t_Line);
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
 {
 	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
 	Notebook_Main->PageIndex = p_Btn->Tag;
+
+	unDATA_8b temp;
+	UnicodeString tempStr = L"";
+	tempStr.sprintf(L"Size : %d", sizeof(unDATA_8b));
+	PrintMemo(tempStr);
+
+	memset(&temp, 0, sizeof(unDATA_8b));
+
+	memcpy(&temp, m_SendBuf, 4);
+
+	tempStr.sprintf(L"BYTE : %d", temp.BYTE_Data);
+	PrintMemo(tempStr);
+	tempStr.sprintf(L"CHAR : %d", temp.CHAR_Data);
+	PrintMemo(tempStr);
+	tempStr.sprintf(L"WORD : %d", temp.WORD_Data);
+	PrintMemo(tempStr);
+	tempStr.sprintf(L"SHORT : %d", temp.SHORT_Data);
+	PrintMemo(tempStr);
+	tempStr.sprintf(L"DWORD : %u", temp.DWORD_Data);
+	PrintMemo(tempStr);
+	tempStr.sprintf(L"INT : %d", temp.INT_Data);
+	PrintMemo(tempStr);
+	PrintMemo(L"-----------");
+
+	tempStr.sprintf(L"%02X %02X %02X %02X", m_SendBuf[0], m_SendBuf[1], m_SendBuf[2], m_SendBuf[3]);
+	PrintMsg(tempStr);
 }
 //---------------------------------------------------------------------------
 
@@ -836,13 +868,9 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	int t_GridRow = 1;
 	int t_GridCol = 1;
 	BYTE* t_pBuffer = NULL;
-
 	BYTE t_Byte = 0;
-	char t_Char = 0;
-	WORD t_Word = 0;
-	short t_Short = 0;
-	DWORD t_DWord = 0;
-	int t_Int = 0;
+
+	unDATA_8b t_unData;
 
 	// Cell Merge Variables
 	TPoint t_point;
@@ -882,7 +910,12 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 
 						// Value Setting
 						t_FinalStr = ExtractOriginSignalName(p_grid->Cells[t_GridCol][t_GridRow]);
-						tempStr.sprintf(L"\n%02X%02X", t_Buffer[t_GridRow - 1], t_Buffer[t_GridRow + 1 - 1]);
+
+						if(m_bIsSigned) {
+							tempStr.sprintf(L"\n%02X%02X", t_Buffer[t_GridRow - 1], t_Buffer[t_GridRow + 1 - 1]);
+						} else {
+							tempStr.sprintf(L"\n%02X%02X", t_Buffer[t_GridRow - 1], t_Buffer[t_GridRow + 1 - 1]);
+						}
 						t_FinalStr += tempStr;
 						p_grid->Cells[t_GridCol][t_GridRow] = t_FinalStr;
 						t_GridRow += 2;

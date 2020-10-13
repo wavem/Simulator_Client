@@ -214,6 +214,7 @@ public:	// Basic Functions
 	void __fastcall InitProgram();
 	void __fastcall ExitProgram();
 	void __fastcall PrintMsg(UnicodeString _str);
+	void __fastcall PrintMemo(UnicodeString _str);
 	void __fastcall ExtractCommInformation();
 	void __fastcall InitGrids();
 
