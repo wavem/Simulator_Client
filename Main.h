@@ -198,6 +198,7 @@ public: // Basic Member Variables
 	int m_RecvProtocolSize;
 	bool m_bIsBigEndian;
 	bool m_bIsOnLogFile;
+	bool m_bIsSigned;
 
 public: // Data Parsing
 	void __fastcall DisplayBufferDataIntoGrid(int _type);
