@@ -836,7 +836,13 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	int t_GridRow = 1;
 	int t_GridCol = 1;
 	BYTE* t_pBuffer = NULL;
+
 	BYTE t_Byte = 0;
+	char t_Char = 0;
+	WORD t_Word = 0;
+	short t_Short = 0;
+	DWORD t_DWord = 0;
+	int t_Int = 0;
 
 	// Cell Merge Variables
 	TPoint t_point;
