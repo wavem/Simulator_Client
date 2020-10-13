@@ -1895,7 +1895,7 @@ object FormMain: TFormMain
           end
           object lb_Setting_Title_Log: TLabel
             Left = 52
-            Top = 116
+            Top = 152
             Width = 46
             Height = 14
             Caption = 'Log File'
@@ -1929,6 +1929,21 @@ object FormMain: TFormMain
             Width = 72
             Height = 14
             Caption = 'Recv Period'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Setting_Title_Signed: TLabel
+            Left = 56
+            Top = 114
+            Width = 42
+            Height = 14
+            Caption = 'Signed'
             Color = 2129339
             Font.Charset = DEFAULT_CHARSET
             Font.Color = 2262986
@@ -2508,7 +2523,7 @@ object FormMain: TFormMain
           end
           object sd_LogFile: TAdvSmoothSlider
             Left = 117
-            Top = 108
+            Top = 145
             Width = 104
             Height = 30
             AppearanceOn.Fill.Color = 3355443
@@ -2976,6 +2991,102 @@ object FormMain: TFormMain
             ButtonAppearance.FillHover.Glow = gmNone
             DropDownHeight = 90
             DropDownWidth = 112
+            TMSStyle = 4
+          end
+          object sd_Signed: TAdvSmoothSlider
+            Left = 117
+            Top = 108
+            Width = 104
+            Height = 30
+            AppearanceOn.Fill.Color = 3355443
+            AppearanceOn.Fill.ColorTo = cl3DDkShadow
+            AppearanceOn.Fill.ColorMirror = 3355443
+            AppearanceOn.Fill.ColorMirrorTo = 3355443
+            AppearanceOn.Fill.GradientType = gtVertical
+            AppearanceOn.Fill.GradientMirrorType = gtVertical
+            AppearanceOn.Fill.BorderColor = cl3DDkShadow
+            AppearanceOn.Fill.Rounding = 4
+            AppearanceOn.Fill.RoundingType = rtLeft
+            AppearanceOn.Fill.ShadowOffset = 0
+            AppearanceOn.Fill.Glow = gmNone
+            AppearanceOn.FillDisabled.ColorMirror = clNone
+            AppearanceOn.FillDisabled.ColorMirrorTo = clNone
+            AppearanceOn.FillDisabled.GradientType = gtVertical
+            AppearanceOn.FillDisabled.GradientMirrorType = gtSolid
+            AppearanceOn.FillDisabled.BorderColor = clNone
+            AppearanceOn.FillDisabled.Rounding = 4
+            AppearanceOn.FillDisabled.ShadowOffset = 0
+            AppearanceOn.FillDisabled.Glow = gmNone
+            AppearanceOn.Caption = 'Unsign'
+            AppearanceOn.Font.Charset = DEFAULT_CHARSET
+            AppearanceOn.Font.Color = 2262986
+            AppearanceOn.Font.Height = -12
+            AppearanceOn.Font.Name = 'Tahoma'
+            AppearanceOn.Font.Style = [fsBold]
+            AppearanceOff.Fill.Color = 3355443
+            AppearanceOff.Fill.ColorTo = cl3DDkShadow
+            AppearanceOff.Fill.ColorMirror = 3355443
+            AppearanceOff.Fill.ColorMirrorTo = 3355443
+            AppearanceOff.Fill.GradientType = gtVertical
+            AppearanceOff.Fill.GradientMirrorType = gtVertical
+            AppearanceOff.Fill.BorderColor = cl3DDkShadow
+            AppearanceOff.Fill.Rounding = 4
+            AppearanceOff.Fill.RoundingType = rtRight
+            AppearanceOff.Fill.ShadowOffset = 0
+            AppearanceOff.Fill.Glow = gmNone
+            AppearanceOff.FillDisabled.ColorMirror = clNone
+            AppearanceOff.FillDisabled.ColorMirrorTo = clNone
+            AppearanceOff.FillDisabled.GradientType = gtVertical
+            AppearanceOff.FillDisabled.GradientMirrorType = gtSolid
+            AppearanceOff.FillDisabled.BorderColor = clNone
+            AppearanceOff.FillDisabled.Rounding = 4
+            AppearanceOff.FillDisabled.ShadowOffset = 0
+            AppearanceOff.FillDisabled.Glow = gmNone
+            AppearanceOff.Caption = 'Signed'
+            AppearanceOff.Font.Charset = DEFAULT_CHARSET
+            AppearanceOff.Font.Color = 2262986
+            AppearanceOff.Font.Height = -12
+            AppearanceOff.Font.Name = 'Tahoma'
+            AppearanceOff.Font.Style = [fsBold]
+            ButtonAppearance.Fill.Color = 8243449
+            ButtonAppearance.Fill.ColorTo = 1153266
+            ButtonAppearance.Fill.ColorMirror = 1153266
+            ButtonAppearance.Fill.ColorMirrorTo = 1153266
+            ButtonAppearance.Fill.GradientType = gtVertical
+            ButtonAppearance.Fill.GradientMirrorType = gtSolid
+            ButtonAppearance.Fill.BorderColor = 2724583
+            ButtonAppearance.Fill.Rounding = 4
+            ButtonAppearance.Fill.ShadowOffset = 0
+            ButtonAppearance.Fill.Glow = gmGradient
+            ButtonAppearance.Fill.GlowGradientColor = 5289205
+            ButtonAppearance.FillDisabled.ColorMirror = clNone
+            ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+            ButtonAppearance.FillDisabled.GradientType = gtVertical
+            ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
+            ButtonAppearance.FillDisabled.BorderColor = clBlack
+            ButtonAppearance.FillDisabled.Rounding = 4
+            ButtonAppearance.FillDisabled.ShadowOffset = 0
+            ButtonAppearance.FillDisabled.Glow = gmNone
+            Fill.ColorMirror = clNone
+            Fill.ColorMirrorTo = clNone
+            Fill.GradientType = gtVertical
+            Fill.GradientMirrorType = gtSolid
+            Fill.BorderColor = clNone
+            Fill.Rounding = 4
+            Fill.ShadowOffset = 0
+            Fill.Glow = gmNone
+            FillDisabled.Color = 15921906
+            FillDisabled.ColorTo = 11974326
+            FillDisabled.ColorMirror = clNone
+            FillDisabled.ColorMirrorTo = clNone
+            FillDisabled.GradientType = gtVertical
+            FillDisabled.GradientMirrorType = gtVertical
+            FillDisabled.BorderColor = 9841920
+            FillDisabled.Rounding = 4
+            FillDisabled.ShadowOffset = 0
+            FillDisabled.Glow = gmNone
+            OnStateChanged = sd_SignedStateChanged
+            TabOrder = 5
             TMSStyle = 4
           end
         end

@@ -155,6 +155,8 @@ __published:	// IDE-managed Components
 	TLabel *lb_Setting_Title_RecvPeriod;
 	TAdvSmoothComboBox *cb_RecvPeriod;
 	TTimer *tm_AutoSend;
+	TAdvSmoothSlider *sd_Signed;
+	TLabel *lb_Setting_Title_Signed;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
@@ -181,6 +183,8 @@ __published:	// IDE-managed Components
 	void __fastcall sd_EndianStateChanged(TObject *Sender, TAdvSmoothSliderState State,
           double Value);
 	void __fastcall sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+          double Value);
+	void __fastcall sd_SignedStateChanged(TObject *Sender, TAdvSmoothSliderState State,
           double Value);
 
 
