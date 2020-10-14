@@ -201,22 +201,22 @@ void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
 	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
 	Notebook_Main->PageIndex = p_Btn->Tag;
 
-	unDATA_8b temp;
+	unDATA_4b temp;
 	UnicodeString tempStr = L"";
-	tempStr.sprintf(L"Size : %d", sizeof(unDATA_8b));
+	tempStr.sprintf(L"Size : %d", sizeof(unDATA_4b));
 	PrintMemo(tempStr);
 
-	memset(&temp, 0, sizeof(unDATA_8b));
+	memset(&temp, 0, sizeof(unDATA_4b));
 
 	memcpy(&temp, m_SendBuf, 4);
 
-	tempStr.sprintf(L"BYTE : %d", temp.BYTE_Data);
+	tempStr.sprintf(L"BYTE : %d", temp.BYTE_Data[0]);
 	PrintMemo(tempStr);
-	tempStr.sprintf(L"CHAR : %d", temp.CHAR_Data);
+	tempStr.sprintf(L"CHAR : %d", temp.CHAR_Data[0]);
 	PrintMemo(tempStr);
-	tempStr.sprintf(L"WORD : %d", temp.WORD_Data);
+	tempStr.sprintf(L"WORD : %d", temp.WORD_Data[0]);
 	PrintMemo(tempStr);
-	tempStr.sprintf(L"SHORT : %d", temp.SHORT_Data);
+	tempStr.sprintf(L"SHORT : %d", temp.SHORT_Data[0]);
 	PrintMemo(tempStr);
 	tempStr.sprintf(L"DWORD : %u", temp.DWORD_Data);
 	PrintMemo(tempStr);
@@ -870,7 +870,7 @@ void __fastcall TFormMain::DisplayBufferDataIntoGrid(int _type) {
 	BYTE* t_pBuffer = NULL;
 	BYTE t_Byte = 0;
 
-	unDATA_8b t_unData;
+	unDATA_4b t_unData;
 
 	// Cell Merge Variables
 	TPoint t_point;
