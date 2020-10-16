@@ -99,9 +99,17 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 void __fastcall TFormDataInputEdit::InputDataRoutine() {
 
 	// Common
-	unsigned int t_IntValue = (unsigned int)ed_Data->IntValue;
 	BYTE t_CurrentByte = 0;
 	BYTE t_InputByte = 0;
+	unsigned __int64 t_UIntValue = 0;
+	UnicodeString tempStr = HexDisplayPrefix;
+
+	if(ed_Data->EditType == etNumeric) {
+		t_UIntValue = StrToUInt64(ed_Data->Text);
+	} else if(ed_Data->EditType == etHex) {
+		tempStr += ed_Data->Text;
+		t_UIntValue = StrToUInt64(tempStr);
+	}
 
 	// Input Value Routine
 	switch(m_ByteSize) {
@@ -111,7 +119,7 @@ void __fastcall TFormDataInputEdit::InputDataRoutine() {
 		case 1:
 		{
 			t_CurrentByte = m_pBuffer[m_ByteIdx];
-			t_InputByte = t_IntValue;
+			t_InputByte = t_UIntValue;
 			switch(m_BitSize) {
 				default:
 					break;
@@ -154,11 +162,11 @@ void __fastcall TFormDataInputEdit::InputDataRoutine() {
 		}
 
 		case 2:
-			memcpy(&(m_pBuffer[m_ByteIdx]), &t_IntValue, 2);
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_UIntValue, 2);
 			break;
 
 		case 4:
-			memcpy(&(m_pBuffer[m_ByteIdx]), &t_IntValue, 4);
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_UIntValue, 4);
 			break;
 	}
 }
@@ -184,18 +192,20 @@ void __fastcall TFormDataInputEdit::Slider_HexDecStateChanged(TObject *Sender, T
 void __fastcall TFormDataInputEdit::ChangeHexDecMode() {
 
 	// Common
-	int t_CurrentValue = 0;
+	unsigned __int64 t_CurrentUIntValue = 0;
+	UnicodeString tempStr = HexDisplayPrefix;
 
 	if(Slider_HexDec->State == ssOn) {
 		this->Caption = L"Data Input Edit (DEC)";
-		t_CurrentValue = ed_Data->IntValue;
+		tempStr += ed_Data->Text;
+		t_CurrentUIntValue = StrToUInt64(tempStr);
 		ed_Data->EditType = etNumeric;
-		ed_Data->IntValue = t_CurrentValue;
+		ed_Data->Text = UIntToStr(t_CurrentUIntValue);
 	} else {
 		this->Caption = L"Data Input Edit (HEX)";
-		t_CurrentValue = ed_Data->IntValue;
+		t_CurrentUIntValue = StrToUInt64(ed_Data->Text);
 		ed_Data->EditType = etHex;
-		ed_Data->IntValue = t_CurrentValue;
+		ed_Data->Text = IntToHex((unsigned __int64) t_CurrentUIntValue, 0);
 	}
 }
 //---------------------------------------------------------------------------
