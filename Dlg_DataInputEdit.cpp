@@ -29,7 +29,7 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 	m_ByteSize = _ByteSize;
 	m_BitSize = _BitSize;
 	m_ProtocolType = _ProtocolType;
-	int t_CurrentValue = 0;
+	unsigned int t_CurrentValue = 0;
 
 	// Prevent Exception
 	if(m_ProtocolType == RECV_PROTOCOL_TYPE) btn_Input->Enabled = false;
@@ -80,12 +80,12 @@ __fastcall TFormDataInputEdit::TFormDataInputEdit(BYTE* _pBuffer, int _ByteIdx, 
 			break;
 
 		case 4:
-			ed_Data->MaxValue = UINT_MAX;
+			//ed_Data->MaxValue = UINT_MAX;
 			memcpy(&t_CurrentValue, &(m_pBuffer[m_ByteIdx]), 4);
 			break;
 	}
 
-	ed_Data->Text = IntToStr(t_CurrentValue);
+	ed_Data->Text = UIntToStr(t_CurrentValue);
 }
 //---------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ void __fastcall TFormDataInputEdit::btn_InputClick(TObject *Sender)
 void __fastcall TFormDataInputEdit::InputDataRoutine() {
 
 	// Common
-	unsigned int t_Value = ed_Data->IntValue;
+	unsigned int t_IntValue = (unsigned int)ed_Data->IntValue;
 	BYTE t_CurrentByte = 0;
 	BYTE t_InputByte = 0;
 
@@ -111,7 +111,7 @@ void __fastcall TFormDataInputEdit::InputDataRoutine() {
 		case 1:
 		{
 			t_CurrentByte = m_pBuffer[m_ByteIdx];
-			t_InputByte = t_Value;
+			t_InputByte = t_IntValue;
 			switch(m_BitSize) {
 				default:
 					break;
@@ -154,11 +154,11 @@ void __fastcall TFormDataInputEdit::InputDataRoutine() {
 		}
 
 		case 2:
-			memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 2);
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_IntValue, 2);
 			break;
 
 		case 4:
-			memcpy(&(m_pBuffer[m_ByteIdx]), &t_Value, 4);
+			memcpy(&(m_pBuffer[m_ByteIdx]), &t_IntValue, 4);
 			break;
 	}
 }
