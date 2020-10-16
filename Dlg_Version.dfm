@@ -31,7 +31,7 @@ object FormVersion: TFormVersion
       Top = 72
       Width = 90
       Height = 16
-      Caption = 'Version : 0.10'
+      Caption = 'Version : 0.11'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 2262986
       Font.Height = -13
@@ -44,7 +44,7 @@ object FormVersion: TFormVersion
       Top = 94
       Width = 231
       Height = 16
-      Caption = 'Last Update : 2020-10-11 PM 16:00'
+      Caption = 'Last Update : 2020-10-16 PM 16:00'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = 2262986
       Font.Height = -13
