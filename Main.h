@@ -217,6 +217,7 @@ public:	// Basic Functions
 	void __fastcall PrintMemo(UnicodeString _str);
 	void __fastcall ExtractCommInformation();
 	void __fastcall InitGrids();
+	void __fastcall ResetGrid(int _Tag);
 
 
 public: // Socket

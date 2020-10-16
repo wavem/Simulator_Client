@@ -560,11 +560,27 @@ void __fastcall TFormMain::InitGrids() {
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::ResetGrid(int _Tag) {
+	TAdvStringGrid* p_grid = NULL;
+
+	if(_Tag == SEND_PROTOCOL_TYPE) {
+		p_grid = grid_Protocol_Send;
+		p_grid->Clear();
+		InitGrids();
+	} else if(_Tag == RECV_PROTOCOL_TYPE) {
+		p_grid = grid_Protocol_Recv;
+		p_grid->Clear();
+		InitGrids();
+	}
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TFormMain::btn_Back_SendClick(TObject *Sender)
 {
 	Notebook_Send->PageIndex = 0;
 	lb_Send_Title->Caption = L"Send Protocol List";
 	btn_Send_Protocol->Visible = false;
+	ResetGrid(SEND_PROTOCOL_TYPE);
 }
 //---------------------------------------------------------------------------
 
@@ -573,6 +589,7 @@ void __fastcall TFormMain::btn_Back_RecvClick(TObject *Sender)
 	Notebook_Recv->PageIndex = 0;
 	lb_Recv_Title->Caption = L"Recv Protocol List";
 	tm_RefreshRecvBufferViewer->Enabled = false;
+	ResetGrid(RECV_PROTOCOL_TYPE);
 }
 //---------------------------------------------------------------------------
 
