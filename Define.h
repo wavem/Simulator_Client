@@ -30,7 +30,6 @@ typedef union unData_4b {
 	short SHORT_Data[2];
 	unsigned int DWORD_Data;
 	int	INT_Data;
-	//double DOUBLE_Data;
 } unDATA_4b;
 
 
