@@ -201,6 +201,8 @@ void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
 	TdxBarLargeButton* p_Btn = (TdxBarLargeButton*)Sender;
 	Notebook_Main->PageIndex = p_Btn->Tag;
 
+	// Below is Test Code
+#if 0
 	unDATA_4b temp;
 	UnicodeString tempStr = L"";
 	tempStr.sprintf(L"Size : %d", sizeof(unDATA_4b));
@@ -226,6 +228,7 @@ void __fastcall TFormMain::ClickMenuButton(TObject *Sender)
 
 	tempStr.sprintf(L"%02X %02X %02X %02X", m_SendBuf[0], m_SendBuf[1], m_SendBuf[2], m_SendBuf[3]);
 	PrintMsg(tempStr);
+#endif
 }
 //---------------------------------------------------------------------------
 
