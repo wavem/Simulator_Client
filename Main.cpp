@@ -1288,3 +1288,15 @@ void __fastcall TFormMain::sd_SignedStateChanged(TObject *Sender, TAdvSmoothSlid
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::btn_Clear_RightClick(TObject *Sender)
+{
+	memo->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::btn_Clear_BottomClick(TObject *Sender)
+{
+	memo_Msg->Clear();
+}
+//---------------------------------------------------------------------------
+

@@ -64,7 +64,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 1
+      PageIndex = 2
       TabOrder = 0
       object TPage
         Left = 0
@@ -1953,6 +1953,36 @@ object FormMain: TFormMain
             ParentColor = False
             ParentFont = False
           end
+          object lb_Setting_Title_Clear_Right: TLabel
+            Left = 496
+            Top = 44
+            Width = 105
+            Height = 14
+            Caption = 'Log Clear (Right)'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object lb_Setting_Title_Clear_Bottom: TLabel
+            Left = 496
+            Top = 78
+            Width = 118
+            Height = 14
+            Caption = 'Log Clear (Bottom)'
+            Color = 2129339
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
           object cb_SendPeriod: TAdvSmoothComboBox
             Left = 346
             Top = 36
@@ -3088,6 +3118,52 @@ object FormMain: TFormMain
             OnStateChanged = sd_SignedStateChanged
             TabOrder = 5
             TMSStyle = 4
+          end
+          object btn_Clear_Right: TAdvGlassButton
+            Left = 635
+            Top = 34
+            Width = 100
+            Height = 32
+            Cursor = crHandPoint
+            BackColor = 3355443
+            Caption = 'CLEAR'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = clOlive
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
+            ParentFont = False
+            ShineColor = clGray
+            TabOrder = 6
+            Version = '1.3.0.2'
+            OnClick = btn_Clear_RightClick
+          end
+          object btn_Clear_Bottom: TAdvGlassButton
+            Left = 635
+            Top = 72
+            Width = 100
+            Height = 32
+            Cursor = crHandPoint
+            BackColor = 3355443
+            Caption = 'CLEAR'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = 2262986
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ForeColor = clWhite
+            GlowColor = clOlive
+            InnerBorderColor = 3355443
+            OuterBorderColor = cl3DDkShadow
+            ParentFont = False
+            ShineColor = clGray
+            TabOrder = 7
+            Version = '1.3.0.2'
+            OnClick = btn_Clear_BottomClick
           end
         end
       end

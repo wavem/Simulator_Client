@@ -157,6 +157,10 @@ __published:	// IDE-managed Components
 	TTimer *tm_AutoSend;
 	TAdvSmoothSlider *sd_Signed;
 	TLabel *lb_Setting_Title_Signed;
+	TAdvGlassButton *btn_Clear_Right;
+	TLabel *lb_Setting_Title_Clear_Right;
+	TLabel *lb_Setting_Title_Clear_Bottom;
+	TAdvGlassButton *btn_Clear_Bottom;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
@@ -186,6 +190,8 @@ __published:	// IDE-managed Components
           double Value);
 	void __fastcall sd_SignedStateChanged(TObject *Sender, TAdvSmoothSliderState State,
           double Value);
+	void __fastcall btn_Clear_RightClick(TObject *Sender);
+	void __fastcall btn_Clear_BottomClick(TObject *Sender);
 
 
 private:	// User declarations
