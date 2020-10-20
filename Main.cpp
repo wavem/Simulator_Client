@@ -116,6 +116,7 @@ void __fastcall TFormMain::InitProgram() {
 	m_bIsBigEndian = false;
 	m_bIsOnLogFile = false;
 	m_bIsSigned = false;
+	m_fp = NULL;
 
 	// Init Grids
 	InitGrids();
