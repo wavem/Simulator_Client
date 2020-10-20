@@ -1297,6 +1297,7 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		int t_TS_num = 2; // TEST !!! Should Receive this Info from ATC SD 6 (4 Byte Train Run Number ???)
 		t_fileName.sprintf("Log_%04d%02d%02d_%02d%02d%02d_TS%02d.bin", Year, Month, Day, Hour, Min, Sec, t_TS_num);
 		t_dstPath = t_folderPath + t_fileName;
+		ForceDirectories(ExtractFilePath(t_dstPath));
 		m_fp = fopen(t_dstPath.c_str(), "wb");
 		if(m_fp) PrintMsg(L"File Pointer Opened");
 		else PrintMsg(L"File Pointer Fail to Opened");
