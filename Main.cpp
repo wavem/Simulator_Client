@@ -1275,7 +1275,7 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		if(m_fp) {
 			fclose(m_fp);
 			m_fp = NULL;
-			PrintMsg(L"File Pointer Closed");
+			PrintMsg(L"File Closed");
 		}
 	} else { // Log File ON
 		m_bIsOnLogFile = true;
@@ -1299,8 +1299,8 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		t_dstPath = t_folderPath + t_fileName;
 		ForceDirectories(ExtractFilePath(t_dstPath));
 		m_fp = fopen(t_dstPath.c_str(), "wb");
-		if(m_fp) PrintMsg(L"File Pointer Opened");
-		else PrintMsg(L"File Pointer Fail to Opened");
+		if(m_fp) PrintMsg(L"Success to open File");
+		else PrintMsg(L"Fail to Opened");
 	}
 }
 //---------------------------------------------------------------------------
