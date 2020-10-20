@@ -54,7 +54,13 @@ void __fastcall CUdpSocketThread::Execute() {
 		t_ReceivedSize = recvfrom(*m_sock, t_Buffer, 1500, 0, (struct sockaddr*)&t_from_addr, &t_fromaddrsize);
 		memcpy(FormMain->m_RecvBuf, t_Buffer, t_ReceivedSize);
 
-		t_Str.sprintf(L"[RECV] Size : %d", t_ReceivedSize);
+		t_Str.sprintf(L"[RECV] Size : %04d", t_ReceivedSize);
+		t_Str += L" (Source IP : ";
+		t_Str += inet_ntoa(t_from_addr.sin_addr);
+		t_Str += L", Port : ";
+		t_Str += t_from_addr.sin_port;
+		t_Str += L")";
+
 		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
 	}
 

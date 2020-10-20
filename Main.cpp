@@ -1190,7 +1190,12 @@ int __fastcall TFormMain::SendPacket() {
 	t_sockaddr_in.sin_port = htons(m_ServerPort);
 
 	t_SendSize = sendto(m_sock_UDP, m_SendBuf, m_SendProtocolSize, 0, (struct sockaddr*)&t_sockaddr_in, sizeof(t_sockaddr_in));
-	t_Str.sprintf(L"[SEND] Size : %d", t_SendSize);
+	t_Str.sprintf(L"[SEND] Size : %04d", t_SendSize);
+	t_Str += L" (Target IP : ";
+	t_Str += m_ServerIPstr;
+	t_Str += L", Port : ";
+	t_Str += m_ServerPort;
+	t_Str += L")";
 	PrintMsg(t_Str);
 
 	return t_SendSize;
