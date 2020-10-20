@@ -6,6 +6,7 @@
 #include "libxl.h"
 #include "Define.h"
 #include "UdpSocketThread.h"
+#include <stdio.h>
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Vcl.Controls.hpp>
@@ -224,6 +225,9 @@ public:	// Basic Functions
 	void __fastcall ExtractCommInformation();
 	void __fastcall InitGrids();
 	void __fastcall ResetGrid(int _Tag);
+
+public: // Log File
+	FILE* m_fp;
 
 
 public: // Socket
