@@ -1272,8 +1272,34 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 {
 	if(State == ssOn) { // Log File OFF
 		m_bIsOnLogFile = false;
+		if(m_fp) {
+			fclose(m_fp);
+			m_fp = NULL;
+			PrintMsg(L"File Pointer Closed");
+		}
 	} else { // Log File ON
 		m_bIsOnLogFile = true;
+
+		AnsiString t_folderPath = ".\\Log\\";
+		AnsiString t_fileName = L"";
+		AnsiString t_dstPath = L"";
+		TTime t_time;
+		unsigned short Year;
+		unsigned short Month;
+		unsigned short Day;
+		unsigned short Hour;
+		unsigned short Min;
+		unsigned short Sec;
+		unsigned short MilSec;
+		t_time = Now();
+		t_time.DecodeDate(&Year, &Month, &Day);
+		t_time.DecodeTime(&Hour, &Min, &Sec, &MilSec);
+		int t_TS_num = 2; // TEST !!! Should Receive this Info from ATC SD 6 (4 Byte Train Run Number ???)
+		t_fileName.sprintf("Log_%04d%02d%02d_%02d%02d%02d_TS%02d.bin", Year, Month, Day, Hour, Min, Sec, t_TS_num);
+		t_dstPath = t_folderPath + t_fileName;
+		m_fp = fopen(t_dstPath.c_str(), "wb");
+		if(m_fp) PrintMsg(L"File Pointer Opened");
+		else PrintMsg(L"File Pointer Fail to Opened");
 	}
 }
 //---------------------------------------------------------------------------
@@ -1300,4 +1326,3 @@ void __fastcall TFormMain::btn_Clear_BottomClick(TObject *Sender)
 	memo_Msg->Clear();
 }
 //---------------------------------------------------------------------------
-
