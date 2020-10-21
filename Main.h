@@ -162,6 +162,8 @@ __published:	// IDE-managed Components
 	TLabel *lb_Setting_Title_Clear_Right;
 	TLabel *lb_Setting_Title_Clear_Bottom;
 	TAdvGlassButton *btn_Clear_Bottom;
+	TLabel *lb_Setting_Title_Binaryfile;
+	TAdvSmoothSlider *sd_BinaryFile;
 	void __fastcall ClickMenuButton(TObject *Sender);
 	void __fastcall dxBarLargeButton1Click(TObject *Sender);
 	void __fastcall btn_CreateClick(TObject *Sender);
