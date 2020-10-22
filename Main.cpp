@@ -115,6 +115,7 @@ void __fastcall TFormMain::InitProgram() {
 	m_RecvProtocolSize = 0;
 	m_bIsBigEndian = false;
 	m_bIsOnLogFile = false;
+	m_bIsOnBinaryFile = false;
 	m_bIsSigned = false;
 	m_fp = NULL;
 

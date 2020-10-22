@@ -212,6 +212,7 @@ public: // Basic Member Variables
 	bool m_bIsBigEndian;
 	bool m_bIsOnLogFile;
 	bool m_bIsSigned;
+	bool m_bIsOnBinaryFile;
 
 public: // Data Parsing
 	void __fastcall DisplayBufferDataIntoGrid(int _type);
