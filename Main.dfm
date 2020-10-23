@@ -3272,6 +3272,7 @@ object FormMain: TFormMain
             FillDisabled.Rounding = 4
             FillDisabled.ShadowOffset = 0
             FillDisabled.Glow = gmNone
+            OnStateChanged = sd_BinaryFileStateChanged
             TabOrder = 8
             TMSStyle = 4
           end

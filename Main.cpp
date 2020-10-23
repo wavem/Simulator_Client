@@ -1317,6 +1317,14 @@ void __fastcall TFormMain::sd_SignedStateChanged(TObject *Sender, TAdvSmoothSlid
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+		  double Value)
+{
+	// On Change Routine (Binary Log File)
+
+}
+//---------------------------------------------------------------------------
+
 void __fastcall TFormMain::btn_Clear_RightClick(TObject *Sender)
 {
 	memo->Clear();
@@ -1328,3 +1336,4 @@ void __fastcall TFormMain::btn_Clear_BottomClick(TObject *Sender)
 	memo_Msg->Clear();
 }
 //---------------------------------------------------------------------------
+

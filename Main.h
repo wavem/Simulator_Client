@@ -195,6 +195,8 @@ __published:	// IDE-managed Components
           double Value);
 	void __fastcall btn_Clear_RightClick(TObject *Sender);
 	void __fastcall btn_Clear_BottomClick(TObject *Sender);
+	void __fastcall sd_BinaryFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+          double Value);
 
 
 private:	// User declarations
