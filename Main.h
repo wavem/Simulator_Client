@@ -232,7 +232,7 @@ public:	// Basic Functions
 	void __fastcall ResetGrid(int _Tag);
 
 public: // Log File
-	FILE* m_fp;
+	FILE* m_fp_Log;
 	FILE* m_fp_Bin;
 
 

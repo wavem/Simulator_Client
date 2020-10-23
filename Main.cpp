@@ -117,7 +117,7 @@ void __fastcall TFormMain::InitProgram() {
 	m_bIsOnLogFile = false;
 	m_bIsOnBinaryFile = false;
 	m_bIsSigned = false;
-	m_fp = NULL;
+	m_fp_Log = NULL;
 
 	// Init Grids
 	InitGrids();
@@ -1273,9 +1273,9 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 {
 	if(State == ssOn) { // Log File OFF
 		m_bIsOnLogFile = false;
-		if(m_fp) {
-			fclose(m_fp);
-			m_fp = NULL;
+		if(m_fp_Log) {
+			fclose(m_fp_Log);
+			m_fp_Log = NULL;
 			PrintMsg(L"File Closed");
 		}
 	} else { // Log File ON
@@ -1299,8 +1299,8 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		t_fileName.sprintf("Log_%04d%02d%02d_%02d%02d%02d_TS%02d.bin", Year, Month, Day, Hour, Min, Sec, t_TS_num);
 		t_dstPath = t_folderPath + t_fileName;
 		ForceDirectories(ExtractFilePath(t_dstPath));
-		m_fp = fopen(t_dstPath.c_str(), "wb");
-		if(m_fp) PrintMsg(L"Success to open File");
+		m_fp_Log = fopen(t_dstPath.c_str(), "wb");
+		if(m_fp_Log) PrintMsg(L"Success to open File");
 		else PrintMsg(L"Fail to Opened");
 	}
 }
