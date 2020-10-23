@@ -1320,8 +1320,11 @@ void __fastcall TFormMain::sd_SignedStateChanged(TObject *Sender, TAdvSmoothSlid
 void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
 		  double Value)
 {
-	// On Change Routine (Binary Log File)
-
+	if(State == ssOn) { // Binary File OFF
+		m_bIsOnBinaryFile = false;
+	} else { // Binary File ON
+		m_bIsOnBinaryFile = true;
+	}
 }
 //---------------------------------------------------------------------------
 
