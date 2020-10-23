@@ -233,6 +233,7 @@ public:	// Basic Functions
 
 public: // Log File
 	FILE* m_fp;
+	FILE* m_fp_Bin;
 
 
 public: // Socket
