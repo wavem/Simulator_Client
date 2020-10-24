@@ -1306,17 +1306,6 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFormMain::sd_SignedStateChanged(TObject *Sender, TAdvSmoothSliderState State,
-          double Value)
-{
-	if(State == ssOn) { // Unsigned
-		m_bIsSigned = false;
-	} else { // Signed
-		m_bIsSigned = true;
-	}
-}
-//---------------------------------------------------------------------------
-
 void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmoothSliderState State,
 		  double Value)
 {
@@ -1324,6 +1313,17 @@ void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmooth
 		m_bIsOnBinaryFile = false;
 	} else { // Binary File ON
 		m_bIsOnBinaryFile = true;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMain::sd_SignedStateChanged(TObject *Sender, TAdvSmoothSliderState State,
+		  double Value)
+{
+	if(State == ssOn) { // Unsigned
+		m_bIsSigned = false;
+	} else { // Signed
+		m_bIsSigned = true;
 	}
 }
 //---------------------------------------------------------------------------
