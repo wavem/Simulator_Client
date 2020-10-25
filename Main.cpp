@@ -1281,7 +1281,7 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 	} else { // Log File ON
 		m_bIsOnLogFile = true;
 
-		AnsiString t_folderPath = ".\\Log\\";
+		AnsiString t_folderPath = ".\\Log\\Text\\";
 		AnsiString t_fileName = L"";
 		AnsiString t_dstPath = L"";
 		TTime t_time;
@@ -1295,11 +1295,10 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		t_time = Now();
 		t_time.DecodeDate(&Year, &Month, &Day);
 		t_time.DecodeTime(&Hour, &Min, &Sec, &MilSec);
-		int t_TS_num = 2; // TEST !!! Should Receive this Info from ATC SD 6 (4 Byte Train Run Number ???)
-		t_fileName.sprintf("Log_%04d%02d%02d_%02d%02d%02d_TS%02d.bin", Year, Month, Day, Hour, Min, Sec, t_TS_num);
+		t_fileName.sprintf("Log_%04d%02d%02d_%02d%02d%02d.txt", Year, Month, Day, Hour, Min, Sec);
 		t_dstPath = t_folderPath + t_fileName;
 		ForceDirectories(ExtractFilePath(t_dstPath));
-		m_fp_Log = fopen(t_dstPath.c_str(), "wb");
+		m_fp_Log = fopen(t_dstPath.c_str(), "wt"); // Test Write
 		if(m_fp_Log) PrintMsg(L"Success to open File");
 		else PrintMsg(L"Fail to Opened");
 	}
@@ -1313,6 +1312,27 @@ void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmooth
 		m_bIsOnBinaryFile = false;
 	} else { // Binary File ON
 		m_bIsOnBinaryFile = true;
+
+		AnsiString t_folderPath = ".\\Log\\Bin\\";
+		AnsiString t_fileName = L"";
+		AnsiString t_dstPath = L"";
+		TTime t_time;
+		unsigned short Year;
+		unsigned short Month;
+		unsigned short Day;
+		unsigned short Hour;
+		unsigned short Min;
+		unsigned short Sec;
+		unsigned short MilSec;
+		t_time = Now();
+		t_time.DecodeDate(&Year, &Month, &Day);
+		t_time.DecodeTime(&Hour, &Min, &Sec, &MilSec);
+		t_fileName.sprintf("Bin_%04d%02d%02d_%02d%02d%02d.bin", Year, Month, Day, Hour, Min, Sec);
+		t_dstPath = t_folderPath + t_fileName;
+		ForceDirectories(ExtractFilePath(t_dstPath));
+		m_fp_Log = fopen(t_dstPath.c_str(), "wb"); // Binary Write
+		if(m_fp_Log) PrintMsg(L"Success to open File");
+		else PrintMsg(L"Fail to Opened");
 	}
 }
 //---------------------------------------------------------------------------
