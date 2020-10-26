@@ -1299,7 +1299,7 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		t_dstPath = t_folderPath + t_fileName;
 		ForceDirectories(ExtractFilePath(t_dstPath));
 		m_fp_Log = fopen(t_dstPath.c_str(), "wt"); // Test Write
-		if(m_fp_Log) PrintMsg(L"Success to open File");
+		if(m_fp_Log) PrintMsg(L"Success to open Text Log File");
 		else PrintMsg(L"Fail to Opened");
 	}
 }
@@ -1336,7 +1336,7 @@ void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmooth
 		t_dstPath = t_folderPath + t_fileName;
 		ForceDirectories(ExtractFilePath(t_dstPath));
 		m_fp_Bin = fopen(t_dstPath.c_str(), "wb"); // Binary Write
-		if(m_fp_Bin) PrintMsg(L"Success to open File");
+		if(m_fp_Bin) PrintMsg(L"Success to open Binary Log File");
 		else PrintMsg(L"Fail to Opened");
 	}
 }
