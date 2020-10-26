@@ -1276,7 +1276,7 @@ void __fastcall TFormMain::sd_LogFileStateChanged(TObject *Sender, TAdvSmoothSli
 		if(m_fp_Log) {
 			fclose(m_fp_Log);
 			m_fp_Log = NULL;
-			PrintMsg(L"File Closed");
+			PrintMsg(L"Text Log File Closed");
 		}
 	} else { // Log File ON
 		m_bIsOnLogFile = true;
@@ -1310,6 +1310,11 @@ void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmooth
 {
 	if(State == ssOn) { // Binary File OFF
 		m_bIsOnBinaryFile = false;
+		if(m_fp_Bin) {
+			fclose(m_fp_Bin);
+			m_fp_Bin = NULL;
+			PrintMsg(L"Binary Log File Closed");
+		}
 	} else { // Binary File ON
 		m_bIsOnBinaryFile = true;
 
@@ -1330,8 +1335,8 @@ void __fastcall TFormMain::sd_BinaryFileStateChanged(TObject *Sender, TAdvSmooth
 		t_fileName.sprintf("Bin_%04d%02d%02d_%02d%02d%02d.bin", Year, Month, Day, Hour, Min, Sec);
 		t_dstPath = t_folderPath + t_fileName;
 		ForceDirectories(ExtractFilePath(t_dstPath));
-		m_fp_Log = fopen(t_dstPath.c_str(), "wb"); // Binary Write
-		if(m_fp_Log) PrintMsg(L"Success to open File");
+		m_fp_Bin = fopen(t_dstPath.c_str(), "wb"); // Binary Write
+		if(m_fp_Bin) PrintMsg(L"Success to open File");
 		else PrintMsg(L"Fail to Opened");
 	}
 }
