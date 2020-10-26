@@ -175,6 +175,17 @@ void __fastcall TFormMain::ExitProgram() {
 		m_UdpThread = NULL;
 	}
 
+	// Delete File Pointer
+	if(m_fp_Log) {
+		fclose(m_fp_Log);
+		m_fp_Log = NULL;
+	}
+
+	if(m_fp_Bin) {
+		fclose(m_fp_Bin);
+		m_fp_Bin = NULL;
+	}
+
 	// Socket Clean Up
 	WSACleanup();
 
