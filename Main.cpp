@@ -298,6 +298,19 @@ void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
 	p = (UnicodeString*)t_wParam;
 	tempStr = *p;
 	PrintMsg(tempStr);
+
+	if(m_bIsOnLogFile && m_fp_Log) {
+		AnsiString t_AnsiStr = "";
+		TTime t_time;
+		unsigned short Year, Month, Day, Hour, Min, Sec, MilSec;
+		t_time = Now();
+		t_time.DecodeDate(&Year, &Month, &Day);
+		t_time.DecodeTime(&Hour, &Min, &Sec, &MilSec);
+		t_AnsiStr.sprintf("[%04d-%02d-%02d %02d:%02d:%02d:%03d] : ", Year, Month, Day, Hour, Min, Sec, MilSec);
+		t_AnsiStr += tempStr;
+		t_AnsiStr += "\n";
+		fprintf(m_fp_Log, t_AnsiStr.c_str());
+	}
 }
 //---------------------------------------------------------------------------
 
