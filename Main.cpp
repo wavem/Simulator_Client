@@ -200,6 +200,19 @@ void __fastcall TFormMain::ExitProgram() {
 void __fastcall TFormMain::PrintMsg(UnicodeString _str) {
 	int t_Line = memo_Msg->Lines->Add(_str);
 	memo_Msg->SetCursor(0, t_Line);
+
+	if(m_bIsOnLogFile && m_fp_Log) {
+		AnsiString t_AnsiStr = "";
+		TTime t_time;
+		unsigned short Year, Month, Day, Hour, Min, Sec, MilSec;
+		t_time = Now();
+		t_time.DecodeDate(&Year, &Month, &Day);
+		t_time.DecodeTime(&Hour, &Min, &Sec, &MilSec);
+		t_AnsiStr.sprintf("[%04d-%02d-%02d %02d:%02d:%02d:%03d] : ", Year, Month, Day, Hour, Min, Sec, MilSec);
+		t_AnsiStr += _str;
+		t_AnsiStr += "\n";
+		fprintf(m_fp_Log, t_AnsiStr.c_str());
+	}
 }
 //---------------------------------------------------------------------------
 
