@@ -902,8 +902,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 1
         Caption = '1'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_01_View: TPanel
           Left = 0
           Top = 0
@@ -916,8 +914,6 @@ object FormMain: TFormMain
           ParentBackground = False
           ParentDoubleBuffered = False
           TabOrder = 0
-          ExplicitLeft = -6
-          ExplicitTop = -6
           object lb_Send_Title: TLabel
             Left = 26
             Top = 18
@@ -959,8 +955,6 @@ object FormMain: TFormMain
               Left = 0
               Top = 0
               Caption = 'Default'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_S_01: TPanel
                 Left = 0
                 Top = 0
@@ -1151,8 +1145,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 1
               Caption = 'page 1'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_S_02: TPanel
                 Left = 0
                 Top = 0
@@ -1379,8 +1371,6 @@ object FormMain: TFormMain
               Left = 0
               Top = 0
               Caption = 'Default'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_R_01: TPanel
                 Left = 0
                 Top = 0
@@ -1572,8 +1562,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 1
               Caption = 'page 1'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_R_02: TPanel
                 Left = 0
                 Top = 0

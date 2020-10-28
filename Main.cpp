@@ -338,6 +338,11 @@ void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFormMain::MakeBinaryLogFile(TMessage &_msg) {
+
+}
+//---------------------------------------------------------------------------
+
 bool __fastcall TFormMain::CreateUDPThread() {
 
 	// Common

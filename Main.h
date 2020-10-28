@@ -262,9 +262,11 @@ public: // Libxl
 
 public: // User Message Handler
 	void __fastcall PrintThreadLogMessage(TMessage &_msg);
+	void __fastcall MakeBinaryLogFile(TMessage &_msg);
 
 BEGIN_MESSAGE_MAP
 	MESSAGE_HANDLER(MSG_LOG_FROM_THREAD, TMessage, PrintThreadLogMessage)
+	MESSAGE_HANDLER(MSG_MAKE_BIN_LOG_FROM_THREAD, TMessage, MakeBinaryLogFile)
 END_MESSAGE_MAP(TForm)
 };
 //---------------------------------------------------------------------------
