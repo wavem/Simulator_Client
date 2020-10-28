@@ -340,6 +340,9 @@ void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
 
 void __fastcall TFormMain::MakeBinaryLogFile(TMessage &_msg) {
 
+	unsigned int t_wParam = _msg.WParam;
+	int t_lParam = _msg.LParam;
+
 }
 //---------------------------------------------------------------------------
 
