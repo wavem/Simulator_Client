@@ -38,6 +38,8 @@ void __fastcall CUdpSocketThread::Execute() {
 	BYTE t_Buffer[1500] = {0, };
 	int t_SendSize = 0;
 	int t_ReceivedSize = 0;
+	ST_RECVDATA t_stRecvData;
+	memset(&t_stRecvData, 0, sizeof(t_stRecvData));
 
 	t_Str = L"Thread Start";
 	SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
@@ -62,6 +64,10 @@ void __fastcall CUdpSocketThread::Execute() {
 		t_Str += L")";
 
 		SendMessage(FormMain->Handle, MSG_LOG_FROM_THREAD, (unsigned int)&t_Str, 0x10);
+
+		t_stRecvData.Size = t_ReceivedSize;
+		t_stRecvData.pBuffer = t_Buffer;
+		SendMessage(FormMain->Handle, MSG_MAKE_BIN_LOG_FROM_THREAD, (unsigned int)&t_stRecvData, 0x10);
 	}
 
 	return;

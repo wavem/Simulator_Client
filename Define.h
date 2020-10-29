@@ -33,6 +33,11 @@ typedef union unData_4b {
 	int	INT_Data;
 } unDATA_4b;
 
+typedef struct st_RECVDATA {
+	int Size;
+	unsigned char* pBuffer;
+} ST_RECVDATA;
+
 
 
 
