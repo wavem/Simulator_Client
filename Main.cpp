@@ -340,9 +340,27 @@ void __fastcall TFormMain::PrintThreadLogMessage(TMessage &_msg) {
 
 void __fastcall TFormMain::MakeBinaryLogFile(TMessage &_msg) {
 
+	// Pre Return
+	if(!m_bIsOnLogFile && !m_fp_Bin) return;
+
+	// Common
 	unsigned int t_wParam = _msg.WParam;
 	int t_lParam = _msg.LParam;
+	ST_RECVDATA* t_pRecvData = NULL;
+	t_pRecvData = (ST_RECVDATA*)t_wParam;
+	UnicodeString tempStr = L"";
+	int t_Size = t_pRecvData->Size;
+	if(t_Size <= 0) {
+		PrintMsg(L"Received Packet is less than 0 byte");
+		return;
+	}
 
+	BYTE* t_pByteBuffer = new BYTE[t_Size];
+	memcpy(t_pByteBuffer, t_pRecvData->pBuffer, t_Size);
+	fwrite(t_pByteBuffer, 1, t_Size, m_fp_Bin);
+	delete t_pByteBuffer;
+	tempStr.sprintf(L"%d Byte Writed", t_Size);
+	PrintMsg(tempStr);
 }
 //---------------------------------------------------------------------------
 
