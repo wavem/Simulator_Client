@@ -1,10 +1,10 @@
 object FormVersion: TFormVersion
   Left = 0
   Top = 0
-  BorderStyle = bsDialog
+  BorderStyle = bsNone
   Caption = 'Version'
-  ClientHeight = 137
-  ClientWidth = 417
+  ClientHeight = 154
+  ClientWidth = 428
   Color = clBtnFace
   DoubleBuffered = True
   Font.Charset = DEFAULT_CHARSET
@@ -20,9 +20,10 @@ object FormVersion: TFormVersion
   object ___pnBase: TPanel
     Left = 0
     Top = 0
-    Width = 417
-    Height = 137
+    Width = 428
+    Height = 154
     Align = alClient
+    BevelKind = bkFlat
     BevelOuter = bvNone
     Color = 3355443
     ParentBackground = False
