@@ -359,7 +359,8 @@ void __fastcall TFormMain::MakeBinaryLogFile(TMessage &_msg) {
 	memcpy(t_pByteBuffer, t_pRecvData->pBuffer, t_Size);
 	fwrite(t_pByteBuffer, 1, t_Size, m_fp_Bin);
 	delete t_pByteBuffer;
-	tempStr.sprintf(L"%d Byte Writed", t_Size);
+
+	tempStr.sprintf(L"Binary Log File Write Success (%d Byte)", t_Size);
 	PrintMsg(tempStr);
 }
 //---------------------------------------------------------------------------
