@@ -14,6 +14,7 @@ object FormVersion: TFormVersion
   Font.Style = []
   OldCreateOrder = False
   Position = poOwnerFormCenter
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object ___pnBase: TPanel

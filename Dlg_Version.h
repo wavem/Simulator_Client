@@ -16,6 +16,7 @@ __published:	// IDE-managed Components
 	TLabel *lb_Version;
 	TLabel *lb_UpdateDate;
 	TLabel *lb_Title_Version;
+	void __fastcall FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormVersion(TComponent* Owner);

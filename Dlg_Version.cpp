@@ -14,3 +14,10 @@ __fastcall TFormVersion::TFormVersion(TComponent* Owner)
 {
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFormVersion::FormKeyDown(TObject *Sender, WORD &Key, TShiftState Shift)
+{
+	if(Key == VK_ESCAPE) this->Close();
+}
+//---------------------------------------------------------------------------
+
