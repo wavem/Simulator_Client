@@ -394,6 +394,8 @@ void __fastcall TFormMain::btn_CreateClick(TObject *Sender)
 			if(CreateUDPSocket()) {
 				if(CreateUDPThread() == false) {
 					PrintMsg(L"Fail to Create UDP Thread");
+				} else {
+					Notebook_Main->PageIndex = 1; // Protocol List Page
 				}
 			}
 			break;

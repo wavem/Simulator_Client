@@ -64,14 +64,11 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 2
       TabOrder = 0
       object TPage
         Left = 0
         Top = 0
         Caption = 'Default'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_00_Start: TPanel
           Left = 0
           Top = 0
@@ -1344,8 +1341,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 2
               Caption = 'page 2'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_S_03: TPanel
                 Left = 0
                 Top = 0
@@ -1759,8 +1754,6 @@ object FormMain: TFormMain
               Top = 0
               HelpContext = 2
               Caption = 'page 2'
-              ExplicitWidth = 0
-              ExplicitHeight = 0
               object _pnBase_R_03: TPanel
                 Left = 0
                 Top = 0
@@ -3285,8 +3278,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 3
         Caption = '3'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_03_Test: TPanel
           Left = 0
           Top = 0
@@ -3306,8 +3297,6 @@ object FormMain: TFormMain
         Top = 0
         HelpContext = 4
         Caption = '4'
-        ExplicitWidth = 0
-        ExplicitHeight = 0
         object __pnBase_04_: TPanel
           Left = 0
           Top = 0
