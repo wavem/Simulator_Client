@@ -64,6 +64,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
+      PageIndex = 1
       TabOrder = 0
       object TPage
         Left = 0
@@ -914,9 +915,9 @@ object FormMain: TFormMain
           object lb_Send_Title: TLabel
             Left = 26
             Top = 18
-            Width = 63
+            Width = 136
             Height = 18
-            Caption = 'Protocol'
+            Caption = 'Send Protocol List'
             Color = 2129339
             Font.Charset = DEFAULT_CHARSET
             Font.Color = 2262986
@@ -929,9 +930,9 @@ object FormMain: TFormMain
           object lb_Recv_Title: TLabel
             Left = 873
             Top = 18
-            Width = 63
+            Width = 136
             Height = 18
-            Caption = 'Protocol'
+            Caption = 'Recv Protocol List'
             Color = 2129339
             Font.Charset = DEFAULT_CHARSET
             Font.Color = 2262986
