@@ -147,8 +147,10 @@ object FormDataInputEdit: TFormDataInputEdit
       ButtonAppearance.Fill.ShadowOffset = 0
       ButtonAppearance.Fill.Glow = gmGradient
       ButtonAppearance.Fill.GlowGradientColor = 5289205
-      ButtonAppearance.FillDisabled.ColorMirror = clNone
-      ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+      ButtonAppearance.FillDisabled.Color = cl3DDkShadow
+      ButtonAppearance.FillDisabled.ColorTo = 3355443
+      ButtonAppearance.FillDisabled.ColorMirror = 3355443
+      ButtonAppearance.FillDisabled.ColorMirrorTo = 3355443
       ButtonAppearance.FillDisabled.GradientType = gtVertical
       ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
       ButtonAppearance.FillDisabled.BorderColor = clBlack

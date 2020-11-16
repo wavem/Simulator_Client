@@ -64,7 +64,7 @@ object FormMain: TFormMain
       Width = 1694
       Height = 788
       Align = alLeft
-      PageIndex = 1
+      PageIndex = 2
       TabOrder = 0
       object TPage
         Left = 0
@@ -2436,8 +2436,10 @@ object FormMain: TFormMain
             ButtonAppearance.Fill.ShadowOffset = 0
             ButtonAppearance.Fill.Glow = gmGradient
             ButtonAppearance.Fill.GlowGradientColor = 5289205
-            ButtonAppearance.FillDisabled.ColorMirror = clNone
-            ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+            ButtonAppearance.FillDisabled.Color = cl3DDkShadow
+            ButtonAppearance.FillDisabled.ColorTo = 3355443
+            ButtonAppearance.FillDisabled.ColorMirror = 3355443
+            ButtonAppearance.FillDisabled.ColorMirrorTo = 3355443
             ButtonAppearance.FillDisabled.GradientType = gtVertical
             ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
             ButtonAppearance.FillDisabled.BorderColor = clBlack
@@ -2532,8 +2534,10 @@ object FormMain: TFormMain
             ButtonAppearance.Fill.ShadowOffset = 0
             ButtonAppearance.Fill.Glow = gmGradient
             ButtonAppearance.Fill.GlowGradientColor = 5289205
-            ButtonAppearance.FillDisabled.ColorMirror = clNone
-            ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+            ButtonAppearance.FillDisabled.Color = cl3DDkShadow
+            ButtonAppearance.FillDisabled.ColorTo = 3355443
+            ButtonAppearance.FillDisabled.ColorMirror = 3355443
+            ButtonAppearance.FillDisabled.ColorMirrorTo = 3355443
             ButtonAppearance.FillDisabled.GradientType = gtVertical
             ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
             ButtonAppearance.FillDisabled.BorderColor = clBlack
@@ -2560,6 +2564,7 @@ object FormMain: TFormMain
             FillDisabled.Glow = gmNone
             OnStateChanged = sd_EndianStateChanged
             TabOrder = 2
+            Enabled = False
             TMSStyle = 4
           end
           object sd_LogFile: TAdvSmoothSlider
@@ -2628,8 +2633,10 @@ object FormMain: TFormMain
             ButtonAppearance.Fill.ShadowOffset = 0
             ButtonAppearance.Fill.Glow = gmGradient
             ButtonAppearance.Fill.GlowGradientColor = 5289205
-            ButtonAppearance.FillDisabled.ColorMirror = clNone
-            ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+            ButtonAppearance.FillDisabled.Color = cl3DDkShadow
+            ButtonAppearance.FillDisabled.ColorTo = 3355443
+            ButtonAppearance.FillDisabled.ColorMirror = 3355443
+            ButtonAppearance.FillDisabled.ColorMirrorTo = 3355443
             ButtonAppearance.FillDisabled.GradientType = gtVertical
             ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
             ButtonAppearance.FillDisabled.BorderColor = clBlack
@@ -3100,8 +3107,10 @@ object FormMain: TFormMain
             ButtonAppearance.Fill.ShadowOffset = 0
             ButtonAppearance.Fill.Glow = gmGradient
             ButtonAppearance.Fill.GlowGradientColor = 5289205
-            ButtonAppearance.FillDisabled.ColorMirror = clNone
-            ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+            ButtonAppearance.FillDisabled.Color = cl3DDkShadow
+            ButtonAppearance.FillDisabled.ColorTo = 3355443
+            ButtonAppearance.FillDisabled.ColorMirror = 3355443
+            ButtonAppearance.FillDisabled.ColorMirrorTo = 3355443
             ButtonAppearance.FillDisabled.GradientType = gtVertical
             ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
             ButtonAppearance.FillDisabled.BorderColor = clBlack
@@ -3242,8 +3251,10 @@ object FormMain: TFormMain
             ButtonAppearance.Fill.ShadowOffset = 0
             ButtonAppearance.Fill.Glow = gmGradient
             ButtonAppearance.Fill.GlowGradientColor = 5289205
-            ButtonAppearance.FillDisabled.ColorMirror = clNone
-            ButtonAppearance.FillDisabled.ColorMirrorTo = clNone
+            ButtonAppearance.FillDisabled.Color = cl3DDkShadow
+            ButtonAppearance.FillDisabled.ColorTo = 3355443
+            ButtonAppearance.FillDisabled.ColorMirror = 3355443
+            ButtonAppearance.FillDisabled.ColorMirrorTo = 3355443
             ButtonAppearance.FillDisabled.GradientType = gtVertical
             ButtonAppearance.FillDisabled.GradientMirrorType = gtSolid
             ButtonAppearance.FillDisabled.BorderColor = clBlack
