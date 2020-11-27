@@ -3137,6 +3137,7 @@ object FormMain: TFormMain
             FillDisabled.Glow = gmNone
             OnStateChanged = sd_SignedStateChanged
             TabOrder = 5
+            Enabled = False
             TMSStyle = 4
           end
           object btn_Clear_Right: TAdvGlassButton
